@@ -2066,6 +2066,9 @@ h1, h2, h3, h4, h5, h6 {
    Layout is original from about.html source.
    ============================================= */
 
+/* Brand green accent */
+:root { --green: #14B57B; }
+
 
 /* ---- HERO ---- */
 .about-hero {
@@ -2100,9 +2103,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.15em;
-  color: rgba(255,255,255,0.65);
+  color: rgba(255,255,255,0.85);
   text-transform: uppercase;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid var(--green);
   padding: 5px 14px;
   border-radius: 20px;
   margin-bottom: 20px;
@@ -2159,6 +2162,15 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   color: var(--navy);
   margin-bottom: 24px;
+}
+
+/* Green accent on section labels within about page */
+.about-text .section-label,
+.pillars .section-label,
+.milestones .section-label,
+.testimonials .section-label,
+.sts10-top .section-label {
+  color: var(--green);
 }
 
 .about-text-left p {
@@ -2316,32 +2328,50 @@ h1, h2, h3, h4, h5, h6 {
 .accordion-year {
   font-size: 1rem;
   font-weight: 700;
-  color: var(--blue);
+  color: var(--green);
   min-width: 48px;
   flex-shrink: 0;
   font-family: 'Playfair Display', Georgia, serif;
 }
 
+/* Clean SVG-style chevron arrow — no emoji */
 .accordion-arrow {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   border-radius: 50%;
-  border: 1px solid var(--border);
+  border: 1.5px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  font-size: 0.85rem;
-  color: var(--slate);
-  transition: transform 0.3s ease, background 0.2s, border-color 0.2s;
-  flex-shrink: 0;
+  transition: border-color 0.25s, background 0.25s;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Disable old pseudo-element chevron */
+.accordion-arrow::before,
+.accordion-arrow::after { display: none; }
+
+/* PNG icon — black tinted to slate when closed */
+.accordion-arrow img {
+  width: 11px;
+  height: 11px;
+  object-fit: contain;
+  display: block;
+  transition: filter 0.25s, transform 0.3s ease;
+  /* Black PNG → slate grey */
+  filter: invert(40%) sepia(8%) saturate(600%) hue-rotate(180deg) brightness(85%);
+}
+
+/* Open state — circle fills green, arrow flips up and turns white */
 .accordion-item.open .accordion-arrow {
+  border-color: var(--green);
+  background: var(--green);
+}
+.accordion-item.open .accordion-arrow img {
   transform: rotate(180deg);
-  background: var(--blue);
-  border-color: var(--blue);
-  color: #fff;
+  filter: brightness(0) invert(1);
 }
 
 /* Highlight the 2026 current edition */
@@ -2481,7 +2511,7 @@ h1, h2, h3, h4, h5, h6 {
 
 .testimonial-role {
   font-size: 0.83rem;
-  color: var(--blue);
+  color: var(--green);
   font-style: italic;
   text-align: right;
   margin-top: 4px;
@@ -2763,7 +2793,7 @@ h1, h2, h3, h4, h5, h6 {
 .about-strip-label {
   font-size: 0.65rem;
   font-weight: 700;
-  color: var(--light-blue);
+  color: var(--green);
   text-transform: uppercase;
   letter-spacing: 0.18em;
 }
@@ -2848,12 +2878,12 @@ h1, h2, h3, h4, h5, h6 {
 .pillar-number {
   font-size: 11px;
   font-weight: 700;
-  color: var(--blue);
+  color: var(--green);
   letter-spacing: 0.1em;
   text-transform: uppercase;
   flex-shrink: 0;
   min-width: 24px;
-  margin-bottom: 0; /* override old bottom margin */
+  margin-bottom: 0;
 }
 
 .pillar-card p {
@@ -2996,7 +3026,7 @@ h1, h2, h3, h4, h5, h6 {
 .sts10-bottom--white .objective-item {
   background: var(--light-bg);
   border-radius: 8px;
-  border-left: 4px solid var(--blue);
+  border-left: 4px solid var(--green);
   padding: 20px 20px 20px 18px;
   display: flex;
   gap: 12px;
@@ -3010,7 +3040,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sts10-bottom--white .objective-dot {
-  background: var(--blue);
+  background: var(--green);
   margin-top: 6px;
   flex-shrink: 0;
 }
@@ -3025,12 +3055,12 @@ h1, h2, h3, h4, h5, h6 {
 .sts10-bottom--white .objective-item.full {
   grid-column: 1 / -1;
   max-width: 100%;
-  background: var(--navy);
-  border-left-color: var(--light-blue);
+  background: var(--light-bg);
+  border-left-color: var(--green);
 }
 
-.sts10-bottom--white .objective-item.full p { color: rgba(255,255,255,0.85); }
-.sts10-bottom--white .objective-item.full .objective-dot { background: var(--light-blue); }
+.sts10-bottom--white .objective-item.full p { color: var(--slate); }
+.sts10-bottom--white .objective-item.full .objective-dot { background: var(--green); }
 
 @media (max-width: 960px) {
   .sts10-bottom--white { padding: 60px 30px; }

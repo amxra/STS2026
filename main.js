@@ -611,6 +611,7 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
 
+
     /* =============================================
    STS 2026 — about.js
    About-page specific JS.
@@ -799,3 +800,42 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById('subscribeSuccess').style.display = 'block';
     });
   }
+
+
+  /* ------------------------------------------
+     SECOND EVENT STRIP (above footer)
+  ------------------------------------------ */
+  function updateAboutStrip2() {
+    var now   = new Date();
+    var start = new Date('2026-10-15T00:00:00');
+    var end   = new Date('2026-10-17T23:59:59');
+    var timer  = document.getElementById('aboutStripTimer2');
+    var status = document.getElementById('aboutStripStatus2');
+
+    if (!timer) return;
+
+    if (now >= end) {
+      timer.style.display = 'none';
+      if (status) status.textContent = 'Completed';
+    } else if (now >= start) {
+      timer.style.display = 'none';
+      if (status) status.textContent = 'Ongoing 🎉';
+    } else {
+      var diff = start - now;
+      var d = String(Math.floor(diff / 86400000)).padStart(2, '0');
+      var h = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+      var m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+      var s = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+      var dEl = document.getElementById('as2-days');
+      var hEl = document.getElementById('as2-hours');
+      var mEl = document.getElementById('as2-mins');
+      var sEl = document.getElementById('as2-secs');
+      if (dEl) dEl.textContent = d;
+      if (hEl) hEl.textContent = h;
+      if (mEl) mEl.textContent = m;
+      if (sEl) sEl.textContent = s;
+    }
+  }
+
+  updateAboutStrip2();
+  setInterval(updateAboutStrip2, 1000);
