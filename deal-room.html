@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deal Room — STS 2026</title>
+  <meta name="description" content="The STS Deal Room connects impact investors and sustainability-driven entrepreneurs. Register your interest to be matched with the right opportunity.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="deal-room.css">
+</head>
+<body>
+<div id="page">
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/Screenshot_1-removebg-preview-2.webp" alt="STS 2026" width="160" height="50">
+      </a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="/speakers">STS Speakers</a>
+        <a href="/partners">Partners &amp; Sponsors</a>
+        <a href="deal-room.html" class="active">Deal Room</a>
+        <div class="has-dropdown">
+          <a href="/past-events" aria-haspopup="true">Past Events ▾</a>
+          <div class="dropdown dropdown--scroll" role="menu">
+            <a href="/past-events/2025" role="menuitem">2025 — 9th Edition</a>
+            <a href="/past-events/2024" role="menuitem">2024 — 8th Edition</a>
+            <a href="/past-events/2023" role="menuitem">2023 — 7th Edition</a>
+            <a href="/past-events/2022" role="menuitem">2022 — 6th Edition</a>
+            <a href="/past-events/2021" role="menuitem">2021 — 5th Edition</a>
+            <a href="/past-events/2020" role="menuitem">2020 — 4th Edition</a>
+            <a href="/past-events/2019" role="menuitem">2019 — 3rd Edition</a>
+            <a href="/past-events/2018" role="menuitem">2018 — 2nd Edition</a>
+            <a href="/past-events/2017" role="menuitem">2017 — 1st Edition</a>
+            <a href="/past-events/2016" role="menuitem">2016 — Inaugural</a>
+          </div>
+        </div>
+        <a href="/publications">Publications</a>
+        <a href="/contact" class="nav-cta">
+          <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false" style="width:14px;fill:#fff"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+          Get in Touch
+        </a>
+      </nav>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="/speakers">STS Speakers</a>
+      <a href="/partners">Partners &amp; Sponsors</a>
+      <a href="deal-room.html">Deal Room</a>
+      <div class="mobile-submenu">
+        <button class="mobile-submenu-title" aria-expanded="false">Past Events ▾</button>
+        <div class="mobile-submenu-links" hidden>
+          <a href="/past-events/2025">2025 — 9th Edition</a>
+          <a href="/past-events/2024">2024 — 8th Edition</a>
+          <a href="/past-events/2023">2023 — 7th Edition</a>
+          <a href="/past-events/2022">2022 — 6th Edition</a>
+          <a href="/past-events/2021">2021 — 5th Edition</a>
+          <a href="/past-events/2020">2020 — 4th Edition</a>
+          <a href="/past-events/2019">2019 — 3rd Edition</a>
+          <a href="/past-events/2018">2018 — 2nd Edition</a>
+          <a href="/past-events/2017">2017 — 1st Edition</a>
+          <a href="/past-events/2016">2016 — Inaugural</a>
+        </div>
+      </div>
+      <a href="/publications">Publications</a>
+      <a href="index.html#contact" class="mobile-cta">Get in Touch →</a>
+    </nav>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="dr-hero">
+    <div class="dr-hero-eyebrow">STS Deal Room</div>
+    <h1 class="dr-hero-title">Connect Capital<br>with <span>Impact</span></h1>
+    <p class="dr-hero-sub">A curated matchmaking platform that brings together impact investors and sustainability-driven entrepreneurs. Register your interest and be matched with the right opportunity.</p>
+  </section>
+
+
+  <!-- EVENT STRIP (under hero) -->
+  <div class="dr-strip" id="heroStrip">
+    <div class="dr-strip-left">
+      <div class="dr-strip-label">STS @ 10 · Next Edition</div>
+      <div class="dr-strip-title">Leading the Sustainable Development Agenda: People, Planet, Prosperity</div>
+      <div class="dr-strip-date">📅 Oct 15 – 16, 2026 &nbsp;·&nbsp; 📍 Balmoral Event Centre, Lagos</div>
+    </div>
+    <div class="dr-strip-timer" id="heroTimer">
+      <div class="cd-block"><span class="cd-num" id="h-days">00</span><span class="cd-unit">Days</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="h-hours">00</span><span class="cd-unit">Hrs</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="h-mins">00</span><span class="cd-unit">Mins</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="h-secs">00</span><span class="cd-unit">Secs</span></div>
+    </div>
+    <div class="cd-status" id="heroStatus"></div>
+    <a href="https://www.eventbrite.com/e/the-sustainability-table-discourse-series-sts-10th-edition-tickets-1988312097006" target="_blank" class="dr-strip-btn">Register Now »</a>
+  </div>
+
+
+  <!-- PRIMARY TABS -->
+  <div class="dr-tabs-bar">
+    <div class="dr-tabs">
+      <button class="dr-tab active" data-tab="investor">Apply as Investor</button>
+      <button class="dr-tab" data-tab="entrepreneur">Apply as Entrepreneur</button>
+    </div>
+  </div>
+
+
+  <!-- PANELS -->
+  <div class="dr-body">
+
+    <!-- ====== INVESTOR PANEL ====== -->
+    <div class="dr-panel active" id="panel-investor">
+      <div class="dr-form-wrapper">
+        <div class="dr-form-intro">
+          <div class="dr-form-tag">Investor Registration</div>
+          <h2>Share Your Investment Profile</h2>
+          <p>Share your investment profile so we can match you with relevant deals and opportunities aligned with your mandate and the Sustainable Development Goals.</p>
+        </div>
+
+        <div id="investorForm">
+
+          <div class="dr-form-section">
+            <div class="dr-section-title">Personal Information</div>
+            <div class="dr-grid">
+              <div class="dr-field"><label for="inv-firstName">First Name</label><input type="text" id="inv-firstName" placeholder="First name"></div>
+              <div class="dr-field"><label for="inv-lastName">Last Name</label><input type="text" id="inv-lastName" placeholder="Last name"></div>
+              <div class="dr-field dr-full"><label for="inv-otherNames">Other Name(s) <span class="opt">optional</span></label><input type="text" id="inv-otherNames" placeholder="Middle or other names"></div>
+              <div class="dr-field"><label for="inv-email">Email Address</label><input type="email" id="inv-email" placeholder="you@example.com"></div>
+              <div class="dr-field"><label>Phone Number</label>
+                <div class="phone-row">
+                  <select id="inv-dialCode"></select>
+                  <input type="tel" id="inv-phone" placeholder="Phone number">
+                </div>
+              </div>
+              <div class="dr-field"><label for="inv-country">Country</label><select id="inv-country"><option value="">Select country</option></select></div>
+              <div class="dr-field"><label for="inv-state">State / Province</label><input type="text" id="inv-state" placeholder="State or province"></div>
+            </div>
+          </div>
+
+          <div class="dr-form-section">
+            <div class="dr-section-title">Organisation</div>
+            <div class="dr-grid">
+              <div class="dr-field dr-full"><label for="inv-orgName">Organisation / Company Name</label><input type="text" id="inv-orgName" placeholder="Your organisation name"></div>
+              <div class="dr-field"><label for="inv-orgType">Organisation Type</label>
+                <select id="inv-orgType">
+                  <option value="">Select type</option>
+                  <option>Angel Investor / HNI</option>
+                  <option>Venture Capital Fund</option>
+                  <option>Private Equity Fund</option>
+                  <option>Family Office</option>
+                  <option>Development Finance Institution</option>
+                  <option>Foundation / Philanthropic Fund</option>
+                  <option>Corporate / Strategic Investor</option>
+                  <option>Government / Public Institution</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="dr-field"><label for="inv-role">Role / Title</label><input type="text" id="inv-role" placeholder="e.g. Managing Partner, Director"></div>
+              <div class="dr-field dr-full"><label for="inv-opCountry">Country of Operation</label><select id="inv-opCountry"><option value="">Select country</option></select></div>
+            </div>
+          </div>
+
+          <div class="dr-form-section">
+            <div class="dr-section-title">Investment Preferences</div>
+            <div class="dr-grid">
+
+              <div class="dr-field dr-full">
+                <label>Investment Criteria <span class="opt">select all that apply</span></label>
+                <div class="dr-check-list">
+                  <label class="dr-check-item"><input type="checkbox" value="no-holding"><span>Investment CANNOT be into a Holding Company Structure</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="profitable"><span>Investment MUST be in a Profitable Company</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="post-revenue"><span>Investment MUST be into Post Revenue Company</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="small-co"><span>Investment MUST be into a Small Company</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sme"><span>Investment MUST be into a Small Medium Sized Enterprise</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="local-team"><span>Investment Must be Owned and Managed by Local Founding Team</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="climate"><span>Investment Must be related to Climate Change or Green Investment</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="esg"><span>Investment Must be ESG Focused</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="impact"><span>Investment Must have a Measurable Social or Environmental Impact</span></label>
+                </div>
+              </div>
+
+              <div class="dr-field dr-full">
+                <label>Ticket Range</label>
+                <div class="dr-radio-row">
+                  <label class="dr-radio-item"><input type="radio" name="inv-ticket" value="under5m">Under ₦5m</label>
+                  <label class="dr-radio-item"><input type="radio" name="inv-ticket" value="5-25m">₦5m – ₦25m</label>
+                  <label class="dr-radio-item"><input type="radio" name="inv-ticket" value="25-100m">₦25m – ₦100m</label>
+                  <label class="dr-radio-item"><input type="radio" name="inv-ticket" value="100-500m">₦100m – ₦500m</label>
+                  <label class="dr-radio-item"><input type="radio" name="inv-ticket" value="500m-2b">₦500m – ₦2b</label>
+                  <label class="dr-radio-item"><input type="radio" name="inv-ticket" value="above2b">Above ₦2b</label>
+                </div>
+              </div>
+
+              <div class="dr-field dr-full">
+                <label>Preferred Investment Stage <span class="opt">select all that apply</span></label>
+                <div class="dr-check-list">
+                  <label class="dr-check-item"><input type="checkbox" value="pre-seed"><span>Pre-seed</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="seed"><span>Seed</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="series-a"><span>Series A</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="series-b"><span>Series B+</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="growth"><span>Growth / Expansion</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="debt"><span>Debt / Blended Finance</span></label>
+                </div>
+              </div>
+
+              <div class="dr-field dr-full">
+                <label>Preferred SDG <span class="opt">select all that apply</span></label>
+                <div class="dr-check-list">
+                  <label class="dr-check-item"><input type="checkbox" value="sdg1"><span>SDG 1 — No Poverty</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg2"><span>SDG 2 — Zero Hunger</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg3"><span>SDG 3 — Good Health and Well-being</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg4"><span>SDG 4 — Quality Education</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg5"><span>SDG 5 — Gender Equality</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg6"><span>SDG 6 — Clean Water and Sanitation</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg7"><span>SDG 7 — Affordable and Clean Energy</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg8"><span>SDG 8 — Decent Work and Economic Growth</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg9"><span>SDG 9 — Industry, Innovation and Infrastructure</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg10"><span>SDG 10 — Reduced Inequalities</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg11"><span>SDG 11 — Sustainable Cities and Communities</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg12"><span>SDG 12 — Responsible Consumption and Production</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg13"><span>SDG 13 — Climate Action</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg14"><span>SDG 14 — Life Below Water</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg15"><span>SDG 15 — Life on Land</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg16"><span>SDG 16 — Peace, Justice and Strong Institutions</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="sdg17"><span>SDG 17 — Partnerships for the Goals</span></label>
+                </div>
+              </div>
+
+              <div class="dr-field dr-full">
+                <label>Preferred Instrument <span class="opt">select all that apply</span></label>
+                <div class="dr-check-list">
+                  <label class="dr-check-item"><input type="checkbox" value="equity"><span>Equity</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="convertible"><span>Convertible Note</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="debt-loan"><span>Debt / Loan</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="rbf"><span>Revenue Based Financing</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="blended"><span>Blended Finance</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="grant-co"><span>Grant Co-Investment</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="open"><span>Open to Discussions</span></label>
+                </div>
+              </div>
+
+              <div class="dr-field dr-full">
+                <label>Sectors of Interest <span class="opt">select all that apply</span></label>
+                <div class="dr-check-list">
+                  <label class="dr-check-item"><input type="checkbox" value="climate-energy"><span>Climate and Clean Energy</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="waste"><span>Waste Management and Circular Economy</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="fintech"><span>Fintech and Green Finance</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="edtech"><span>EdTech and Skills</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="agri"><span>Sustainable Agriculture and Food</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="infrastructure"><span>Green Infrastructure</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="health"><span>Health and Wellbeing</span></label>
+                  <label class="dr-check-item"><input type="checkbox" value="gender"><span>Gender and Social Inclusion</span></label>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="dr-form-section">
+            <div class="dr-section-title">Additional Information</div>
+            <div class="dr-grid">
+              <div class="dr-field dr-full">
+                <label for="inv-thesis">Investment Thesis or Mandate Statement <span class="opt">300 words max</span></label>
+                <textarea id="inv-thesis" placeholder="Describe your investment mandate, focus areas, and what you look for in a deal..." rows="6"></textarea>
+                <div class="word-count" id="inv-thesis-count">0 / 300 words</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dr-submit-row">
+            <button class="dr-submit-btn" id="investorSubmitBtn">Submit Profile →</button>
+          </div>
+        </div>
+
+        <div class="dr-success" id="investorSuccess">
+          <div class="dr-success-icon">✓</div>
+          <h3>Thank You for Registering!</h3>
+          <p>Your profile has been received by our team. We will review your details and be in touch shortly to explore potential matches and next steps.</p>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- ====== ENTREPRENEUR PANEL ====== -->
+    <div class="dr-panel" id="panel-entrepreneur">
+
+      <div class="dr-sub-tabs-bar">
+        <div class="dr-sub-tabs">
+          <button class="dr-sub-tab active" data-subtab="grants">Grants</button>
+          <button class="dr-sub-tab" data-subtab="loans">Loans</button>
+        </div>
+      </div>
+
+      <!-- GRANTS -->
+      <div class="dr-sub-panel active" id="panel-grants">
+        <div class="dr-form-wrapper">
+          <div class="dr-form-intro">
+            <div class="dr-form-tag">Grant Application</div>
+            <h2>Apply for Grant Funding</h2>
+            <p>Apply for non-repayable grant funding for impact-driven projects and early-stage sustainability initiatives.</p>
+          </div>
+
+          <div id="grantsForm">
+            <div class="dr-form-section">
+              <div class="dr-section-title">Personal Information</div>
+              <div class="dr-grid">
+                <div class="dr-field"><label for="gr-firstName">First Name</label><input type="text" id="gr-firstName" placeholder="First name"></div>
+                <div class="dr-field"><label for="gr-lastName">Last Name</label><input type="text" id="gr-lastName" placeholder="Last name"></div>
+                <div class="dr-field dr-full"><label>Other Name(s) <span class="opt">optional</span></label><input type="text" placeholder="Middle or other names"></div>
+                <div class="dr-field"><label for="gr-email">Email Address</label><input type="email" id="gr-email" placeholder="you@example.com"></div>
+                <div class="dr-field"><label>Phone Number</label>
+                  <div class="phone-row"><select id="gr-dialCode"></select><input type="tel" id="gr-phone" placeholder="Phone number"></div>
+                </div>
+                <div class="dr-field"><label for="gr-country">Country</label><select id="gr-country"><option value="">Select country</option></select></div>
+                <div class="dr-field"><label for="gr-state">State / Province</label><input type="text" id="gr-state" placeholder="State or province"></div>
+              </div>
+            </div>
+
+            <div class="dr-form-section">
+              <div class="dr-section-title">Project Information</div>
+              <div class="dr-grid">
+                <div class="dr-field"><label for="gr-projectName">Project / Organisation Name</label><input type="text" id="gr-projectName" placeholder="Project or organisation name"></div>
+                <div class="dr-field"><label for="gr-yearFounded">Year Founded</label><select id="gr-yearFounded"><option value="">Select year</option></select></div>
+                <div class="dr-field dr-full">
+                  <label>Sector <span class="opt">select all that apply</span></label>
+                  <div class="dr-check-list">
+                    <label class="dr-check-item"><input type="checkbox"><span>Climate and Clean Energy</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>Waste Management and Circular Economy</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>Fintech and Green Finance</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>EdTech and Skills</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>Sustainable Agriculture and Food</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>Green Infrastructure</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>Health and Wellbeing</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>Gender and Social Inclusion</span></label>
+                  </div>
+                </div>
+                <div class="dr-field"><label for="gr-stage">Project Stage</label>
+                  <select id="gr-stage">
+                    <option value="">Select stage</option>
+                    <option>Idea / Concept</option>
+                    <option>Pilot / Early Implementation</option>
+                    <option>Scaling</option>
+                  </select>
+                </div>
+                <div class="dr-field"><label for="gr-amount">Grant Amount Sought</label><input type="text" id="gr-amount" placeholder="e.g. ₦5,000,000"></div>
+                <div class="dr-field dr-full"><label for="gr-duration">Project Duration</label><input type="text" id="gr-duration" placeholder="e.g. 12 months"></div>
+                <div class="dr-field dr-full">
+                  <label>Primary SDG Alignment <span class="opt">select all that apply</span></label>
+                  <div class="dr-check-list">
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 1 — No Poverty</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 2 — Zero Hunger</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 3 — Good Health and Well-being</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 4 — Quality Education</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 5 — Gender Equality</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 6 — Clean Water and Sanitation</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 7 — Affordable and Clean Energy</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 8 — Decent Work and Economic Growth</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 9 — Industry, Innovation and Infrastructure</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 10 — Reduced Inequalities</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 11 — Sustainable Cities and Communities</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 12 — Responsible Consumption and Production</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 13 — Climate Action</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 14 — Life Below Water</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 15 — Life on Land</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 16 — Peace, Justice and Strong Institutions</span></label>
+                    <label class="dr-check-item"><input type="checkbox"><span>SDG 17 — Partnerships for the Goals</span></label>
+                  </div>
+                </div>
+                <div class="dr-field dr-full">
+                  <label for="gr-description">Project Description <span class="opt">300 words max</span></label>
+                  <textarea id="gr-description" placeholder="Describe your project, its goals, target beneficiaries, and relevance to sustainability..." rows="5"></textarea>
+                  <div class="word-count" id="gr-desc-count">0 / 300 words</div>
+                </div>
+                <div class="dr-field dr-full">
+                  <label for="gr-impact">Grant Use and Expected Impact <span class="opt">300 words max</span></label>
+                  <textarea id="gr-impact" placeholder="How will the grant be used? What measurable outcomes or impact do you expect to achieve?" rows="5"></textarea>
+                  <div class="word-count" id="gr-impact-count">0 / 300 words</div>
+                </div>
+                <div class="dr-field dr-full">
+                  <label>Have you received grant funding before?</label>
+                  <div class="dr-radio-row">
+                    <label class="dr-radio-item"><input type="radio" name="gr-priorGrant" value="no">No</label>
+                    <label class="dr-radio-item"><input type="radio" name="gr-priorGrant" value="local">Yes, domestic / local grant</label>
+                    <label class="dr-radio-item"><input type="radio" name="gr-priorGrant" value="intl">Yes, international grant</label>
+                    <label class="dr-radio-item"><input type="radio" name="gr-priorGrant" value="both">Yes, domestic and international</label>
+                  </div>
+                </div>
+                <div class="dr-field dr-full">
+                  <label>Upload Documents <span class="opt">PDF only</span></label>
+                  <div class="dr-file-area">
+                    <input type="file" id="gr-files" accept=".pdf" multiple onchange="showFileNames('gr-files','gr-fileNames')">
+                    <div class="dr-file-icon">📄</div>
+                    <div class="dr-file-text"><strong>Click to upload</strong> or drag and drop<br>Project Proposal / Concept Note &nbsp;·&nbsp; Proof of Registration (if applicable) &nbsp;·&nbsp; Previous Grant Reports (if applicable)</div>
+                    <div class="dr-file-names" id="gr-fileNames"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="dr-submit-row">
+              <button class="dr-submit-btn" id="grantsSubmitBtn">Submit Application →</button>
+            </div>
+          </div>
+
+          <div class="dr-success" id="grantsSuccess">
+            <div class="dr-success-icon">✓</div>
+            <h3>Application Received!</h3>
+            <p>Thank you for your application. Your details have been received by the team. We will review your project and be in touch shortly regarding next steps.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- LOANS -->
+      <div class="dr-sub-panel" id="panel-loans">
+        <div class="dr-form-wrapper">
+          <div class="dr-form-intro">
+            <div class="dr-form-tag">Loan Application</div>
+            <h2>Apply for a Business Loan</h2>
+            <p>Connect with lenders and financing institutions through the STS Deal Room to access the capital your business needs to grow sustainably.</p>
+          </div>
+
+          <div id="loansForm">
+            <div class="dr-form-section">
+              <div class="dr-section-title">Personal Information</div>
+              <div class="dr-grid">
+                <div class="dr-field"><label for="ln-firstName">First Name</label><input type="text" id="ln-firstName" placeholder="First name"></div>
+                <div class="dr-field"><label for="ln-lastName">Last Name</label><input type="text" id="ln-lastName" placeholder="Last name"></div>
+                <div class="dr-field dr-full"><label>Other Name(s) <span class="opt">optional</span></label><input type="text" placeholder="Middle or other names"></div>
+                <div class="dr-field"><label for="ln-email">Email Address</label><input type="email" id="ln-email" placeholder="you@example.com"></div>
+                <div class="dr-field"><label>Phone Number</label>
+                  <div class="phone-row"><select id="ln-dialCode"></select><input type="tel" id="ln-phone" placeholder="Phone number"></div>
+                </div>
+                <div class="dr-field"><label for="ln-country">Country of Residence</label><select id="ln-country"><option value="">Select country</option></select></div>
+                <div class="dr-field"><label for="ln-state">State / Province</label><input type="text" id="ln-state" placeholder="State or province"></div>
+              </div>
+            </div>
+
+            <div class="dr-form-section">
+              <div class="dr-section-title">Business Information</div>
+              <div class="dr-grid">
+                <div class="dr-field"><label for="ln-bizName">Business Name</label><input type="text" id="ln-bizName" placeholder="Registered business name"></div>
+                <div class="dr-field"><label for="ln-yearEstablished">Year Established</label><select id="ln-yearEstablished"><option value="">Select year</option><option value="startup">Start-up</option></select></div>
+                <div class="dr-field"><label for="ln-regStatus">Registration Status</label>
+                  <select id="ln-regStatus">
+                    <option value="">Select status</option>
+                    <option>Registered</option>
+                    <option>Not Registered</option>
+                  </select>
+                </div>
+                <div class="dr-field"><label for="ln-bizSize">Business Size</label>
+                  <select id="ln-bizSize">
+                    <option value="">Select size</option>
+                    <option>Micro (1–9 Employees)</option>
+                    <option>Small (10–49 Employees)</option>
+                    <option>Medium (50–199 Employees)</option>
+                    <option>Large (Over 200 Employees)</option>
+                  </select>
+                </div>
+                <div class="dr-field dr-full"><label for="ln-sector">Sector</label>
+                  <select id="ln-sector">
+                    <option value="">Select sector</option>
+                    <option>Agriculture</option>
+                    <option>Manufacturing</option>
+                    <option>Clean Energy</option>
+                    <option>Technology</option>
+                    <option>Trade and Commerce</option>
+                    <option>Creative Industries</option>
+                    <option>Health</option>
+                    <option>Other (please specify)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="dr-form-section">
+              <div class="dr-section-title">Loan Details</div>
+              <div class="dr-grid">
+                <div class="dr-field"><label for="ln-amount">Loan Amount Sought</label><input type="text" id="ln-amount" placeholder="e.g. ₦10,000,000"></div>
+                <div class="dr-field"><label for="ln-tenure">Loan Tenure Sought</label>
+                  <select id="ln-tenure">
+                    <option value="">Select tenure</option>
+                    <option>Under 1 year</option>
+                    <option>1–3 years</option>
+                    <option>3–5 years</option>
+                    <option>5–7 years</option>
+                    <option>7+ years</option>
+                  </select>
+                </div>
+                <div class="dr-field dr-full">
+                  <label>Existing Loan Obligation</label>
+                  <div class="dr-radio-row">
+                    <label class="dr-radio-item"><input type="radio" name="ln-existing" value="none">None</label>
+                    <label class="dr-radio-item"><input type="radio" name="ln-existing" value="serviced">Yes — current and being serviced</label>
+                    <label class="dr-radio-item"><input type="radio" name="ln-existing" value="arrears">Yes — with arrears</label>
+                  </div>
+                </div>
+                <div class="dr-field dr-full">
+                  <label for="ln-purpose">Purpose of Loan</label>
+                  <textarea id="ln-purpose" placeholder="Describe what the loan will be used for and the expected business impact..." rows="5"></textarea>
+                </div>
+              </div>
+            </div>
+
+            <div class="dr-submit-row">
+              <button class="dr-submit-btn" id="loansSubmitBtn">Submit Application →</button>
+            </div>
+          </div>
+
+          <div class="dr-success" id="loansSuccess">
+            <div class="dr-success-icon">✓</div>
+            <h3>Application Received!</h3>
+            <p>Thank you for your loan application. Your details have been received by the team. We will review your information and reach out to you shortly.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- EVENT STRIP (above footer) -->
+  <div class="dr-strip" id="footerStrip">
+    <div class="dr-strip-left">
+      <div class="dr-strip-label">STS @ 10 · Next Edition</div>
+      <div class="dr-strip-title">Leading the Sustainable Development Agenda: People, Planet, Prosperity</div>
+      <div class="dr-strip-date">📅 Oct 15 – 16, 2026 &nbsp;·&nbsp; 📍 Balmoral Event Centre, Lagos</div>
+    </div>
+    <div class="dr-strip-timer" id="footerTimer">
+      <div class="cd-block"><span class="cd-num" id="f-days">00</span><span class="cd-unit">Days</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="f-hours">00</span><span class="cd-unit">Hrs</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="f-mins">00</span><span class="cd-unit">Mins</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="f-secs">00</span><span class="cd-unit">Secs</span></div>
+    </div>
+    <div class="cd-status" id="footerStatus"></div>
+    <a href="https://www.eventbrite.com/e/the-sustainability-table-discourse-series-sts-10th-edition-tickets-1988312097006" target="_blank" class="dr-strip-btn">Register Now »</a>
+  </div>
+
+
+  <!-- FOOTER -->
+  <footer class="about-footer" id="contact">
+    <div class="about-footer-inner">
+      <div class="about-footer-contact">
+        <h2>Contact Us</h2>
+        <p>For enquiries about partnership, exhibition or general info, please reach out to us via the details below.</p>
+        <a href="mailto:sustainabilitytable@avantgardeltd.org" class="about-contact-detail"><span>✉️</span> sustainabilitytable@avantgardeltd.org</a>
+        <a href="tel:+2348133959999" class="about-contact-detail"><span>📞</span> +234-813-395-9999</a>
+        <a href="https://instagram.com/sustainability_table" target="_blank" class="about-contact-detail"><span>📸</span> @sustainability_table</a>
+        <div class="about-footer-social">
+          <a href="https://instagram.com/sustainability_table" target="_blank" title="Instagram">📷</a>
+          <a href="#" title="Twitter / X">𝕏</a>
+          <a href="#" title="WhatsApp">💬</a>
+        </div>
+      </div>
+      <div class="about-footer-subscribe">
+        <h3>Subscribe for our updates</h3>
+        <div class="about-subscribe-form" id="subscribeForm">
+          <input type="text" id="subName" placeholder="Your Name">
+          <input type="email" id="subEmail" placeholder="Email Address">
+          <button id="subscribeBtn">Subscribe</button>
+        </div>
+        <div class="about-subscribe-success" id="subscribeSuccess">
+          Thank you for subscribing — you're now a part of a growing community committed to meaningful impact.
+        </div>
+      </div>
+    </div>
+    <div class="about-footer-bottom">&copy; 2026 The Sustainability Table Discourse Series. All rights reserved.</div>
+  </footer>
+
+  <button id="scroll-top" aria-label="Scroll back to top">
+    <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"/></svg>
+  </button>
+
+</div>
+
+<script src="main.js" defer></script>
+<script src="deal-room.js" defer></script>
+</body>
+</html>
