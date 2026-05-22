@@ -285,3 +285,517 @@
   
     updateEventCountdown();
     setInterval(updateEventCountdown, 1000);
+
+    /* =============================================
+   STS 2026 — about.js
+   About-page specific JS.
+   Shared behaviour lives in main.js.
+   ============================================= */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ------------------------------------------
+     ACCORDION — Milestones
+  ------------------------------------------ */
+  document.querySelectorAll('.accordion-trigger').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var item   = trigger.closest('.accordion-item');
+      var body   = item.querySelector('.accordion-body');
+      var isOpen = item.classList.contains('open');
+
+      // Close all first
+      document.querySelectorAll('.accordion-item').forEach(function (i) {
+        i.classList.remove('open');
+        var t = i.querySelector('.accordion-trigger');
+        var b = i.querySelector('.accordion-body');
+        if (t) t.setAttribute('aria-expanded', 'false');
+        if (b) b.setAttribute('hidden', '');
+      });
+
+      // Open this one if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+        if (body) body.removeAttribute('hidden');
+
+        // Smooth scroll so the opened content is visible
+        setTimeout(function () {
+          trigger.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 50);
+      }
+    });
+  });
+
+
+  /* ------------------------------------------
+     STS @ 10 COUNTDOWN
+  ------------------------------------------ */
+  function updateAboutCountdown() {
+    var now   = new Date();
+    var start = new Date('2026-10-15T00:00:00');
+    var end   = new Date('2026-10-17T23:59:59');
+    var block  = document.getElementById('countdown');
+    var status = document.getElementById('countdown-status');
+
+    if (!block) return;
+
+    if (now >= end) {
+      block.style.display = 'none';
+      if (status) status.textContent = 'This edition has concluded.';
+    } else if (now >= start) {
+      block.style.display = 'none';
+      if (status) status.textContent = 'Ongoing now 🎉';
+    } else {
+      var diff = start - now;
+      var d = String(Math.floor(diff / 86400000)).padStart(2, '0');
+      var h = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+      var m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+      var s = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+      var dEl = document.getElementById('cd-days');
+      var hEl = document.getElementById('cd-hours');
+      var mEl = document.getElementById('cd-mins');
+      var sEl = document.getElementById('cd-secs');
+      if (dEl) dEl.textContent = d;
+      if (hEl) hEl.textContent = h;
+      if (mEl) mEl.textContent = m;
+      if (sEl) sEl.textContent = s;
+    }
+  }
+
+  updateAboutCountdown();
+  setInterval(updateAboutCountdown, 1000);
+
+
+  /* ------------------------------------------
+     PILLAR CARD STAGGER
+     Each card fades in with a slight delay
+  ------------------------------------------ */
+  var pillars = document.querySelectorAll('.pillar-card');
+  if ('IntersectionObserver' in window && pillars.length) {
+    var pillarObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var index = Array.from(pillars).indexOf(entry.target);
+          setTimeout(function () {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, index * 60);
+          pillarObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    pillars.forEach(function (card) {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      pillarObserver.observe(card);
+    });
+  }
+
+
+  /* ------------------------------------------
+     TESTIMONIAL CARD STAGGER
+  ------------------------------------------ */
+  var testimonials = document.querySelectorAll('.testimonial-card');
+  if ('IntersectionObserver' in window && testimonials.length) {
+    var testObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var index = Array.from(testimonials).indexOf(entry.target);
+          setTimeout(function () {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, index * 100);
+          testObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    testimonials.forEach(function (card) {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(24px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      testObserver.observe(card);
+    });
+  }
+
+});
+
+/* =============================================
+   STS 2026 — about.js
+   About-page specific JS.
+   Shared behaviour lives in main.js.
+   ============================================= */
+
+   document.addEventListener('DOMContentLoaded', function () {
+
+    /* ------------------------------------------
+       ACCORDION — Milestones
+    ------------------------------------------ */
+    document.querySelectorAll('.accordion-trigger').forEach(function (trigger) {
+      trigger.addEventListener('click', function () {
+        var item   = trigger.closest('.accordion-item');
+        var isOpen = item.classList.contains('open');
+  
+        // Close all
+        document.querySelectorAll('.accordion-item').forEach(function (i) {
+          i.classList.remove('open');
+          var t = i.querySelector('.accordion-trigger');
+          if (t) t.setAttribute('aria-expanded', 'false');
+        });
+  
+        // Open clicked if it was closed
+        if (!isOpen) {
+          item.classList.add('open');
+          trigger.setAttribute('aria-expanded', 'true');
+  
+          // Smooth scroll so trigger stays visible
+          setTimeout(function () {
+            trigger.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }, 50);
+        }
+      });
+    });
+  
+  
+    /* ------------------------------------------
+       STS @ 10 COUNTDOWN
+    ------------------------------------------ */
+    function updateAboutCountdown() {
+      var now   = new Date();
+      var start = new Date('2026-10-15T00:00:00');
+      var end   = new Date('2026-10-17T23:59:59');
+      var block  = document.getElementById('countdown');
+      var status = document.getElementById('countdown-status');
+  
+      if (!block) return;
+  
+      if (now >= end) {
+        block.style.display = 'none';
+        if (status) status.textContent = 'This edition has concluded.';
+      } else if (now >= start) {
+        block.style.display = 'none';
+        if (status) status.textContent = 'Ongoing now 🎉';
+      } else {
+        var diff = start - now;
+        var d = String(Math.floor(diff / 86400000)).padStart(2, '0');
+        var h = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+        var m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+        var s = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+        var dEl = document.getElementById('cd-days');
+        var hEl = document.getElementById('cd-hours');
+        var mEl = document.getElementById('cd-mins');
+        var sEl = document.getElementById('cd-secs');
+        if (dEl) dEl.textContent = d;
+        if (hEl) hEl.textContent = h;
+        if (mEl) mEl.textContent = m;
+        if (sEl) sEl.textContent = s;
+      }
+    }
+  
+    updateAboutCountdown();
+    setInterval(updateAboutCountdown, 1000);
+  
+  
+    /* ------------------------------------------
+       PILLAR CARD STAGGER
+       Each card fades in with a slight delay
+    ------------------------------------------ */
+    var pillars = document.querySelectorAll('.pillar-card');
+    if ('IntersectionObserver' in window && pillars.length) {
+      var pillarObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var index = Array.from(pillars).indexOf(entry.target);
+            setTimeout(function () {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }, index * 60);
+            pillarObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  
+      pillars.forEach(function (card) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        pillarObserver.observe(card);
+      });
+    }
+  
+  
+    /* ------------------------------------------
+       TESTIMONIAL CARD STAGGER
+    ------------------------------------------ */
+    var testimonials = document.querySelectorAll('.testimonial-card');
+    if ('IntersectionObserver' in window && testimonials.length) {
+      var testObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var index = Array.from(testimonials).indexOf(entry.target);
+            setTimeout(function () {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }, index * 100);
+            testObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+  
+      testimonials.forEach(function (card) {
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(24px)';
+        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        testObserver.observe(card);
+      });
+    }
+  
+  });
+  
+  
+    /* ------------------------------------------
+       EVENT STRIP COUNTDOWN (under hero)
+    ------------------------------------------ */
+    function updateAboutStrip() {
+      var now   = new Date();
+      var start = new Date('2026-10-15T00:00:00');
+      var end   = new Date('2026-10-17T23:59:59');
+      var timer  = document.getElementById('aboutStripTimer');
+      var status = document.getElementById('aboutStripStatus');
+  
+      if (!timer) return;
+  
+      if (now >= end) {
+        timer.style.display = 'none';
+        if (status) status.textContent = 'Completed';
+      } else if (now >= start) {
+        timer.style.display = 'none';
+        if (status) status.textContent = 'Ongoing 🎉';
+      } else {
+        var diff = start - now;
+        var d = String(Math.floor(diff / 86400000)).padStart(2, '0');
+        var h = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+        var m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+        var s = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+        var dEl = document.getElementById('as-days');
+        var hEl = document.getElementById('as-hours');
+        var mEl = document.getElementById('as-mins');
+        var sEl = document.getElementById('as-secs');
+        if (dEl) dEl.textContent = d;
+        if (hEl) hEl.textContent = h;
+        if (mEl) mEl.textContent = m;
+        if (sEl) sEl.textContent = s;
+      }
+    }
+  
+    updateAboutStrip();
+    setInterval(updateAboutStrip, 1000);
+  
+  
+    /* ------------------------------------------
+       SUBSCRIBE FORM
+    ------------------------------------------ */
+    var subscribeBtn = document.getElementById('subscribeBtn');
+    if (subscribeBtn) {
+      subscribeBtn.addEventListener('click', function () {
+        var name  = document.getElementById('subName').value.trim();
+        var email = document.getElementById('subEmail').value.trim();
+        if (!name || !email) {
+          alert('Please fill in both your name and email address.');
+          return;
+        }
+        document.getElementById('subscribeForm').style.display = 'none';
+        document.getElementById('subscribeSuccess').style.display = 'block';
+      });
+    }
+
+    /* =============================================
+   STS 2026 — about.js
+   About-page specific JS.
+   Shared behaviour lives in main.js.
+   ============================================= */
+
+document.addEventListener('DOMContentLoaded', function () {
+
+  /* ------------------------------------------
+     ACCORDION — Milestones
+  ------------------------------------------ */
+  document.querySelectorAll('.accordion-trigger').forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var item   = trigger.closest('.accordion-item');
+      var isOpen = item.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.accordion-item').forEach(function (i) {
+        i.classList.remove('open');
+        var t = i.querySelector('.accordion-trigger');
+        if (t) t.setAttribute('aria-expanded', 'false');
+      });
+
+      // Open clicked if it was closed
+      if (!isOpen) {
+        item.classList.add('open');
+        trigger.setAttribute('aria-expanded', 'true');
+
+        // Smooth scroll so trigger stays visible
+        setTimeout(function () {
+          trigger.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }, 50);
+      }
+    });
+  });
+
+
+  /* ------------------------------------------
+     STS @ 10 COUNTDOWN
+  ------------------------------------------ */
+  function updateAboutCountdown() {
+    var now   = new Date();
+    var start = new Date('2026-10-15T00:00:00');
+    var end   = new Date('2026-10-17T23:59:59');
+    var block  = document.getElementById('countdown');
+    var status = document.getElementById('countdown-status');
+
+    if (!block) return;
+
+    if (now >= end) {
+      block.style.display = 'none';
+      if (status) status.textContent = 'This edition has concluded.';
+    } else if (now >= start) {
+      block.style.display = 'none';
+      if (status) status.textContent = 'Ongoing now 🎉';
+    } else {
+      var diff = start - now;
+      var d = String(Math.floor(diff / 86400000)).padStart(2, '0');
+      var h = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+      var m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+      var s = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+      var dEl = document.getElementById('cd-days');
+      var hEl = document.getElementById('cd-hours');
+      var mEl = document.getElementById('cd-mins');
+      var sEl = document.getElementById('cd-secs');
+      if (dEl) dEl.textContent = d;
+      if (hEl) hEl.textContent = h;
+      if (mEl) mEl.textContent = m;
+      if (sEl) sEl.textContent = s;
+    }
+  }
+
+  updateAboutCountdown();
+  setInterval(updateAboutCountdown, 1000);
+
+
+  /* ------------------------------------------
+     PILLAR CARD STAGGER
+     Each card fades in with a slight delay
+  ------------------------------------------ */
+  var pillars = document.querySelectorAll('.pillar-card');
+  if ('IntersectionObserver' in window && pillars.length) {
+    var pillarObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var index = Array.from(pillars).indexOf(entry.target);
+          setTimeout(function () {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, index * 60);
+          pillarObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    pillars.forEach(function (card) {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(20px)';
+      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      pillarObserver.observe(card);
+    });
+  }
+
+
+  /* ------------------------------------------
+     TESTIMONIAL CARD STAGGER
+  ------------------------------------------ */
+  var testimonials = document.querySelectorAll('.testimonial-card');
+  if ('IntersectionObserver' in window && testimonials.length) {
+    var testObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var index = Array.from(testimonials).indexOf(entry.target);
+          setTimeout(function () {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+          }, index * 100);
+          testObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    testimonials.forEach(function (card) {
+      card.style.opacity = '0';
+      card.style.transform = 'translateY(24px)';
+      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      testObserver.observe(card);
+    });
+  }
+
+});
+
+
+  /* ------------------------------------------
+     EVENT STRIP COUNTDOWN (under hero)
+  ------------------------------------------ */
+  function updateAboutStrip() {
+    var now   = new Date();
+    var start = new Date('2026-10-15T00:00:00');
+    var end   = new Date('2026-10-17T23:59:59');
+    var timer  = document.getElementById('aboutStripTimer');
+    var status = document.getElementById('aboutStripStatus');
+
+    if (!timer) return;
+
+    if (now >= end) {
+      timer.style.display = 'none';
+      if (status) status.textContent = 'Completed';
+    } else if (now >= start) {
+      timer.style.display = 'none';
+      if (status) status.textContent = 'Ongoing 🎉';
+    } else {
+      var diff = start - now;
+      var d = String(Math.floor(diff / 86400000)).padStart(2, '0');
+      var h = String(Math.floor((diff % 86400000) / 3600000)).padStart(2, '0');
+      var m = String(Math.floor((diff % 3600000) / 60000)).padStart(2, '0');
+      var s = String(Math.floor((diff % 60000) / 1000)).padStart(2, '0');
+      var dEl = document.getElementById('as-days');
+      var hEl = document.getElementById('as-hours');
+      var mEl = document.getElementById('as-mins');
+      var sEl = document.getElementById('as-secs');
+      if (dEl) dEl.textContent = d;
+      if (hEl) hEl.textContent = h;
+      if (mEl) mEl.textContent = m;
+      if (sEl) sEl.textContent = s;
+    }
+  }
+
+  updateAboutStrip();
+  setInterval(updateAboutStrip, 1000);
+
+
+  /* ------------------------------------------
+     SUBSCRIBE FORM
+  ------------------------------------------ */
+  var subscribeBtn = document.getElementById('subscribeBtn');
+  if (subscribeBtn) {
+    subscribeBtn.addEventListener('click', function () {
+      var name  = document.getElementById('subName').value.trim();
+      var email = document.getElementById('subEmail').value.trim();
+      if (!name || !email) {
+        alert('Please fill in both your name and email address.');
+        return;
+      }
+      document.getElementById('subscribeForm').style.display = 'none';
+      document.getElementById('subscribeSuccess').style.display = 'block';
+    });
+  }
