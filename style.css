@@ -4140,8 +4140,7 @@ h1, h2, h3, h4, h5, h6 {
    }
    .dr-strip-btn:hover { transform: translateY(-1px); }
    .dr-strip-btn:active { transform: translateY(0); }
-
-   /* =============================================
+  /* =============================================
    STS 2026 — partners.css
    ============================================= */
 
@@ -4301,7 +4300,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 
-/* ---- PARTNERS GRID ---- */
+/* ---- PARTNERS GRID — Option 1: no cards, logos on light bg ---- */
 .pt-grid-section {
   background: var(--light-bg);
   padding: 80px 60px;
@@ -4325,52 +4324,48 @@ h1, h2, h3, h4, h5, h6 {
 .pt-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+  gap: 24px 32px;
+  align-items: center;
 }
 
 .pt-logo-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  height: 120px;
+  background: none;
+  border: none;
+  border-radius: 0;
+  height: 64px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 16px 12px;
-  gap: 10px;
-  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+  padding: 0 8px;
+  gap: 0;
   opacity: 0;
-  transform: translateY(16px);
+  transform: translateY(12px);
 }
 
 .pt-logo-card.visible {
   opacity: 1;
   transform: translateY(0);
-  transition: opacity 0.4s ease, transform 0.4s ease, box-shadow 0.2s, border-color 0.2s;
+  transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.pt-logo-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.09);
-  border-color: var(--blue);
-}
+.pt-logo-card:hover { background: none; border-color: transparent; }
 
 .pt-logo-card img {
   max-width: 100%;
-  max-height: 56px;
+  max-height: 44px;
   width: auto;
   height: auto;
   object-fit: contain;
   display: block;
+  transition: transform 0.25s;
 }
 
-.pt-logo-card span {
-  font-size: 0.65rem;
-  color: #94a3b8;
-  text-align: center;
-  line-height: 1.3;
+.pt-logo-card:hover img {
+  transform: translateY(-3px);
 }
+
+/* Hide the name labels — logos speak for themselves */
+.pt-logo-card span { display: none; }
 
 @media (max-width: 960px) {
   .pt-grid-section { padding: 60px 30px; }
