@@ -13,17 +13,16 @@
 </head>
 <body>
 <div id="page">
-
-  <header class="site-header">
+    <header class="site-header">
     <div class="header-inner">
       <a href="index.html" class="site-logo">
         <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/Screenshot_1-removebg-preview-2.webp" alt="STS 2026" width="160" height="50">
       </a>
-      <nav class="main-nav" aria-label="Main navigation">
+            <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="speakers.html">STS Speakers</a>
-        <a href="partners-sponsors.html">Partners &amp; Sponsors</a>
+        <a href="partners.html">Partners &amp; Sponsors</a>
         <a href="deal-room.html">Deal Room</a>
         <div class="has-dropdown">
           <a href="past-events.html" aria-haspopup="true" class="active">Past Events ▾</a>
@@ -39,8 +38,14 @@
             <a href="sts-2016.html" role="menuitem">2016 — Inaugural</a>
           </div>
         </div>
-        <a href="/publications">Publications</a>
-        <a href="/contact" class="nav-cta">
+        <div class="has-dropdown">
+          <a href="#" aria-haspopup="true">More ▾</a>
+          <div class="dropdown" role="menu">
+            <a href="publications.html" role="menuitem">Publications</a>
+            <a href="press.html" role="menuitem">Press &amp; Media</a>
+          </div>
+        </div>
+        <a href="contact.html" class="nav-cta">
           <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false" style="width:14px;fill:#fff"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
           Get in Touch
         </a>
@@ -49,11 +54,11 @@
         <span></span><span></span><span></span>
       </button>
     </div>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="speakers.html">STS Speakers</a>
-      <a href="partners-sponsors.html">Partners &amp; Sponsors</a>
+      <a href="partners.html">Partners &amp; Sponsors</a>
       <a href="deal-room.html">Deal Room</a>
       <div class="mobile-submenu">
         <button class="mobile-submenu-title" aria-expanded="false">Past Events ▾</button>
@@ -69,14 +74,17 @@
           <a href="sts-2016.html">2016 — Inaugural</a>
         </div>
       </div>
-      <a href="/publications">Publications</a>
-      <a href="index.html#contact" class="mobile-cta">Get in Touch →</a>
+      <a href="publications.html">Publications</a>
+      <a href="press.html">Press &amp; Media</a>
+      <a href="contact.html" class="mobile-cta">Get in Touch →</a>
     </nav>
   </header>
 
-  <!-- BACK -->
-  <div class="ed-back">
-    <a href="past-events.html">← All Past Events</a>
+  <!-- PREV/NEXT BAR -->
+  <div class="ed-nav-bar">
+    <a href="sts-2019.html" class="ed-nav-back">← STS 2019</a>
+    <span class="ed-nav-center">4th Edition · 2020</span>
+    <a href="sts-2021.html" class="ed-nav-next">STS 2021 →</a>
   </div>
 
   <!-- HERO -->
@@ -85,27 +93,28 @@
     <div class="ed-hero-content">
       <div class="ed-edition-label">4th Edition · 2020</div>
       <div class="ed-sdg-row">
-          <div class="ed-sdg" style="background:#FD6925">9</div>
+        <div class="ed-sdg" style="background:#FD6925">9</div>
           <div class="ed-sdg" style="background:#C5192D">4</div>
           <div class="ed-sdg" style="background:#DD1367">10</div>
-        </div>
+          
+      </div>
       <h1 class="ed-hero-title">Bridging the Digital Divide: Leveraging Technology and Optimal Broadband Penetration to Achieve the SDGs</h1>
       <div class="ed-hero-meta">
         <span class="ed-hero-meta-item">📅 2020</span>
         <span class="ed-hero-meta-item">📍 Lagos, Nigeria</span>
         <span class="ed-hero-meta-item">🎤 9 Speakers</span>
+        
       </div>
     </div>
   </section>
 
-  
-  <div class="ed-strip" id="heroStrip">
+  <div class="ed-strip" id="hStrip">
     <div class="ed-strip-left">
       <div class="ed-strip-label">STS @ 10 · Next Edition</div>
       <div class="ed-strip-title">Leading the Sustainable Development Agenda: People, Planet, Prosperity</div>
       <div class="ed-strip-date">📅 Oct 15 – 16, 2026 &nbsp;·&nbsp; 📍 Balmoral Event Centre, Lagos</div>
     </div>
-    <div class="ed-strip-timer" id="heroTimer">
+    <div class="ed-strip-timer" id="hTimer">
       <div class="cd-block"><span class="cd-num" id="h-days">00</span><span class="cd-unit">Days</span></div>
       <div class="cd-sep">:</div>
       <div class="cd-block"><span class="cd-num" id="h-hours">00</span><span class="cd-unit">Hrs</span></div>
@@ -114,54 +123,55 @@
       <div class="cd-sep">:</div>
       <div class="cd-block"><span class="cd-num" id="h-secs">00</span><span class="cd-unit">Secs</span></div>
     </div>
-    <div class="cd-status" id="heroStatus"></div>
+    <div class="cd-status" id="hStatus"></div>
     <a href="https://www.eventbrite.com/e/the-sustainability-table-discourse-series-sts-10th-edition-tickets-1988312097006" target="_blank" class="ed-strip-btn">Register Now »</a>
   </div>
 
   <!-- STATS -->
-  <div class="ed-section">
-    <div class="ed-section-inner">
-      <div class="ed-stats">
+  <div class="ed-stats">
   <div class="ed-stat"><span class="ed-stat-num">9</span><span class="ed-stat-label">Speakers</span></div>
   <div class="ed-stat"><span class="ed-stat-num">4th</span><span class="ed-stat-label">Edition</span></div>
   <div class="ed-stat"><span class="ed-stat-num">2020</span><span class="ed-stat-label">Year</span></div>
   <div class="ed-stat"><span class="ed-stat-num">Digital Inclusion</span><span class="ed-stat-label">Focus</span></div>
 </div>
-    </div>
-  </div>
 
   <!-- ABOUT -->
-  <div class="ed-section alt">
+  <div class="ed-section">
     <div class="ed-section-inner">
       <span class="ed-section-label">Overview</span>
       <h2 class="ed-section-heading">About This Edition</h2>
       <div class="ed-summary">
-        <p>STS 2020 convened policymakers, corporate leaders, and development experts to explore how digital technology can propel Nigeria's socioeconomic growth and aid in meeting the UN's 2030 Agenda for Sustainable Development.</p>
-<p>Emphasizing technology's role in advancing the SDGs, the event highlighted broadband penetration as vital for unlocking economic opportunities, especially in sectors like agriculture, healthcare, and education. With Nigeria's broadband penetration at 43.3% in 2020, the digital divide remained a major barrier.</p>
-<p>The COVID-19 pandemic underscored the urgency of closing digital gaps, particularly for continuity in education and healthcare. Discussions centered on public-private partnerships to expand broadband access and align with Nigeria's National Broadband Plan (2020–2025).</p>
-<p>A key outcome was the recommendation to reduce provider costs and designate telecommunications as critical national infrastructure, aiming for 70% broadband penetration by 2025.</p>
+      <p>STS 2020 convened policymakers, corporate leaders, and development experts to explore how digital technology can propel Nigeria's socioeconomic growth and aid in meeting the UN's 2030 Agenda for Sustainable Development.</p>
+      <div class="ed-key-takeaway">
+        <span class="ed-kt-label">Key Takeaway</span>
+        <p class="ed-kt-text">"With Nigeria's broadband penetration at only 43.3% in 2020, the digital divide remained a major barrier to sustainable growth — closing it requires urgent public-private collaboration."</p>
+      </div>
+      <p>Emphasizing technology's role in advancing the SDGs, the event highlighted broadband penetration as vital for unlocking economic opportunities in agriculture, healthcare, and education.</p>
+      <p>The COVID-19 pandemic underscored the urgency of closing digital gaps, particularly for continuity in education and healthcare. Discussions centered on public-private partnerships to expand broadband access.</p>
+      <p>A key outcome was the recommendation to reduce provider costs and designate telecommunications as critical national infrastructure, aiming for 70% broadband penetration by 2025.</p>
 
       </div>
     </div>
   </div>
 
-  <!-- HIGHLIGHTS / GALLERY -->
-  <div class="ed-section">
+  <!-- GALLERY -->
+  <div class="ed-section alt">
     <div class="ed-section-inner">
       <span class="ed-section-label">Gallery</span>
       <h2 class="ed-section-heading">Event Highlights</h2>
       <div class="ed-gallery-grid">
-        <div class="ed-gallery-item tall">[ Photo ]</div>
-        <div class="ed-gallery-item">[ Photo ]</div>
-        <div class="ed-gallery-item">[ Photo ]</div>
-        <div class="ed-gallery-item">[ Photo ]</div>
-        <div class="ed-gallery-item">[ Photo ]</div>
+      <div class="ed-gallery-item tall"><div class="ed-gallery-placeholder"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" fill="none"/><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#94a3b8"/></svg><span>Photo coming soon</span></div></div>
+      <div class="ed-gallery-item"><div class="ed-gallery-placeholder"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" fill="none"/><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#94a3b8"/></svg><span>Photo coming soon</span></div></div>
+      <div class="ed-gallery-item"><div class="ed-gallery-placeholder"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" fill="none"/><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#94a3b8"/></svg><span>Photo coming soon</span></div></div>
+      <div class="ed-gallery-item"><div class="ed-gallery-placeholder"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" fill="none"/><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#94a3b8"/></svg><span>Photo coming soon</span></div></div>
+      <div class="ed-gallery-item"><div class="ed-gallery-placeholder"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" fill="none"/><path d="M21 19V5C21 3.9 20.1 3 19 3H5C3.9 3 3 3.9 3 5V19C3 20.1 3.9 21 5 21H19C20.1 21 21 20.1 21 19ZM8.5 13.5L11 16.51L14.5 12L19 18H5L8.5 13.5Z" fill="#94a3b8"/></svg><span>Photo coming soon</span></div></div>
       </div>
+      <a href="#" class="ed-gallery-more">View full photo gallery →</a>
     </div>
   </div>
 
   <!-- KEY TOPICS -->
-  <div class="ed-section alt">
+  <div class="ed-section">
     <div class="ed-section-inner">
       <span class="ed-section-label">Programme</span>
       <h2 class="ed-section-heading">Key Topics</h2>
@@ -175,8 +185,27 @@
     </div>
   </div>
 
+  <div class="ed-strip" id="mStrip">
+    <div class="ed-strip-left">
+      <div class="ed-strip-label">STS @ 10 · Next Edition</div>
+      <div class="ed-strip-title">Leading the Sustainable Development Agenda: People, Planet, Prosperity</div>
+      <div class="ed-strip-date">📅 Oct 15 – 16, 2026 &nbsp;·&nbsp; 📍 Balmoral Event Centre, Lagos</div>
+    </div>
+    <div class="ed-strip-timer" id="mTimer">
+      <div class="cd-block"><span class="cd-num" id="m-days">00</span><span class="cd-unit">Days</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="m-hours">00</span><span class="cd-unit">Hrs</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="m-mins">00</span><span class="cd-unit">Mins</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="m-secs">00</span><span class="cd-unit">Secs</span></div>
+    </div>
+    <div class="cd-status" id="mStatus"></div>
+    <a href="https://www.eventbrite.com/e/the-sustainability-table-discourse-series-sts-10th-edition-tickets-1988312097006" target="_blank" class="ed-strip-btn">Register Now »</a>
+  </div>
+
   <!-- SPEAKERS -->
-  <div class="ed-section">
+  <div class="ed-section alt">
     <div class="ed-section-inner">
       <span class="ed-section-label">Faculty</span>
       <h2 class="ed-section-heading">Edition Speakers</h2>
@@ -258,28 +287,35 @@
   </div>
 
   <!-- SPONSORS -->
-  <div class="ed-section alt">
+  <div class="ed-section">
     <div class="ed-section-inner">
       <span class="ed-section-label">Partners</span>
       <h2 class="ed-section-heading">Edition Sponsors</h2>
-      <div class="ed-sponsors-list">
-      </div>
+      <p style="color:var(--slate);font-size:0.9rem">Sponsor information for this edition is being compiled.</p>
     </div>
   </div>
 
-  
-  <div class="ed-nav">
-    <a href="sts-2019.html" class="ed-nav-link"><span class="ed-nav-direction">← Previous</span><span class="ed-nav-year">2019</span><span class="ed-nav-theme">Future of Sustainable Development in Nigeria</span></a>
-    <a href="sts-2021.html" class="ed-nav-link next"><span class="ed-nav-direction">Next →</span><span class="ed-nav-year">2021</span><span class="ed-nav-theme">New Pathways in a Circular Economy</span></a>
+  <!-- EDITION NAVIGATION -->
+  <div class="ed-edition-nav">
+    <a href="sts-2019.html" class="ed-edition-nav-link">
+      <span class="ed-edition-nav-dir">← Previous Edition</span>
+      <span class="ed-edition-nav-year">2019</span>
+      <span class="ed-edition-nav-theme">Future of Sustainable Development in Nigeria</span>
+    </a>
+    <a href="sts-2021.html" class="ed-edition-nav-link right">
+      <span class="ed-edition-nav-dir">Next Edition →</span>
+      <span class="ed-edition-nav-year">2021</span>
+      <span class="ed-edition-nav-theme">New Pathways in a Circular Economy</span>
+    </a>
   </div>
-  
-  <div class="ed-strip" id="footerStrip">
+
+  <div class="ed-strip" id="fStrip">
     <div class="ed-strip-left">
       <div class="ed-strip-label">STS @ 10 · Next Edition</div>
       <div class="ed-strip-title">Leading the Sustainable Development Agenda: People, Planet, Prosperity</div>
       <div class="ed-strip-date">📅 Oct 15 – 16, 2026 &nbsp;·&nbsp; 📍 Balmoral Event Centre, Lagos</div>
     </div>
-    <div class="ed-strip-timer" id="footerTimer">
+    <div class="ed-strip-timer" id="fTimer">
       <div class="cd-block"><span class="cd-num" id="f-days">00</span><span class="cd-unit">Days</span></div>
       <div class="cd-sep">:</div>
       <div class="cd-block"><span class="cd-num" id="f-hours">00</span><span class="cd-unit">Hrs</span></div>
@@ -288,11 +324,11 @@
       <div class="cd-sep">:</div>
       <div class="cd-block"><span class="cd-num" id="f-secs">00</span><span class="cd-unit">Secs</span></div>
     </div>
-    <div class="cd-status" id="footerStatus"></div>
+    <div class="cd-status" id="fStatus"></div>
     <a href="https://www.eventbrite.com/e/the-sustainability-table-discourse-series-sts-10th-edition-tickets-1988312097006" target="_blank" class="ed-strip-btn">Register Now »</a>
   </div>
-  
-  <footer class="about-footer" id="contact">
+
+    <footer class="about-footer" id="contact">
     <div class="about-footer-inner">
       <div class="about-footer-contact">
         <h2>Contact Us</h2>
@@ -320,13 +356,11 @@
     </div>
     <div class="about-footer-bottom">&copy; 2026 The Sustainability Table Discourse Series. All rights reserved.</div>
   </footer>
-
   <button id="scroll-top" aria-label="Scroll back to top">
     <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"/></svg>
   </button>
-
 </div>
 <script src="scripts/main.js" defer></script>
-<script src="scripts/past-event.js" defer></script>
+<script src="scripts/edition.js" defer></script>
 </body>
 </html>

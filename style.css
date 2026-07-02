@@ -7332,3 +7332,318 @@ h1, h2, h3, h4, h5, h6 {
      .pr-section { padding: 52px 20px; }
      .pr-grid { grid-template-columns: 1fr; }
    }
+
+/* =============================================
+   STS 2026 — contact.css
+   ============================================= */
+
+   :root { --green: #14B57B; }
+
+
+   /* ---- HERO ---- */
+   .ct-hero {
+     background: var(--navy);
+     padding: 80px 60px 64px;
+     position: relative;
+     overflow: hidden;
+   }
+   
+   .ct-hero::before {
+     content: '';
+     position: absolute;
+     top: -80px; right: -80px;
+     width: 420px; height: 420px;
+     border-radius: 50%;
+     background: radial-gradient(circle, rgba(20,181,123,0.07) 0%, transparent 70%);
+     pointer-events: none;
+   }
+   
+   .ct-hero-eyebrow {
+     font-size: 11px;
+     font-weight: 600;
+     color: var(--green);
+     text-transform: uppercase;
+     letter-spacing: 0.2em;
+     margin-bottom: 20px;
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     animation: fadeInUp 0.6s ease 0.1s both;
+   }
+   .ct-hero-eyebrow::after {
+     content: '';
+     flex: 0 0 32px;
+     height: 1px;
+     background: var(--green);
+     opacity: 0.5;
+   }
+   
+   .ct-hero-title {
+     font-family: 'Playfair Display', Georgia, serif;
+     font-size: clamp(2.4rem, 5vw, 3.6rem);
+     font-weight: 700;
+     color: #fff;
+     line-height: 1.1;
+     margin-bottom: 20px;
+     animation: fadeInUp 0.6s ease 0.25s both;
+   }
+   
+   .ct-hero-sub {
+     font-size: 1rem;
+     color: rgba(255,255,255,0.55);
+     line-height: 1.8;
+     max-width: 520px;
+     animation: fadeInUp 0.6s ease 0.4s both;
+   }
+   
+   @media (max-width: 768px) {
+     .ct-hero { padding: 56px 24px 48px; }
+     .ct-hero-title { font-size: 2.2rem; }
+   }
+   
+   
+   /* ---- BODY ---- */
+   .ct-body {
+     padding: 80px 60px;
+     background: #fff;
+   }
+   
+   .ct-body-inner {
+     max-width: 1100px;
+     margin: 0 auto;
+     display: grid;
+     grid-template-columns: 1fr 1.8fr;
+     gap: 80px;
+     align-items: start;
+   }
+   
+   @media (max-width: 900px) {
+     .ct-body { padding: 60px 30px; }
+     .ct-body-inner { grid-template-columns: 1fr; gap: 52px; }
+   }
+   @media (max-width: 640px) { .ct-body { padding: 52px 20px; } }
+   
+   
+   /* ---- LEFT — contact details ---- */
+   .ct-section-label {
+     font-size: 11px;
+     font-weight: 600;
+     color: var(--green);
+     text-transform: uppercase;
+     letter-spacing: 0.14em;
+     margin-bottom: 10px;
+     display: block;
+   }
+   
+   .ct-details-heading {
+     font-family: 'Playfair Display', Georgia, serif;
+     font-size: clamp(1.6rem, 3vw, 2rem);
+     font-weight: 700;
+     color: var(--navy);
+     line-height: 1.3;
+     margin-bottom: 18px;
+   }
+   
+   .ct-details-text {
+     font-size: 0.95rem;
+     color: var(--slate);
+     line-height: 1.85;
+     margin-bottom: 48px;
+   }
+   
+   .ct-detail-list {
+     display: flex;
+     flex-direction: column;
+     gap: 28px;
+   }
+   
+   .ct-detail-item {
+     display: flex;
+     flex-direction: column;
+     gap: 4px;
+     padding-bottom: 28px;
+     border-bottom: 1px solid var(--border);
+   }
+   .ct-detail-item:last-child {
+     border-bottom: none;
+     padding-bottom: 0;
+   }
+   
+   .ct-detail-label {
+     font-size: 10px;
+     font-weight: 700;
+     color: var(--green);
+     text-transform: uppercase;
+     letter-spacing: 0.14em;
+   }
+   
+   .ct-detail-value {
+     font-size: 0.95rem;
+     color: var(--navy);
+     font-weight: 400;
+     line-height: 1.5;
+   }
+   
+   .ct-detail-value a {
+     color: var(--navy);
+     text-decoration: none;
+     border-bottom: 1px solid var(--border);
+     padding-bottom: 1px;
+     transition: border-color 0.2s, color 0.2s;
+   }
+   .ct-detail-value a:hover {
+     color: var(--green);
+     border-color: var(--green);
+   }
+   
+   
+   /* ---- RIGHT — form ---- */
+   .ct-form-wrap {
+     background: var(--light-bg);
+     border-radius: 12px;
+     padding: 48px;
+     border: 1px solid var(--border);
+   }
+   
+   .ct-form-heading {
+     font-family: 'Playfair Display', Georgia, serif;
+     font-size: 1.5rem;
+     font-weight: 700;
+     color: var(--navy);
+     margin-bottom: 6px;
+   }
+   
+   .ct-form-sub {
+     font-size: 0.875rem;
+     color: var(--slate);
+     margin-bottom: 36px;
+     line-height: 1.6;
+   }
+   
+   .ct-form-row {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 20px;
+     margin-bottom: 20px;
+   }
+   
+   .ct-field {
+     display: flex;
+     flex-direction: column;
+     gap: 7px;
+     margin-bottom: 20px;
+   }
+   .ct-field:last-of-type { margin-bottom: 0; }
+   
+   .ct-label {
+     font-size: 11px;
+     font-weight: 600;
+     color: var(--navy);
+     text-transform: uppercase;
+     letter-spacing: 0.08em;
+   }
+   
+   .ct-input {
+     padding: 14px 16px;
+     border: 1.5px solid var(--border);
+     border-radius: 6px;
+     font-size: 0.95rem;
+     color: var(--navy);
+     background: #fff;
+     outline: none;
+     font-family: inherit;
+     transition: border-color 0.2s, box-shadow 0.2s;
+     width: 100%;
+   }
+   .ct-input::placeholder { color: #94a3b8; }
+   .ct-input:focus {
+     border-color: var(--green);
+     box-shadow: 0 0 0 3px rgba(20,181,123,0.1);
+   }
+   
+   textarea.ct-input {
+     min-height: 140px;
+     resize: vertical;
+   }
+   
+   .ct-submit {
+     width: 100%;
+     padding: 16px;
+     background: var(--green);
+     color: #fff;
+     border: none;
+     border-radius: 6px;
+     font-size: 0.95rem;
+     font-weight: 600;
+     cursor: pointer;
+     font-family: inherit;
+     margin-top: 8px;
+     letter-spacing: 0.03em;
+     transition: background 0.2s, transform 0.15s;
+   }
+   .ct-submit:hover {
+     background: #0fa068;
+     transform: translateY(-1px);
+   }
+   
+   .ct-success {
+     background: #fff;
+     border-left: 4px solid var(--green);
+     border-radius: 0 8px 8px 0;
+     padding: 24px 28px;
+     margin-top: 24px;
+   }
+   .ct-success[hidden] { display: none; }
+   
+   .ct-success strong {
+     display: block;
+     font-family: 'Playfair Display', Georgia, serif;
+     font-size: 1rem;
+     font-weight: 600;
+     color: var(--navy);
+     margin-bottom: 8px;
+   }
+   
+   .ct-success p {
+     font-size: 0.875rem;
+     color: var(--slate);
+     line-height: 1.7;
+     margin: 0;
+   }
+   
+   @media (max-width: 640px) {
+     .ct-form-wrap { padding: 28px 20px; }
+     .ct-form-row { grid-template-columns: 1fr; gap: 0; }
+   }
+   
+   
+   /* ---- EVENT STRIP ---- */
+   .ct-strip {
+     background: #0f1117;
+     border-top: 3px solid var(--blue);
+     padding: 18px 60px;
+     display: flex;
+     align-items: center;
+     gap: 24px;
+     flex-wrap: nowrap;
+   }
+   .ct-strip-left { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+   .ct-strip-label { font-size: 10px; font-weight: 600; color: var(--green); text-transform: uppercase; letter-spacing: 0.18em; }
+   .ct-strip-title { font-size: 0.9rem; font-weight: 500; color: #fff; line-height: 1.4; }
+   .ct-strip-date { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-top: 2px; }
+   .ct-strip-timer { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+   .ct-strip .cd-sep { color: rgba(255,255,255,0.3); }
+   .ct-strip-btn {
+     display: inline-block; padding: 9px 20px; background: var(--green);
+     color: #fff; text-decoration: none; font-weight: 600; font-size: 0.82rem;
+     border-radius: 4px; white-space: nowrap; flex-shrink: 0;
+     transition: background 0.2s, transform 0.15s;
+   }
+   .ct-strip-btn:hover { background: #0fa068; color: #fff; transform: translateY(-1px); }
+   
+   @media (max-width: 960px) { .ct-strip { padding: 18px 30px; flex-wrap: wrap; } }
+   @media (max-width: 640px) {
+     .ct-strip { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 14px; }
+     .ct-strip-timer { width: 100%; }
+     .ct-strip-btn { width: 100%; text-align: center; padding: 12px; }
+   }
