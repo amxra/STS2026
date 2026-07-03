@@ -8,6 +8,23 @@
    document.addEventListener('DOMContentLoaded', function () {
 
     /* ------------------------------------------
+       NAV — TRANSPARENT → SOLID ON SCROLL
+    ------------------------------------------ */
+    var siteHeader = document.getElementById('siteHeader');
+    if (siteHeader) {
+      function onNavScroll() {
+        if (window.scrollY > 50) {
+          siteHeader.classList.add('nav-scrolled');
+        } else {
+          siteHeader.classList.remove('nav-scrolled');
+        }
+      }
+      window.addEventListener('scroll', onNavScroll, { passive: true });
+      onNavScroll();
+    }
+  
+  
+    /* ------------------------------------------
        MOBILE NAV TOGGLE
     ------------------------------------------ */
     var hamburger = document.querySelector('.hamburger');
@@ -258,3 +275,81 @@
     setInterval(updateStripCountdown, 1000);
   
   });
+  
+  
+    /* ------------------------------------------
+       SUBSCRIBE FORM (shared footer)
+    ------------------------------------------ */
+    var subscribeBtn = document.getElementById('subscribeBtn');
+    if (subscribeBtn) {
+      subscribeBtn.addEventListener('click', function () {
+        var name  = document.getElementById('subName').value.trim();
+        var email = document.getElementById('subEmail').value.trim();
+        if (!name || !email) { alert('Please fill in both your name and email address.'); return; }
+        document.getElementById('subscribeForm').style.display = 'none';
+        document.getElementById('subscribeSuccess').style.display = 'block';
+      });
+    }
+  
+  
+  
+    /* ------------------------------------------
+       WELCOME POPUP
+    ------------------------------------------ */
+    var overlay = document.getElementById('welcomeOverlay');
+    if (overlay) {
+      // Show after 1.5s
+      setTimeout(function () {
+        overlay.classList.remove('hidden');
+      }, 1500);
+  
+      // Close on X button
+      var closeBtn = document.getElementById('welcomeClose');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          overlay.classList.add('hidden');
+        });
+      }
+  
+      // Close on overlay click
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) overlay.classList.add('hidden');
+      });
+  
+      // Close on Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') overlay.classList.add('hidden');
+      });
+    }
+  
+  
+    /* ------------------------------------------
+       NAV STRIP + WELCOME POPUP COUNTDOWNS
+    ------------------------------------------ */
+    var cdTargets = [
+      { days:'ns-days', hours:'ns-hours', mins:'ns-mins', secs:'ns-secs' },
+      { days:'h-days',  hours:'h-hours',  mins:'h-mins',  secs:'h-secs'  },
+      { days:'wc-days', hours:'wc-hours', mins:'wc-mins', secs:'wc-secs' }
+    ];
+  
+    function tickCountdowns() {
+      var now   = new Date();
+      var start = new Date('2026-10-15T00:00:00');
+      var diff  = start - now;
+      if (diff < 0) diff = 0;
+  
+      var d = Math.floor(diff / 86400000);
+      var h = Math.floor((diff % 86400000) / 3600000);
+      var m = Math.floor((diff % 3600000) / 60000);
+      var s = Math.floor((diff % 60000) / 1000);
+  
+      cdTargets.forEach(function (t) {
+        var dEl = document.getElementById(t.days);   if (dEl) dEl.textContent = String(d).padStart(2,'0');
+        var hEl = document.getElementById(t.hours);  if (hEl) hEl.textContent = String(h).padStart(2,'0');
+        var mEl = document.getElementById(t.mins);   if (mEl) mEl.textContent = String(m).padStart(2,'0');
+        var sEl = document.getElementById(t.secs);   if (sEl) sEl.textContent = String(s).padStart(2,'0');
+      });
+    }
+  
+    tickCountdowns();
+    setInterval(tickCountdowns, 1000);

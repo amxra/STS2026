@@ -10,16 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="has-nav-strip">
 <div id="page">
 
   <!-- HEADER -->
-    <header class="site-header">
+      <header class="site-header" id="siteHeader">
     <div class="header-inner">
-      <a href="index.html" class="site-logo">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/Screenshot_1-removebg-preview-2.webp" alt="STS 2026" width="160" height="50">
-      </a>
-            <nav class="main-nav" aria-label="Main navigation">
+      <div class="logo-pair">
+        <a href="index.html"><img src="assets/AG-Logos/STS-Logo.png" alt="STS 2026"></a>
+        <div class="logo-divider"></div>
+        <a href="index.html"><img src="assets/AG-Logos/STS-Logo.png" alt="Avant-Garde Sustainability Foundation"></a>
+      </div>
+      <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="speakers.html">STS Speakers</a>
@@ -39,17 +41,14 @@
             <a href="sts-2016.html" role="menuitem">2016 — Inaugural</a>
           </div>
         </div>
-        <div class="has-dropdown">
-          <a href="#" aria-haspopup="true">More ▾</a>
-          <div class="dropdown" role="menu">
-            <a href="publications.html" role="menuitem">Publications</a>
-            <a href="press.html" role="menuitem">Press &amp; Media</a>
-          </div>
+        <a href="publications.html">Publications</a>
+        <a href="press.html">Press &amp; Media</a>
+        <div class="nav-cta-wrap">
+          <a href="contact.html" class="nav-cta">
+            <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false" style="width:13px;fill:#fff"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+            Get in Touch
+          </a>
         </div>
-        <a href="contact.html" class="nav-cta">
-          <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false" style="width:14px;fill:#fff"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
-          Get in Touch
-        </a>
       </nav>
       <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span><span></span>
@@ -104,6 +103,25 @@
       </div>
     </div>
   </section>
+  <!-- EVENT STRIP -->
+  <div class="pt-strip" id="heroStrip">
+    <div class="pt-strip-left">
+      <div class="pt-strip-label">STS @ 10 · Next Edition</div>
+      <div class="pt-strip-title">Leading the Sustainable Development Agenda: People, Planet, Prosperity</div>
+      <div class="pt-strip-date">📅 Oct 15 – 16, 2026 &nbsp;·&nbsp; 📍 Balmoral Event Centre, Lagos</div>
+    </div>
+    <div class="pt-strip-timer" id="heroTimer">
+      <div class="cd-block"><span class="cd-num" id="h-days">00</span><span class="cd-unit">Days</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="h-hours">00</span><span class="cd-unit">Hrs</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="h-mins">00</span><span class="cd-unit">Mins</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="h-secs">00</span><span class="cd-unit">Secs</span></div>
+    </div>
+    <div class="cd-status" id="heroStatus"></div>
+    <a href="https://www.eventbrite.com/e/the-sustainability-table-discourse-series-sts-10th-edition-tickets-1988312097006" target="_blank" class="pt-strip-btn">Register Now »</a>
+  </div>
 
 
   <!-- STATS BAR -->
@@ -129,23 +147,23 @@
         <p>Driving action towards the 2030 Agenda for a sustainable and inclusive future.</p>
       </div>
       <div class="sdg-grid" aria-label="17 Sustainable Development Goals">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-01-1024x1024.webp" alt="SDG 1: No Poverty" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-02-1024x1024.webp" alt="SDG 2: Zero Hunger" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-03-1024x1024.webp" alt="SDG 3: Good Health and Well-being" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-04-1024x1024.webp" alt="SDG 4: Quality Education" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-05-1024x1024.webp" alt="SDG 5: Gender Equality" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-06-1024x1024.webp" alt="SDG 6: Clean Water and Sanitation" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-07-1024x1024.webp" alt="SDG 7: Affordable and Clean Energy" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-1.png" alt="SDG 1: No Poverty" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-2.jpeg" alt="SDG 2: Zero Hunger" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-3.png" alt="SDG 3: Good Health and Well-being" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-4.jpeg" alt="SDG 4: Quality Education" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-5.png" alt="SDG 5: Gender Equality" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-6.jpeg" alt="SDG 6: Clean Water and Sanitation" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-17.jpegg" alt="SDG 7: Affordable and Clean Energy" loading="lazy">
         <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-08-1024x1024.webp" alt="SDG 8: Decent Work and Economic Growth" loading="lazy">
         <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-09-1024x1024.webp" alt="SDG 9: Industry, Innovation and Infrastructure" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-10-1024x1024.webp" alt="SDG 10: Reduced Inequalities" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-11-1024x1024.webp" alt="SDG 11: Sustainable Cities and Communities" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-12-1024x1024.webp" alt="SDG 12: Responsible Consumption and Production" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-13-1024x1024.webp" alt="SDG 13: Climate Action" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-14-1024x1024.webp" alt="SDG 14: Life Below Water" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-15-1024x1024.webp" alt="SDG 15: Life on Land" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-16-1024x1024.webp" alt="SDG 16: Peace, Justice and Strong Institutions" loading="lazy">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-17-1024x1024.webp" alt="SDG 17: Partnerships for the Goals" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-10.webp" alt="SDG 10: Reduced Inequalities" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-11.png" alt="SDG 11: Sustainable Cities and Communities" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-12.png" alt="SDG 12: Responsible Consumption and Production" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-13.jpeg" alt="SDG 13: Climate Action" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-14.png" alt="SDG 14: Life Below Water" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-15.png" alt="SDG 15: Life on Land" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-16.png" alt="SDG 16: Peace, Justice and Strong Institutions" loading="lazy">
+        <img src="assets/Images/SDG-Goals/SDG-17.jpeg" alt="SDG 17: Partnerships for the Goals" loading="lazy">
         <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/global-goals.webp" alt="Global Goals" loading="lazy">
       </div>
     </div>
@@ -427,6 +445,37 @@
   <button id="scroll-top" aria-label="Scroll back to top">
     <svg viewBox="0 0 448 512" aria-hidden="true"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"/></svg>
   </button>
+
+
+  <!-- WELCOME POPUP -->
+  <div class="welcome-overlay" id="welcomeOverlay">
+    <div class="welcome-modal" id="welcomeModal" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle">
+      <button class="welcome-close" id="welcomeClose" aria-label="Close">&times;</button>
+      <div class="welcome-modal-inner">
+        <div class="welcome-left">
+          <span class="welcome-pill">10th Edition · STS 2026</span>
+          <h2 id="welcomeTitle">Leading the <em>Sustainable</em> Development Agenda</h2>
+          <p>People, Planet, Prosperity</p>
+          <div class="welcome-details">
+            <div class="welcome-detail">📅 Oct 15 – 16, 2026</div>
+            <div class="welcome-detail">📍 Balmoral Event Centre, Lagos</div>
+            <div class="welcome-detail">✉️ sustainabilitytable@avantgardeltd.org</div>
+            <div class="welcome-detail">📞 +234-813-395-9999</div>
+          </div>
+          <div class="welcome-countdown" id="welcomeCountdown">
+            <div class="cd-block"><span class="cd-num" id="wc-days">00</span><span class="cd-unit">Days</span></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-block"><span class="cd-num" id="wc-hours">00</span><span class="cd-unit">Hrs</span></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-block"><span class="cd-num" id="wc-mins">00</span><span class="cd-unit">Mins</span></div>
+            <div class="cd-sep">:</div>
+            <div class="cd-block"><span class="cd-num" id="wc-secs">00</span><span class="cd-unit">Secs</span></div>
+          </div>
+          <a href="https://www.eventbrite.com/e/the-sustainability-table-discourse-series-sts-10th-edition-tickets-1988312097006" target="_blank" class="welcome-register-btn">Register for STS 2026 →</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </div>
 <script src="scripts/main.js" defer></script>

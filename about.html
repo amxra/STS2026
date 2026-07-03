@@ -15,12 +15,22 @@
 <div id="page">
 
   <!-- HEADER -->
-    <header class="site-header">
+  <header class="site-header" id="siteHeader">
     <div class="header-inner">
-      <a href="index.html" class="site-logo">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/Screenshot_1-removebg-preview-2.webp" alt="STS 2026" width="160" height="50">
-      </a>
-            <nav class="main-nav" aria-label="Main navigation">
+
+      <!-- TWO LOGOS -->
+      <div class="logo-pair">
+        <a href="index.html">
+          <img src="assets/AG-Logos/STS-Logo.png" alt="STS 2026">
+        </a>
+        <div class="logo-divider"></div>
+        <a href="index.html">
+          <img src="assets/AG-Logos/STS-Logo.png" alt="Avant-Garde Sustainability Foundation">
+        </a>
+      </div>
+
+      <!-- DESKTOP NAV -->
+      <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="about.html" class="active">About</a>
         <a href="speakers.html">STS Speakers</a>
@@ -40,22 +50,21 @@
             <a href="sts-2016.html" role="menuitem">2016 — Inaugural</a>
           </div>
         </div>
-        <div class="has-dropdown">
-          <a href="#" aria-haspopup="true">More ▾</a>
-          <div class="dropdown" role="menu">
-            <a href="publications.html" role="menuitem">Publications</a>
-            <a href="press.html" role="menuitem">Press &amp; Media</a>
-          </div>
+        <a href="publications.html">Publications</a>
+        <a href="press.html">Press &amp; Media</a>
+        <div class="nav-cta-wrap">
+          <a href="contact.html" class="nav-cta">
+            <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false" style="width:13px;fill:#fff"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+            Get in Touch
+          </a>
         </div>
-        <a href="contact.html" class="nav-cta">
-          <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false" style="width:14px;fill:#fff"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
-          Get in Touch
-        </a>
       </nav>
       <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span><span></span>
       </button>
     </div>
+
+    <!-- MOBILE NAV -->
         <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -263,7 +272,6 @@
         <ul><li>Carbon Market and Climate Finance: Unlocking Investment for a Low-Carbon Economy</li><li>Energy for Inclusive Growth: Expanding Clean Power, Clean Cooking, and Energy Access</li><li>Sustainable Production and Circular Economy: Driving Responsible Industry and Resource Efficiency</li><li>Resilient Food System: Strengthening Cold Chains, Reducing Post-Harvest Losses, and Enhancing Food Security</li><li>Financing Inclusive Enterprises: Empowering MSMEs, Women, and Youth for Sustainable Prosperity</li><li>Technology and Ethics for the SDGs: Harnessing AI and Innovation Responsibly</li></ul>
       </div>
     </div>
-
   </section>
 
 
@@ -271,28 +279,24 @@
   <section class="testimonials reveal">
     <h2>What People Say</h2>
     <div class="testimonials-grid">
-
       <div class="testimonial-card">
         <div class="testimonial-photo" aria-hidden="true">[ Photo ]</div>
         <p class="testimonial-quote">The summit wasn't just about discussions; it was a gathering of change-makers dedicated to making a tangible difference.</p>
         <div class="testimonial-name">Eziafakaku Nwokolo</div>
         <div class="testimonial-role">Founder, Shades of Life Foundation</div>
       </div>
-
       <div class="testimonial-card">
         <div class="testimonial-photo" aria-hidden="true">[ Photo ]</div>
         <p class="testimonial-quote">STS is a great opportunity for establishing and strengthening connections between all relevant actors from different walks of life. It provides lots of insightful conversations and fantastic networking.</p>
         <div class="testimonial-name">Matthias Schmale</div>
         <div class="testimonial-role">Senior Advisor, UN Development Coordination Regional Office Africa</div>
       </div>
-
       <div class="testimonial-card">
         <div class="testimonial-photo" aria-hidden="true">[ Photo ]</div>
         <p class="testimonial-quote">They were not only informative but provided a platform for networking. I engaged in insightful discussions with industry experts, sharing my ideas and gaining valuable feedback.</p>
         <div class="testimonial-name">Lolade Alonge</div>
         <div class="testimonial-role">Project Manager, Koolboks</div>
       </div>
-
     </div>
   </section>
 
@@ -314,8 +318,6 @@
   <!-- STS@10 — UNIFIED SECTION -->
   <section class="sts10-unified reveal" aria-labelledby="sts10-heading">
     <div class="sts10-unified-inner">
-
-      <!-- Top row: title + countdown -->
       <div class="sts10-top-row">
         <div class="sts10-left">
           <span class="sts10-edition-pill">STS @ 10 · 10th Edition</span>
@@ -340,14 +342,9 @@
           <a href="https://www.eventbrite.com/e/the-sustainability-table-discourse-series-sts-10th-edition-tickets-1988312097006" target="_blank" class="sts10-register-btn">Register Now »</a>
         </div>
       </div>
-
-      <!-- Divider -->
       <div class="sts10-divider"></div>
-
-      <!-- Objectives -->
       <div class="sts10-obj-label">Objectives for the 10th Edition</div>
       <div class="sts10-obj-grid">
-
         <div class="sts10-obj-card">
           <div class="sts10-obj-top"><div class="sts10-obj-dot"></div><p>Strengthen alignment between government, private sector, civil society, and development partners on SDG priorities and financing mechanisms</p></div>
           <div class="sts10-sdg-icons">
@@ -355,7 +352,6 @@
             <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-17-1024x1024.webp" alt="SDG 17" loading="lazy">
           </div>
         </div>
-
         <div class="sts10-obj-card">
           <div class="sts10-obj-top"><div class="sts10-obj-dot"></div><p>Advance critical national priorities including energy transition, food security, climate finance, human capital development, and digital economy</p></div>
           <div class="sts10-sdg-icons">
@@ -365,7 +361,6 @@
             <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-04-1024x1024.webp" alt="SDG 4" loading="lazy">
           </div>
         </div>
-
         <div class="sts10-obj-card">
           <div class="sts10-obj-top"><div class="sts10-obj-dot"></div><p>Promote inclusive growth through MSMEs, women, and youth-led enterprises, ensuring prosperity is shared across value chains</p></div>
           <div class="sts10-sdg-icons">
@@ -374,7 +369,6 @@
             <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-10-1024x1024.webp" alt="SDG 10" loading="lazy">
           </div>
         </div>
-
         <div class="sts10-obj-card">
           <div class="sts10-obj-top"><div class="sts10-obj-dot"></div><p>Facilitate investment discussions and cross-sector partnerships that translate commitments into deployed capital and implementation</p></div>
           <div class="sts10-sdg-icons">
@@ -383,7 +377,6 @@
             <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-11-1024x1024.webp" alt="SDG 11" loading="lazy">
           </div>
         </div>
-
         <div class="sts10-obj-card">
           <div class="sts10-obj-top"><div class="sts10-obj-dot"></div><p>Deliver clear, measurable commitments from government, business, and development institutions with transparent tracking mechanisms</p></div>
           <div class="sts10-sdg-icons">
@@ -391,7 +384,6 @@
             <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-10-1024x1024.webp" alt="SDG 10" loading="lazy">
           </div>
         </div>
-
         <div class="sts10-obj-card">
           <div class="sts10-obj-top"><div class="sts10-obj-dot"></div><p>Position Africa as a leader in sustainable development, solving global challenges through African innovation and home-grown solutions</p></div>
           <div class="sts10-sdg-icons">
@@ -400,7 +392,6 @@
             <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-13-1024x1024.webp" alt="SDG 13" loading="lazy">
           </div>
         </div>
-
         <div class="sts10-obj-card sts10-obj-card--full">
           <div class="sts10-obj-top"><div class="sts10-obj-dot"></div><p>Consolidate a decade of STS insights into actionable policy and investment pathways for 2026–2030</p></div>
           <div class="sts10-sdg-icons">
@@ -418,7 +409,6 @@
             <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/E-WEB-Goal-17-1024x1024.webp" alt="SDG 17" loading="lazy">
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -483,5 +473,20 @@
 
 <script src="scripts/main.js" defer></script>
 <script src="scripts/about.js" defer></script>
+<script>
+  /* Transparent → solid on scroll */
+  (function () {
+    var header = document.getElementById('siteHeader');
+    function onScroll() {
+      if (window.scrollY > 50) {
+        header.classList.add('nav-scrolled');
+      } else {
+        header.classList.remove('nav-scrolled');
+      }
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  })();
+</script>
 </body>
 </html>

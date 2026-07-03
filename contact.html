@@ -16,16 +16,18 @@
 <div id="page">
 
   <!-- HEADER -->
-  <header class="site-header">
+      <header class="site-header" id="siteHeader">
     <div class="header-inner">
-      <a href="index.html" class="site-logo">
-        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/Screenshot_1-removebg-preview-2.webp" alt="STS 2026" width="160" height="50">
-      </a>
+      <div class="logo-pair">
+        <a href="index.html"><img src="assets/AG-Logos/STS-Logo.png" alt="STS 2026"></a>
+        <div class="logo-divider"></div>
+        <a href="index.html"><img src="assets/AG-Logos/STS-Logo.png" alt="Avant-Garde Sustainability Foundation"></a>
+      </div>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
         <a href="speakers.html">STS Speakers</a>
-        <a href="partners-sponsors.html">Partners &amp; Sponsors</a>
+        <a href="partners.html">Partners &amp; Sponsors</a>
         <a href="deal-room.html">Deal Room</a>
         <div class="has-dropdown">
           <a href="past-events.html" aria-haspopup="true">Past Events ▾</a>
@@ -41,27 +43,24 @@
             <a href="sts-2016.html" role="menuitem">2016 — Inaugural</a>
           </div>
         </div>
-        <div class="has-dropdown">
-          <a href="#" aria-haspopup="true">More ▾</a>
-          <div class="dropdown" role="menu">
-            <a href="publications.html" role="menuitem">Publications</a>
-            <a href="press.html" role="menuitem">Press &amp; Media</a>
-          </div>
+        <a href="publications.html">Publications</a>
+        <a href="press.html">Press &amp; Media</a>
+        <div class="nav-cta-wrap">
+          <a href="contact.html" class="nav-cta">
+            <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false" style="width:13px;fill:#fff"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+            Get in Touch
+          </a>
         </div>
-        <a href="contact.html" class="nav-cta active">
-          <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false" style="width:14px;fill:#fff"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
-          Get in Touch
-        </a>
       </nav>
       <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span><span></span>
       </button>
     </div>
-    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="speakers.html">STS Speakers</a>
-      <a href="partners-sponsors.html">Partners &amp; Sponsors</a>
+      <a href="partners.html">Partners &amp; Sponsors</a>
       <a href="deal-room.html">Deal Room</a>
       <div class="mobile-submenu">
         <button class="mobile-submenu-title" aria-expanded="false">Past Events ▾</button>
@@ -90,6 +89,26 @@
     <h1 class="ct-hero-title">Contact Us</h1>
     <p class="ct-hero-sub">Have a question, a partnership idea, or want to get involved with STS? We'd love to hear from you.</p>
   </section>
+
+  <!-- EVENT STRIP (under hero) -->
+  <div class="ct-strip" id="heroStrip">
+    <div class="ct-strip-left">
+      <div class="ct-strip-label">STS @ 10 · Next Edition</div>
+      <div class="ct-strip-title">Leading the Sustainable Development Agenda: People, Planet, Prosperity</div>
+      <div class="ct-strip-date">📅 Oct 15 – 16, 2026 &nbsp;·&nbsp; 📍 Balmoral Event Centre, Lagos</div>
+    </div>
+    <div class="ct-strip-timer" id="heroTimer">
+      <div class="cd-block"><span class="cd-num" id="h-days">00</span><span class="cd-unit">Days</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="h-hours">00</span><span class="cd-unit">Hrs</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="h-mins">00</span><span class="cd-unit">Mins</span></div>
+      <div class="cd-sep">:</div>
+      <div class="cd-block"><span class="cd-num" id="h-secs">00</span><span class="cd-unit">Secs</span></div>
+    </div>
+    <div class="cd-status" id="heroStatus"></div>
+    <a href="https://www.eventbrite.com/e/the-sustainability-table-discourse-series-sts-10th-edition-tickets-1988312097006" target="_blank" class="ct-strip-btn">Register Now »</a>
+  </div>
 
 
   <!-- BODY -->
@@ -234,7 +253,7 @@
   </button>
 
 </div>
-<script src="main.js" defer></script>
-<script src="contact.js" defer></script>
+<script src="scripts/main.js" defer></script>
+<script src="scripts/contact.js" defer></script>
 </body>
 </html>
