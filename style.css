@@ -4549,22 +4549,40 @@ h1, h2, h3, h4, h5, h6 {
 
 .pt-hero-text { flex: 1; min-width: 260px; }
 
-.pt-hero-text .section-label { color: var(--green); }
+.pt-hero-text .section-label {
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.pt-hero-text .section-label::after {
+  content: '';
+  flex: 0 0 32px;
+  height: 1px;
+  background: var(--green);
+  opacity: 0.5;
+}
 
 .pt-hero-text h1 {
   font-family: 'Playfair Display', Georgia, serif;
-  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
   font-weight: 700;
   color: #fff;
   line-height: 1.15;
-  margin-bottom: 16px;
+  margin-bottom: 20px;
 }
 
 .pt-hero-text p {
   font-size: 1rem;
-  color: rgba(255,255,255,0.6);
-  line-height: 1.75;
-  max-width: 500px;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.8;
+  max-width: 520px;
 }
 
 .pt-hero-btn {
@@ -4704,31 +4722,28 @@ h1, h2, h3, h4, h5, h6 {
   background: none;
   border: none;
   border-radius: 0;
-  height: 64px;
+  height: 90px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 8px;
+  padding: 8px 16px;
   gap: 0;
-  opacity: 0;
-  transform: translateY(12px);
-}
-
-.pt-logo-card.visible {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 0.4s ease, transform 0.4s ease;
+  /* border: 1px solid red; */
 }
+
+.pt-logo-card.visible { opacity: 1; transform: translateY(0); }
 
 .pt-logo-card:hover { background: none; border-color: transparent; }
 
 .pt-logo-card img {
-  max-width: 100%;
-  max-height: 44px;
-  width: auto;
-  height: auto;
+  width: 100%;
+  height: 60px;
   object-fit: contain;
   display: block;
+  mix-blend-mode: multiply;
   transition: transform 0.25s;
 }
 
@@ -4736,6 +4751,12 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-3px);
 }
 
+
+/* ---- Specific logo size overrides ---- */
+.pt-logo-card img[alt="Golborne Road Advisory"] { height: 90px; }
+.pt-logo-card img[alt="Kopek Construction Limited"] { height: 90px; }
+.pt-logo-card img[alt="Legacy Serviced Offices"] { height: 90px; }
+.pt-logo-card img[alt="The Temple Management Company"] { height: 90px; }
 /* Hide the name labels — logos speak for themselves */
 .pt-logo-card span { display: none; }
 
