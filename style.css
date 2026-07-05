@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .logo-pair a { display: flex; align-items: center; flex-shrink: 0; }
 .logo-pair img { height: 42px; width: auto; display: block; max-width: none; flex-shrink: 0; object-fit: contain; }
-.logo-pair a:last-child img { height: 50px; }
+.logo-pair a:last-child img { height: 52px; }
 .logo-divider {
   width: 1px;
   height: 30px;
@@ -2811,12 +2811,15 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 20px;
   background: var(--light-bg);
   border: 2px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--slate);
-  font-size: 0.75rem;
+  overflow: hidden;
   flex-shrink: 0;
+}
+
+.testimonial-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 .testimonial-quote {
@@ -7326,4 +7329,10 @@ h1, h2, h3, h4, h5, h6 {
 /* index.html hero pushed below nav + countdown strip */
 .has-nav-strip .hero-section {
   padding-top: 160px;
+}
+/* Photo highlights footer link */
+.photo-footer {
+  max-width: 1200px;
+  margin: 20px auto 0;
+  text-align: right;
 }
