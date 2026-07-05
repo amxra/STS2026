@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Avant-Garde Sustainability Foundation</title>
+  <meta name="description" content="The Avant-Garde Sustainability Foundation — conveners of the Sustainability Table Discourse Series. Website coming soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #fff; color: #1e293b; line-height: 1.65; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    .f-nav {
+      padding: 18px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e2e8f0;
+      background: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+    .f-back { font-size: 13px; color: #64748b; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .f-back:hover { color: #1e293b; }
+    .f-nav-logo { display: flex; align-items: center; gap: 10px; }
+    .f-nav-logo img { height: 40px; width: auto; }
+    .f-nav-name { font-size: 12px; color: #94a3b8; letter-spacing: 0.04em; }
+
+    /* SCROLL HINT */
+    .f-scroll-hint {
+      background: #f0fdf4;
+      border-bottom: 1px solid #bbf7d0;
+      padding: 10px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      font-size: 13px;
+      color: #166534;
+      font-weight: 500;
+    }
+    .bounce { animation: bounce 1.5s ease-in-out infinite; }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(4px)} }
+
+    /* HERO */
+    .f-hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 60px 72px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .f-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #14B57B;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .f-label::after { content: ''; flex: 0 0 24px; height: 1px; background: #14B57B; opacity: 0.45; }
+
+    .f-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: #1e293b;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .f-hero h1 em { color: #14B57B; font-style: italic; }
+
+    .f-hero-sub { font-size: 0.95rem; color: #475569; line-height: 1.85; margin-bottom: 32px; text-align: justify; }
+
+    .f-contact-list { display: flex; flex-direction: column; gap: 16px; margin-bottom: 32px; padding-bottom: 32px; border-bottom: 1px solid #f1f5f9; }
+    .f-ci-label { font-size: 10px; font-weight: 700; color: #14B57B; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 2px; }
+    .f-ci-val { font-size: 14px; color: #1e293b; }
+    .f-ci-val a { color: #1e293b; border-bottom: 1px solid #e2e8f0; padding-bottom: 1px; transition: border-color 0.2s, color 0.2s; }
+    .f-ci-val a:hover { color: #14B57B; border-color: #14B57B; }
+
+    .f-sts-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: #14B57B;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 4px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .f-sts-btn:hover { background: #0fa068; transform: translateY(-1px); }
+
+    /* COMING SOON CARD */
+    .f-cs-card {
+      background: #0a1628;
+      border-radius: 16px;
+      padding: 48px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .f-cs-card::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(20,181,123,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .f-cs-pill { display: inline-block; font-size: 10px; font-weight: 600; color: #14B57B; text-transform: uppercase; letter-spacing: 0.14em; border: 1px solid rgba(20,181,123,0.25); background: rgba(20,181,123,0.07); padding: 5px 16px; border-radius: 20px; margin-bottom: 22px; }
+    .f-cs-h { font-family: 'Playfair Display', Georgia, serif; font-size: 1.5rem; font-weight: 700; color: #fff; line-height: 1.25; margin-bottom: 12px; }
+    .f-cs-sub { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.8; margin-bottom: 28px; }
+    .f-cs-divider { height: 1px; background: rgba(255,255,255,0.07); margin-bottom: 24px; }
+    .f-cs-contact { font-size: 12px; color: rgba(255,255,255,0.3); line-height: 2.2; }
+    .f-cs-contact a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .f-cs-contact a:hover { color: #14B57B; }
+
+    /* GAME SECTION */
+    .f-game-section {
+      background: #f8fafc;
+      border-top: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0;
+      padding: 80px 60px;
+    }
+    .f-game-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    .f-game-label { font-size: 11px; font-weight: 600; color: #14B57B; text-transform: uppercase; letter-spacing: 0.16em; margin-bottom: 14px; }
+    .f-game-text h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(1.6rem, 2.5vw, 2rem); font-weight: 700; color: #1e293b; line-height: 1.25; margin-bottom: 16px; }
+    .f-game-text h2 em { color: #14B57B; font-style: italic; }
+    .f-game-text p { font-size: 0.9rem; color: #475569; line-height: 1.85; margin-bottom: 24px; text-align: justify; }
+
+    .f-legend { display: flex; flex-direction: column; gap: 12px; }
+    .f-legend-item { display: flex; align-items: center; gap: 12px; font-size: 13px; color: #475569; }
+    .f-legend-icon { width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+
+    /* GAME WIDGET */
+    .f-game-wrap { background: #0a1628; border-radius: 14px; padding: 20px; }
+    .f-game-stats { display: flex; gap: 6px; margin-bottom: 12px; }
+    .f-stat-box { background: rgba(255,255,255,0.05); border: 0.5px solid rgba(255,255,255,0.08); border-radius: 6px; padding: 8px 10px; text-align: center; flex: 1; }
+    .f-stat-lbl { font-size: 9px; color: rgba(255,255,255,0.3); text-transform: uppercase; letter-spacing: 0.1em; display: block; }
+    .f-stat-val { font-size: 1.1rem; font-weight: 700; color: #fff; font-family: 'Playfair Display', Georgia, serif; display: block; }
+    .f-stat-val.g { color: #14B57B; }
+    #fCanvas { display: block; border-radius: 8px; width: 100%; cursor: crosshair; touch-action: none; }
+    .f-game-msg { text-align: center; margin-top: 12px; min-height: 52px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; }
+    .f-start-btn { background: #14B57B; color: #fff; border: none; padding: 9px 24px; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: inherit; transition: background 0.2s; }
+    .f-start-btn:hover { background: #0fa068; }
+    .f-hint { font-size: 11px; color: rgba(255,255,255,0.2); }
+
+    /* FOOTER */
+    .f-footer { padding: 22px 60px; border-top: 1px solid #f1f5f9; display: flex; align-items: center; justify-content: space-between; }
+    .f-footer-copy { font-size: 12px; color: #94a3b8; }
+    .f-footer-link { font-size: 12px; color: #14B57B; font-weight: 500; }
+    .f-footer-link:hover { color: #0fa068; }
+
+    @media (max-width: 900px) {
+      .f-nav, .f-scroll-hint, .f-footer { padding-left: 24px; padding-right: 24px; }
+      .f-hero, .f-game-inner { grid-template-columns: 1fr; gap: 48px; }
+      .f-hero { padding: 52px 24px; }
+      .f-game-section { padding: 60px 24px; }
+      .f-footer { flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="f-nav">
+    <a href="index.html" class="f-back">
+      <svg viewBox="0 0 448 512" width="10" fill="currentColor"><path d="M257.5 445.1l-22.2 22.2c-9.4 9.4-24.6 9.4-33.9 0L7 273c-9.4-9.4-9.4-24.6 0-33.9L201.4 44.7c9.4-9.4 24.6-9.4 33.9 0l22.2 22.2c9.5 9.5 9.3 25-.4 34.3L136.6 216H424c13.3 0 24 10.7 24 24v32c0 13.3-10.7 24-24 24H136.6l120.5 114.8c9.8 9.3 10 24.8.4 34.3z"/></svg>
+      Back to STS 2026
+    </a>
+    <div class="f-nav-logo">
+      <img src="assets/AG-logos/fdn_logo.png" alt="Avant-Garde Sustainability Foundation">
+      <span class="f-nav-name">Avant-Garde Sustainability Foundation</span>
+    </div>
+  </nav>
+
+  <!-- SCROLL HINT -->
+  <div class="f-scroll-hint">
+    <svg class="bounce" viewBox="0 0 24 24" width="16" fill="none" stroke="#166534" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+    Scroll down to play Green Catcher while you wait!
+  </div>
+
+  <!-- HERO -->
+  <div class="f-hero">
+    <div>
+      <div class="f-label">About the Foundation</div>
+      <h1>The <em>Avant-Garde</em> Sustainability Foundation</h1>
+      <p class="f-hero-sub">The convening body behind the Sustainability Table Discourse Series — driving multi-stakeholder dialogue, knowledge production, and policy advocacy for sustainable development across Nigeria and Africa since 2016.</p>
+      <div class="f-contact-list">
+        <div><div class="f-ci-label">Email</div><div class="f-ci-val"><a href="mailto:sustainabilitytable@avantgardeltd.org">sustainabilitytable@avantgardeltd.org</a></div></div>
+        <div><div class="f-ci-label">Phone</div><div class="f-ci-val"><a href="tel:+2348133959999">+234-813-395-9999</a></div></div>
+        <div><div class="f-ci-label">Instagram</div><div class="f-ci-val"><a href="https://instagram.com/sustainability_table" target="_blank">@sustainability_table</a></div></div>
+      </div>
+      <a href="index.html" class="f-sts-btn">
+        <svg viewBox="0 0 448 512" width="12" fill="#fff"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        View STS 2026
+      </a>
+    </div>
+    <div class="f-cs-card">
+      <div class="f-cs-pill">Website coming soon</div>
+      <div class="f-cs-h">Our full website is on its way.</div>
+      <p class="f-cs-sub">We're building something thoughtful. In the meantime reach out directly or explore the STS 2026 event site.</p>
+      <div class="f-cs-divider"></div>
+      <div class="f-cs-contact">
+        <a href="mailto:sustainabilitytable@avantgardeltd.org">sustainabilitytable@avantgardeltd.org</a><br>
+        <a href="tel:+2348133959999">+234-813-395-9999</a><br>
+        Lagos, Nigeria
+      </div>
+    </div>
+  </div>
+
+  <!-- GAME SECTION -->
+  <div class="f-game-section">
+    <div class="f-game-inner">
+
+      <div class="f-game-text">
+        <div class="f-game-label">While you wait</div>
+        <h2>Play <em>Green Catcher</em></h2>
+        <p>Catch sustainability icons, dodge pollution. Move your mouse <strong>left and right</strong> over the game to control the green paddle — or use your <strong>← → arrow keys</strong>. On mobile, <strong>drag your finger</strong> across the screen. A little something we built while our website is in the works — because sustainability should be fun too.</p>
+        <div class="f-legend">
+          <div class="f-legend-item">
+            <div class="f-legend-icon" style="background:rgba(20,181,123,0.15);border:1px solid rgba(20,181,123,0.3)">
+              <img src="assets/fdn-game/sprout.png" style="width:18px;height:18px;object-fit:contain">
+            </div>
+            Catch sustainability icons — solar, earth, water, trees &amp; more
+          </div>
+          <div class="f-legend-item">
+            <div class="f-legend-icon" style="background:rgba(226,75,74,0.15);border:1px solid rgba(226,75,74,0.3)">
+              <img src="assets/fdn-game/factory.png" style="width:18px;height:18px;object-fit:contain">
+            </div>
+            Dodge pollution icons — factory, fire, petrol, smoke &amp; more
+          </div>
+          <div class="f-legend-item">
+            <div class="f-legend-icon" style="background:#f59e0b">
+              <svg viewBox="0 0 24 24" width="14" fill="#fff"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6z"/></svg>
+            </div>
+            Gets faster every 10 points — 4 lives total
+          </div>
+        </div>
+      </div>
+
+      <div class="f-game-wrap">
+        <div class="f-game-stats">
+          <div class="f-stat-box"><span class="f-stat-lbl">Score</span><span class="f-stat-val g" id="fSc">0</span></div>
+          <div class="f-stat-box"><span class="f-stat-lbl">Lives</span><span class="f-stat-val" id="fLv">❤️❤️❤️❤️</span></div>
+          <div class="f-stat-box"><span class="f-stat-lbl">Level</span><span class="f-stat-val" id="fLvl">1</span></div>
+        </div>
+        <canvas id="fCanvas" width="420" height="320"></canvas>
+        <div class="f-game-msg" id="fMsg">
+          <button class="f-start-btn" id="fStartBtn">Start Game</button>
+          <div class="f-hint">🖱️ Move mouse left &amp; right &nbsp;·&nbsp; ⬅️➡️ Arrow keys &nbsp;·&nbsp; 👆 Touch on mobile</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="f-footer">
+    <div class="f-footer-copy">&copy; 2026 Avant-Garde Sustainability Foundation. All rights reserved.</div>
+    <a href="index.html" class="f-footer-link">STS 2026 →</a>
+  </footer>
+
+  <script>
+  (function () {
+    const canvas = document.getElementById('fCanvas');
+    const ctx    = canvas.getContext('2d');
+    const W = canvas.width, H = canvas.height;
+
+    const GOOD_IMGS = ['solar-cell.png','drop.png','justice.png','planet-earth.png','recycle-sign.png','sprout.png','sun.png','tree.png'];
+    const BAD_IMGS  = ['bin.png','factory.png','fire.png','petrol.png','smoke.png','warning.png'];
+    const BASE      = 'assets/fdn-game/';
+
+    /* Preload all images */
+    const images = {};
+    let loaded = 0;
+    const total = GOOD_IMGS.length + BAD_IMGS.length;
+
+    function loadImg(name) {
+      const img = new Image();
+      img.onload  = function() { loaded++; };
+      img.onerror = function() { loaded++; }; /* still count so game starts */
+      img.src = BASE + name;
+      images[name] = img;
+    }
+    GOOD_IMGS.forEach(loadImg);
+    BAD_IMGS.forEach(loadImg);
+
+    let state = 'idle', score = 0, lives = 4, level = 1, frame = 0;
+    let items = [], particles = [];
+    let paddle = { x: W / 2, w: 68, h: 12 };
+
+    function lStr(n) { return '❤️'.repeat(Math.max(0,n)) + '🖤'.repeat(Math.max(0,4-n)); }
+
+    function reset() {
+      score=0; lives=4; level=1; frame=0; items=[]; particles=[];
+      document.getElementById('fSc').textContent  = '0';
+      document.getElementById('fLv').textContent  = lStr(4);
+      document.getElementById('fLvl').textContent = '1';
+    }
+
+    function spawn() {
+      const isGood = Math.random() > 0.35;
+      const list   = isGood ? GOOD_IMGS : BAD_IMGS;
+      const name   = list[Math.floor(Math.random() * list.length)];
+      items.push({
+        x: 24 + Math.random() * (W - 48),
+        y: -28,
+        vy: 1.7 + level * 0.42 + Math.random() * 0.8,
+        name,
+        good: isGood,
+        size: 36,
+      });
+    }
+
+    function spawnParts(x, y, good) {
+      const color = good ? '#14B57B' : '#e24b4a';
+      for (let i = 0; i < 9; i++) {
+        const a = (Math.PI * 2 / 9) * i;
+        particles.push({ x, y, vx: Math.cos(a)*2.6, vy: Math.sin(a)*2.6, life: 1, color });
+      }
+    }
+
+    function update() {
+      if (state !== 'playing') return;
+      frame++;
+      const rate = Math.max(26, 65 - level * 5);
+      if (frame % rate === 0) spawn();
+      level = 1 + Math.floor(score / 10);
+      paddle.w = Math.max(34, 68 - level * 3);
+      document.getElementById('fLvl').textContent = level;
+
+      const py = H - 24;
+      for (let i = items.length - 1; i >= 0; i--) {
+        const it = items[i];
+        it.y += it.vy;
+        const dx = Math.abs(it.x - paddle.x);
+        if (it.y + it.size/2 >= py && it.y - it.size/2 <= py + paddle.h && dx < paddle.w/2 + it.size/2) {
+          spawnParts(it.x, py, it.good);
+          if (it.good) { score++; document.getElementById('fSc').textContent = score; }
+          else { lives--; document.getElementById('fLv').textContent = lStr(lives); if (lives <= 0) { endGame(); return; } }
+          items.splice(i, 1); continue;
+        }
+        if (it.y > H + 28) {
+          if (it.good) { lives--; document.getElementById('fLv').textContent = lStr(lives); if (lives <= 0) { endGame(); return; } }
+          items.splice(i, 1);
+        }
+      }
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const p = particles[i]; p.x += p.vx; p.y += p.vy; p.life -= 0.06;
+        if (p.life <= 0) particles.splice(i, 1);
+      }
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      ctx.fillStyle = '#0d1f3c'; ctx.fillRect(0, 0, W, H);
+
+      /* subtle grid */
+      ctx.strokeStyle = 'rgba(20,181,123,0.04)'; ctx.lineWidth = 1;
+      for (let i = 1; i < 6; i++) { ctx.beginPath(); ctx.moveTo(i*(W/6),0); ctx.lineTo(i*(W/6),H); ctx.stroke(); }
+      for (let i = 1; i < 5; i++) { ctx.beginPath(); ctx.moveTo(0,i*(H/5)); ctx.lineTo(W,i*(H/5)); ctx.stroke(); }
+
+      /* items */
+      items.forEach(function(it) {
+        const img = images[it.name];
+        const s   = it.size;
+        if (img && img.complete && img.naturalWidth > 0) {
+          /* glow ring */
+          ctx.shadowColor = it.good ? 'rgba(20,181,123,0.6)' : 'rgba(226,75,74,0.6)';
+          ctx.shadowBlur  = 14;
+          ctx.drawImage(img, it.x - s/2, it.y - s/2, s, s);
+          ctx.shadowBlur  = 0;
+        } else {
+          /* fallback circle if image not loaded */
+          ctx.beginPath();
+          ctx.arc(it.x, it.y, s/2, 0, Math.PI*2);
+          ctx.fillStyle = it.good ? '#14B57B' : '#e24b4a';
+          ctx.fill();
+        }
+      });
+
+      /* particles */
+      particles.forEach(function(p) {
+        ctx.globalAlpha = p.life;
+        ctx.fillStyle   = p.color;
+        ctx.beginPath(); ctx.arc(p.x, p.y, 3, 0, Math.PI*2); ctx.fill();
+      });
+      ctx.globalAlpha = 1; ctx.shadowBlur = 0;
+
+      /* paddle */
+      if (state === 'playing') {
+        const py = H - 24;
+        ctx.shadowColor = 'rgba(20,181,123,0.5)'; ctx.shadowBlur = 10;
+        ctx.fillStyle = '#14B57B';
+        ctx.beginPath(); ctx.roundRect(paddle.x - paddle.w/2, py, paddle.w, paddle.h, 6); ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = 'rgba(255,255,255,0.15)';
+        ctx.beginPath(); ctx.roundRect(paddle.x - paddle.w/2 + 4, py + 2, paddle.w - 8, 3, 2); ctx.fill();
+      }
+
+      /* idle overlay */
+      if (state === 'idle') {
+        ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.fillRect(0, 0, W, H);
+        const img = images['sprout.png'];
+        if (img && img.complete) {
+          ctx.shadowColor = 'rgba(20,181,123,0.5)'; ctx.shadowBlur = 24;
+          ctx.drawImage(img, W/2 - 30, H/2 - 48, 60, 60);
+          ctx.shadowBlur = 0;
+        }
+        ctx.fillStyle = 'rgba(255,255,255,0.25)'; ctx.font = '13px Inter, sans-serif';
+        ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        ctx.fillText('Press Start to play', W/2, H/2 + 26);
+      }
+
+      if (state === 'over') { ctx.fillStyle = 'rgba(0,0,0,0.6)'; ctx.fillRect(0, 0, W, H); }
+    }
+
+    function endGame() {
+      state = 'over';
+      var grade = score >= 20 ? '🏆 Sustainability Champion!' : score >= 10 ? '🌿 Green Advocate!' : '♻️ Keep trying!';
+      document.getElementById('fMsg').innerHTML =
+        '<div style="color:#14B57B;font-family:Playfair Display,Georgia,serif;font-size:2rem;font-weight:700">' + score + '</div>' +
+        '<div style="color:rgba(255,255,255,0.35);font-size:11px;margin-bottom:6px">points scored</div>' +
+        '<div style="color:#fff;font-size:13px;font-weight:600;margin-bottom:12px">' + grade + '</div>' +
+        '<button class="f-start-btn" onclick="fGo()">Play Again</button>';
+        '<div style="color:rgba(255,255,255,0.35);font-size:11px;margin-bottom:6px">points scored</div>' +
+        '<div style="color:#fff;font-size:13px;font-weight:600;margin-bottom:12px">' + grade + '</div>' +
+        '<button class="f-start-btn" onclick="fGo()">Play Again</button>';
+    }
+
+    window.fGo = function () { reset(); state = 'playing'; document.getElementById('fMsg').innerHTML = ''; };
+    document.getElementById('fStartBtn').addEventListener('click', window.fGo);
+
+    canvas.addEventListener('mousemove', function(e) {
+      const r = canvas.getBoundingClientRect();
+      paddle.x = Math.max(paddle.w/2, Math.min(W - paddle.w/2, (e.clientX - r.left) * (W / r.width)));
+    });
+    canvas.addEventListener('touchmove', function(e) {
+      e.preventDefault();
+      const r = canvas.getBoundingClientRect();
+      paddle.x = Math.max(paddle.w/2, Math.min(W - paddle.w/2, (e.touches[0].clientX - r.left) * (W / r.width)));
+    }, { passive: false });
+
+    /* Arrow key support — declared before loop so keys is always defined */
+    var keys = {};
+    document.addEventListener('keydown', function(e) {
+      keys[e.key] = true;
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') e.preventDefault();
+    });
+    document.addEventListener('keyup', function(e) { keys[e.key] = false; });
+
+    (function loop() {
+      /* apply arrow keys every frame */
+      if (state === 'playing') {
+        var speed = 12;
+        if (keys['ArrowLeft'])  paddle.x = Math.max(paddle.w/2, paddle.x - speed);
+        if (keys['ArrowRight']) paddle.x = Math.min(W - paddle.w/2, paddle.x + speed);
+      }
+      update(); draw(); requestAnimationFrame(loop);
+    })();
+  })();
+</script>
+
+</body>
+</html>

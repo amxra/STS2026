@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Coming Soon — STS 2026</title>
+  <meta name="description" content="The Sustainability Table Discourse Series 10th Edition — October 15–16 2026, Balmoral Event Centre, Lagos.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: #0a1628; color: #fff; min-height: 100vh; }
+    a { text-decoration: none; color: inherit; }
+
+    /* NAV */
+    .cs-nav {
+      padding: 20px 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .cs-logo-pair { display: flex; align-items: center; gap: 0; }
+    .cs-logo-pair img { height: 44px; width: auto; display: block; max-width: none; }
+    .cs-logo-div { width: 1px; height: 28px; background: rgba(255,255,255,0.2); margin: 0 12px; }
+    .cs-nav-pill {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      border: 1px solid rgba(255,255,255,0.12);
+      padding: 6px 14px;
+      border-radius: 20px;
+    }
+
+    /* HERO */
+    .cs-hero {
+      padding: 80px 60px 64px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .cs-hero::before {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px; height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(20,181,123,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cs-eyebrow {
+      font-size: 11px;
+      font-weight: 600;
+      color: #14B57B;
+      text-transform: uppercase;
+      letter-spacing: 0.2em;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+    }
+    .cs-eyebrow::before, .cs-eyebrow::after { content: ''; flex: 0 0 28px; height: 1px; background: #14B57B; opacity: 0.4; }
+
+    .cs-hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2.4rem, 5vw, 3.8rem);
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+    .cs-hero h1 em { color: #14B57B; font-style: italic; }
+
+    .cs-hero-sub {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.5);
+      line-height: 1.8;
+      max-width: 540px;
+      margin: 0 auto 48px;
+    }
+
+    /* COUNTDOWN */
+    .cs-countdown {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+    .cs-cd-block { text-align: center; min-width: 72px; }
+    .cs-cd-num {
+      display: block;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1;
+    }
+    .cs-cd-unit {
+      display: block;
+      font-size: 10px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-top: 8px;
+    }
+    .cs-cd-sep {
+      font-size: 2.2rem;
+      font-weight: 300;
+      color: #14B57B;
+      margin-bottom: 20px;
+      flex-shrink: 0;
+    }
+
+    /* REGISTER */
+    .cs-register-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      background: #14B57B;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 4px;
+      border: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-bottom: 14px;
+    }
+    .cs-register-btn:hover { background: #0fa068; transform: translateY(-2px); }
+    .cs-event-meta {
+      font-size: 12px;
+      color: rgba(255,255,255,0.3);
+      letter-spacing: 0.04em;
+    }
+
+    /* DIVIDER */
+    .cs-divider {
+      width: 1px;
+      height: 60px;
+      background: rgba(255,255,255,0.08);
+      margin: 52px auto;
+    }
+
+    /* PILLARS */
+    .cs-pillars {
+      padding: 0 60px 80px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .cs-pillars-label {
+      font-size: 11px;
+      font-weight: 600;
+      color: #14B57B;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+    .cs-pillars-heading {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .cs-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .cs-pillar {
+      background: rgba(255,255,255,0.03);
+      border: 0.5px solid rgba(255,255,255,0.08);
+      border-radius: 10px;
+      padding: 24px 20px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .cs-pillar:hover { border-color: rgba(20,181,123,0.3); background: rgba(20,181,123,0.04); }
+    .cs-pillar-num {
+      font-size: 11px;
+      font-weight: 700;
+      color: #14B57B;
+      letter-spacing: 0.1em;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .cs-pillar p { font-size: 13px; color: rgba(255,255,255,0.55); line-height: 1.7; }
+
+    /* STRIP */
+    .cs-strip {
+      background: #0f1117;
+      border-top: 2px solid #046bd2;
+      border-bottom: 2px solid #046bd2;
+      padding: 16px 60px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+    .cs-strip-left { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 3px; }
+    .cs-strip-label { font-size: 10px; font-weight: 600; color: #14B57B; text-transform: uppercase; letter-spacing: 0.16em; }
+    .cs-strip-title { font-size: 13px; color: rgba(255,255,255,0.7); }
+    .cs-strip-date { font-size: 11px; color: rgba(255,255,255,0.3); margin-top: 2px; }
+    .cs-strip-contact { font-size: 12px; color: rgba(255,255,255,0.35); flex-shrink: 0; text-align: right; line-height: 1.8; }
+    .cs-strip-contact a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .cs-strip-contact a:hover { color: #14B57B; }
+
+    /* FOOTER */
+    .cs-footer {
+      padding: 22px 60px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cs-footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+    .cs-footer-link { font-size: 12px; color: #14B57B; font-weight: 500; }
+    .cs-footer-link:hover { color: #0fa068; }
+
+    @media (max-width: 768px) {
+      .cs-nav { padding: 16px 24px; }
+      .cs-hero { padding: 60px 24px 48px; }
+      .cs-pillars { padding: 0 24px 60px; }
+      .cs-pillars-grid { grid-template-columns: 1fr; }
+      .cs-strip { padding: 16px 24px; flex-direction: column; align-items: flex-start; gap: 12px; }
+      .cs-strip-contact { text-align: left; }
+      .cs-footer { padding: 20px 24px; flex-direction: column; gap: 8px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="cs-nav">
+    <div class="cs-logo-pair">
+      <a href="index.html"><img src="assets/AG-Logos/STS-Logo.png" alt="STS 2026"></a>
+      <div class="cs-logo-div"></div>
+      <a href="foundation.html"><img src="assets/AG-logos/fdn_logo.png" alt="Avant-Garde Sustainability Foundation"></a>
+    </div>
+    <div class="cs-nav-pill">Coming Soon</div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="cs-hero">
+    <div class="cs-eyebrow">STS @ 10 · 10th Edition · 2026</div>
+    <h1>Leading the <em>Sustainable</em><br>Development Agenda</h1>
+    <p class="cs-hero-sub">People, Planet, Prosperity — Africa's leading multi-stakeholder platform for sustainable development discourse returns for its landmark 10th edition.</p>
+
+    <div class="cs-countdown">
+      <div class="cs-cd-block"><span class="cs-cd-num" id="cs-days">00</span><span class="cs-cd-unit">Days</span></div>
+      <div class="cs-cd-sep">:</div>
+      <div class="cs-cd-block"><span class="cs-cd-num" id="cs-hours">00</span><span class="cs-cd-unit">Hrs</span></div>
+      <div class="cs-cd-sep">:</div>
+      <div class="cs-cd-block"><span class="cs-cd-num" id="cs-mins">00</span><span class="cs-cd-unit">Mins</span></div>
+      <div class="cs-cd-sep">:</div>
+      <div class="cs-cd-block"><span class="cs-cd-num" id="cs-secs">00</span><span class="cs-cd-unit">Secs</span></div>
+    </div>
+
+    <div>
+      <a href="https://www.eventbrite.com/e/the-sustainability-table-discourse-series-sts-10th-edition-tickets-1988312097006" target="_blank" class="cs-register-btn">
+        <svg viewBox="0 0 448 512" width="13" fill="#fff"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
+        Register for STS 2026
+      </a>
+      <div class="cs-event-meta">Oct 15 – 16, 2026 &nbsp;·&nbsp; Balmoral Event Centre, Lagos</div>
+    </div>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <!-- PILLARS -->
+  <div class="cs-pillars">
+    <div class="cs-pillars-label">What We Do</div>
+    <div class="cs-pillars-heading">Nine years of dialogue, action and impact.</div>
+    <div class="cs-pillars-grid">
+      <div class="cs-pillar"><span class="cs-pillar-num">01</span><p>Climate Action and Resilience</p></div>
+      <div class="cs-pillar"><span class="cs-pillar-num">02</span><p>Sustainable Waste Management and Circular Economy</p></div>
+      <div class="cs-pillar"><span class="cs-pillar-num">03</span><p>Food Security and Sustainable Agriculture</p></div>
+      <div class="cs-pillar"><span class="cs-pillar-num">04</span><p>Renewable Energy Transition and Access</p></div>
+      <div class="cs-pillar"><span class="cs-pillar-num">05</span><p>Eco-Innovation and Green Technology Solutions</p></div>
+      <div class="cs-pillar"><span class="cs-pillar-num">06</span><p>Unlocking Climate Financing for Scaled Impact</p></div>
+    </div>
+  </div>
+
+  <!-- CONTACT STRIP -->
+  <div class="cs-strip">
+    <div class="cs-strip-left">
+      <div class="cs-strip-label">Avant-Garde Sustainability Foundation</div>
+      <div class="cs-strip-title">Conveners of the Sustainability Table Discourse Series</div>
+      <div class="cs-strip-date">Oct 15 – 16, 2026 &nbsp;·&nbsp; Balmoral Event Centre, Lagos, Nigeria</div>
+    </div>
+    <div class="cs-strip-contact">
+      <a href="mailto:sustainabilitytable@avantgardeltd.org">sustainabilitytable@avantgardeltd.org</a><br>
+      <a href="tel:+2348133959999">+234-813-395-9999</a><br>
+      <a href="https://instagram.com/sustainability_table" target="_blank">@sustainability_table</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="cs-footer">
+    <div class="cs-footer-copy">&copy; 2026 The Sustainability Table Discourse Series. All rights reserved.</div>
+    <a href="index.html" class="cs-footer-link">View full site →</a>
+  </footer>
+
+  <script>
+    (function () {
+      function tick() {
+        var now   = new Date();
+        var start = new Date('2026-10-15T00:00:00');
+        var diff  = Math.max(0, start - now);
+        var d = Math.floor(diff / 86400000);
+        var h = Math.floor((diff % 86400000) / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        document.getElementById('cs-days').textContent  = String(d).padStart(2,'0');
+        document.getElementById('cs-hours').textContent = String(h).padStart(2,'0');
+        document.getElementById('cs-mins').textContent  = String(m).padStart(2,'0');
+        document.getElementById('cs-secs').textContent  = String(s).padStart(2,'0');
+      }
+      tick();
+      setInterval(tick, 1000);
+    })();
+  </script>
+
+</body>
+</html>
