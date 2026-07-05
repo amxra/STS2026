@@ -167,11 +167,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 .logo-pair a { display: flex; align-items: center; flex-shrink: 0; }
 .logo-pair img { height: 42px; width: auto; display: block; max-width: none; flex-shrink: 0; object-fit: contain; }
+.logo-pair a:last-child img { height: 50px; }
 .logo-divider {
   width: 1px;
   height: 30px;
   background: rgba(255,255,255,0.5) !important;
-  margin: 0 14px;
+  margin: 0 10px;
   flex-shrink: 0;
   display: block !important;
   transition: background 0.35s ease;
@@ -468,50 +469,59 @@ h1, h2, h3, h4, h5, h6 {
    SDG SECTION
    ============================================= */
 .sdg-section {
-  padding: 80px 24px;
+  padding: 100px 60px;
   background: var(--light-bg);
 }
 
 .sdg-inner {
   max-width: 1200px;
   margin: 0 auto;
-  display: flex;
-  align-items: flex-start;
-  gap: 60px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
 }
 
-.sdg-text { flex: 1; min-width: 260px; }
+.sdg-text { max-width: 420px; }
 
 .sdg-text .section-badge {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
-.sdg-text .section-badge img { height: 60px; width: auto; }
+.sdg-text .section-badge img { height: 56px; width: auto; }
 
-.sdg-text h3 {
-  font-size: 1.4rem;
-  font-weight: 600;
+.sdg-text h2, .sdg-text h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.6rem, 2.5vw, 2rem);
+  font-weight: 700;
   color: var(--navy);
-  margin-bottom: 10px;
+  line-height: 1.25;
+  margin-bottom: 16px;
 }
-.sdg-text p { color: var(--slate); line-height: 1.7; }
+
+.sdg-text p {
+  font-size: 0.95rem;
+  color: var(--slate);
+  line-height: 1.8;
+  max-width: 360px;
+}
 
 .sdg-grid {
-  flex: 2;
-  min-width: 280px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(64px, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  width: 100%;
 }
 .sdg-grid img {
   width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
   border-radius: 6px;
   transition: transform 0.2s;
 }
-.sdg-grid img:hover { transform: translateY(-6px); }
+.sdg-grid img:hover { transform: translateY(-4px); }
 
 
 /* =============================================
@@ -696,9 +706,10 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-track:hover { animation-play-state: paused; }
 
 .carousel-track img {
-  height: 50px;
+  height: 64px;
   width: auto;
   object-fit: contain;
+  mix-blend-mode: multiply;
   transition: opacity 0.2s, transform 0.2s;
   flex-shrink: 0;
 }
@@ -1638,7 +1649,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 50px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
+  /* filter: brightness(0) invert(1); */
   opacity: 0.6;
   transition: opacity 0.2s;
   flex-shrink: 0;
@@ -2520,6 +2531,8 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   border-radius: 8px;
   display: block;
+  margin: 30px;
+  opacity: 10;
 }
 
 @media (max-width: 960px) {
@@ -2658,26 +2671,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .accordion-arrow {
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 0.85rem;
+  font-size: 1.1rem;
+  font-weight: 300;
   color: var(--slate);
-  transition: transform 0.3s ease, background 0.2s, border-color 0.2s;
   flex-shrink: 0;
+  line-height: 1;
+  width: 20px;
+  text-align: center;
+  user-select: none;
+  border: none;
+  background: none;
+  border-radius: 0;
+  transition: color 0.2s;
 }
 
 .accordion-item.open .accordion-arrow {
-  transform: rotate(180deg);
-  background: var(--blue);
-  border-color: var(--blue);
-  color: #fff;
+  font-size: 0;
+  color: var(--navy);
 }
+.accordion-item.open .accordion-arrow::before {
+  content: "2";
+  font-size: 1.1rem;
+  font-weight: 300;
+  display: block;
+}
+.accordion-item.open .accordion-arrow::before { content: "−"; }
+.accordion-item.open .accordion-arrow { font-size: 0; }
+.accordion-item.open .accordion-arrow::before { font-size: 1.2rem; font-weight: 300; }
 
 /* Highlight the 2026 current edition */
 .accordion-item--current .accordion-year { color: var(--navy); }
@@ -2839,40 +2859,84 @@ h1, h2, h3, h4, h5, h6 {
   padding: 80px 60px;
 }
 
+.photo-highlights-header {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
 .photo-highlights h2 {
   font-family: 'Playfair Display', Georgia, serif;
   font-size: clamp(1.8rem, 3vw, 2.4rem);
   font-weight: 700;
   color: var(--navy);
-  margin-bottom: 40px;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
 }
+
+.photo-view-all {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--green);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+.photo-view-all:hover { border-color: var(--green); color: var(--green); }
 
 .photo-grid {
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  gap: 12px;
 }
+
+.photo-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--light-bg);
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.photo-item:hover img { transform: scale(1.04); }
+
+.photo-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.22);
+  transition: opacity 0.3s ease;
+}
+
+.photo-item:hover .photo-dim { opacity: 0.5; }
 
 .photo-placeholder {
   width: 100%;
   height: 220px;
   background: var(--light-bg);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--slate);
   font-size: 0.9rem;
-  transition: background 0.2s;
 }
-
-.photo-placeholder:hover { background: var(--border); }
 
 @media (max-width: 768px) {
   .photo-highlights { padding: 60px 30px; }

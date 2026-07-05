@@ -10,6 +10,141 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="about.css">
+  <style>
+    /* ── Fixed transparent → solid nav ── */
+    #page { padding-top: 80px; }
+
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 999;
+      height: 80px;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+      box-shadow: none;
+      transition: background 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .site-header.nav-scrolled {
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      border-bottom: 1px solid #D1D5DB;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    /* ── Header inner: logo | links | cta ── */
+    .header-inner {
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── Logo pair — fixed left slot ── */
+    .logo-pair {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      min-width: 0;
+    }
+
+    .logo-pair a {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .logo-pair img {
+      height: 42px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+
+    .logo-divider {
+      width: 1px;
+      height: 30px;
+      background: rgba(255,255,255,0.4);
+      margin: 0 14px;
+      flex-shrink: 0;
+      display: block;
+      transition: background 0.35s ease;
+    }
+
+    .site-header.nav-scrolled .logo-divider { background: #D1D5DB; }
+
+    /* ── Nav — centred ── */
+    .main-nav {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    /* ALL nav links white at top — override style.css completely */
+    .site-header:not(.nav-scrolled) .main-nav > a,
+    .site-header:not(.nav-scrolled) .main-nav .has-dropdown > a {
+      color: #ffffff !important;
+    }
+
+    .site-header:not(.nav-scrolled) .main-nav > a:hover,
+    .site-header:not(.nav-scrolled) .main-nav .has-dropdown > a:hover {
+      color: rgba(255,255,255,0.75) !important;
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* Solid state — dark links */
+    .site-header.nav-scrolled .main-nav > a,
+    .site-header.nav-scrolled .main-nav .has-dropdown > a {
+      color: #334155 !important;
+    }
+
+    .site-header.nav-scrolled .main-nav > a:hover,
+    .site-header.nav-scrolled .main-nav .has-dropdown > a:hover,
+    .site-header.nav-scrolled .main-nav > a.active {
+      color: #1e293b !important;
+    }
+
+    /* Dropdown always dark regardless of header state */
+    .dropdown a { color: #334155 !important; }
+    .dropdown a:hover { color: #1e293b !important; background: var(--light-bg); }
+
+    /* CTA always green — both states */
+    .main-nav .nav-cta,
+    .site-header:not(.nav-scrolled) .main-nav .nav-cta,
+    .site-header.nav-scrolled .main-nav .nav-cta {
+      background: #14B57B !important;
+      color: #fff !important;
+      padding: 9px 18px !important;
+    }
+    .main-nav .nav-cta:hover { background: #0fa068 !important; color: #fff !important; }
+
+    /* CTA wrapper — right slot */
+    .nav-cta-wrap {
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Hamburger — white on transparent */
+    .hamburger span {
+      background: rgba(255,255,255,0.9);
+      transition: background 0.35s ease;
+    }
+    .site-header.nav-scrolled .hamburger span { background: #1e293b; }
+
+    /* Mobile nav always opens solid */
+    .mobile-nav { top: 80px; }
+  </style>
 </head>
 <body>
 <div id="page">
@@ -25,7 +160,7 @@
         </a>
         <div class="logo-divider"></div>
         <a href="index.html">
-          <img src="assets/AG-logos/fdn_logo.png" alt="Avant-Garde Sustainability Foundation">
+          <img src="assets/AG-Logos/AG-Logo.png" alt="Avant-Garde Sustainability Foundation">
         </a>
       </div>
 
@@ -50,8 +185,13 @@
             <a href="sts-2016.html" role="menuitem">2016 — Inaugural</a>
           </div>
         </div>
-        <a href="publications.html">Publications</a>
-        <a href="press.html">Press &amp; Media</a>
+        <div class="has-dropdown">
+          <a href="#" aria-haspopup="true">More ▾</a>
+          <div class="dropdown" role="menu">
+            <a href="publications.html" role="menuitem">Publications</a>
+            <a href="press.html" role="menuitem">Press &amp; Media</a>
+          </div>
+        </div>
         <div class="nav-cta-wrap">
           <a href="contact.html" class="nav-cta">
             <svg viewBox="0 0 448 512" aria-hidden="true" focusable="false" style="width:13px;fill:#fff"><path d="M190.5 66.9l22.2-22.2c9.4-9.4 24.6-9.4 33.9 0L441 239c9.4 9.4 9.4 24.6 0 33.9L246.6 467.3c-9.4 9.4-24.6 9.4-33.9 0l-22.2-22.2c-9.5-9.5-9.3-25 .4-34.3L311.4 296H24c-13.3 0-24-10.7-24-24v-32c0-13.3 10.7-24 24-24h287.4L190.9 101.2c-9.8-9.3-10-24.8-.4-34.3z"/></svg>
@@ -59,13 +199,14 @@
           </a>
         </div>
       </nav>
+
       <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-nav">
         <span></span><span></span><span></span>
       </button>
     </div>
 
     <!-- MOBILE NAV -->
-        <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="speakers.html">STS Speakers</a>
@@ -134,8 +275,7 @@
         <p>As STS prepares for its 10th edition in 2026, the platform remains committed to highlighting African priorities, amplifying emerging voices, and supporting the bold transitions needed for a sustainable, inclusive, and resilient future.</p>
       </div>
       <div class="about-text-right">
-        <img src="assets/Images/sts-delegates.JPG" alt="STS event — delegates in discussion" loading="lazy">
-        <img src="assets/Images/sts-atendees.JPG" alt="STS event — delegates in discussion" loading="lazy">
+        <img src="https://amiradediran.midnights.world/wp-content/uploads/2026/05/QP21596-731x1024.webp" alt="STS event — delegates in discussion" loading="lazy">
       </div>
     </div>
   </section>
@@ -167,7 +307,7 @@
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-year">2016</span>
-        <span class="accordion-arrow" aria-hidden="true">+</span>
+        <span class="accordion-arrow" aria-hidden="true"><img src="assets/icons/down-arrow.png" alt=""></span>
         <span class="accordion-theme">The Green Table — Opportunities in a Green Economy</span>
       </button>
       <div class="accordion-body">
@@ -178,7 +318,7 @@
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-year">2018</span>
-        <span class="accordion-arrow" aria-hidden="true">+</span>
+        <span class="accordion-arrow" aria-hidden="true"><img src="assets/icons/down-arrow.png" alt=""></span>
         <span class="accordion-theme">Green Economy — Panacea for the Future of Sustainable Development</span>
       </button>
       <div class="accordion-body">
@@ -189,7 +329,7 @@
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-year">2019</span>
-        <span class="accordion-arrow" aria-hidden="true">+</span>
+        <span class="accordion-arrow" aria-hidden="true"><img src="assets/icons/down-arrow.png" alt=""></span>
         <span class="accordion-theme">The Future of Sustainable Development in Nigeria: Achieving Economic Growth with a Low-Carbon Trajectory in a Circular Economy</span>
       </button>
       <div class="accordion-body">
@@ -200,7 +340,7 @@
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-year">2020</span>
-        <span class="accordion-arrow" aria-hidden="true">+</span>
+        <span class="accordion-arrow" aria-hidden="true"><img src="assets/icons/down-arrow.png" alt=""></span>
         <span class="accordion-theme">Bridging the Digital Divide: Leveraging Broadband Technology to Achieve the SDGs</span>
       </button>
       <div class="accordion-body">
@@ -211,7 +351,7 @@
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-year">2021</span>
-        <span class="accordion-arrow" aria-hidden="true">+</span>
+        <span class="accordion-arrow" aria-hidden="true"><img src="assets/icons/down-arrow.png" alt=""></span>
         <span class="accordion-theme">New Pathways to Achieve the SDGs in a Circular Economy</span>
       </button>
       <div class="accordion-body">
@@ -222,7 +362,7 @@
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-year">2022</span>
-        <span class="accordion-arrow" aria-hidden="true">+</span>
+        <span class="accordion-arrow" aria-hidden="true"><img src="assets/icons/down-arrow.png" alt=""></span>
         <span class="accordion-theme">Achieving SDGs in the 4th Industrial Revolution: Opportunities for Growth in a Circular Economy</span>
       </button>
       <div class="accordion-body">
@@ -233,7 +373,7 @@
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-year">2023</span>
-        <span class="accordion-arrow" aria-hidden="true">+</span>
+        <span class="accordion-arrow" aria-hidden="true"><img src="assets/icons/down-arrow.png" alt=""></span>
         <span class="accordion-theme">Sustainability to Prosperity: Mobilising Finance for the SDGs</span>
       </button>
       <div class="accordion-body">
@@ -244,7 +384,7 @@
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-year">2024</span>
-        <span class="accordion-arrow" aria-hidden="true">+</span>
+        <span class="accordion-arrow" aria-hidden="true"><img src="assets/icons/down-arrow.png" alt=""></span>
         <span class="accordion-theme">Navigating Challenges, Leveraging Opportunities in a Reforming Economy to Achieve the SDGs</span>
       </button>
       <div class="accordion-body">
@@ -255,7 +395,7 @@
     <div class="accordion-item">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-year">2025</span>
-        <span class="accordion-arrow" aria-hidden="true">+</span>
+        <span class="accordion-arrow" aria-hidden="true"><img src="assets/icons/down-arrow.png" alt=""></span>
         <span class="accordion-theme">Sustainability in Action: Scaling Impact for a Thriving Future to Achieve the SDGs</span>
       </button>
       <div class="accordion-body">
@@ -266,7 +406,7 @@
     <div class="accordion-item accordion-item--current">
       <button class="accordion-trigger" aria-expanded="false">
         <span class="accordion-year">2026</span>
-        <span class="accordion-arrow" aria-hidden="true">+</span>
+        <span class="accordion-arrow" aria-hidden="true"><img src="assets/icons/down-arrow.png" alt=""></span>
         <span class="accordion-theme">Leading the Sustainable Development Agenda: People, Planet, and Prosperity</span>
       </button>
       <div class="accordion-body">
@@ -304,17 +444,14 @@
 
   <!-- PHOTO HIGHLIGHTS -->
   <section class="photo-highlights reveal">
-    <div class="photo-highlights-header">
-      <h2>Photo Highlights</h2>
-      <a href="https://drive.google.com/drive/u/1/folders/1cnWsNv4AgVorkKbzcO_X89SI-HNsrw-h" target="_blank" class="photo-view-all">View all photos →</a>
-    </div>
+    <h2>Photo Highlights</h2>
     <div class="photo-grid">
-      <div class="photo-item"><img src="assets/Images/photo-1.jpg" alt="STS event photo" loading="lazy"><div class="photo-dim"></div></div>
-      <div class="photo-item"><img src="assets/Images/photo-2.jpg" alt="STS event photo" loading="lazy"><div class="photo-dim"></div></div>
-      <div class="photo-item"><img src="assets/Images/photo-3.jpg" alt="STS event photo" loading="lazy"><div class="photo-dim"></div></div>
-      <div class="photo-item"><img src="assets/Images/photo-4.jpg" alt="STS event photo" loading="lazy"><div class="photo-dim"></div></div>
-      <div class="photo-item"><img src="assets/Images/photo-5.jpg" alt="STS event photo" loading="lazy"><div class="photo-dim"></div></div>
-      <div class="photo-item"><img src="assets/Images/photo-6.jpg" alt="STS event photo" loading="lazy"><div class="photo-dim"></div></div>
+      <div class="photo-placeholder">[ Photo 1 ]</div>
+      <div class="photo-placeholder">[ Photo 2 ]</div>
+      <div class="photo-placeholder">[ Photo 3 ]</div>
+      <div class="photo-placeholder">[ Photo 4 ]</div>
+      <div class="photo-placeholder">[ Photo 5 ]</div>
+      <div class="photo-placeholder">[ Photo 6 ]</div>
     </div>
   </section>
 
