@@ -5252,6 +5252,19 @@ h1, h2, h3, h4, h5, h6 {
      border-color: var(--blue);
    }
    
+   /* Avatar — photo or initials */
+   .sp-avatar--photo {
+     background: var(--border) !important;
+     overflow: hidden;
+   }
+
+   .sp-avatar--photo img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     display: block;
+   }
+
    /* Avatar — coloured initials */
    .sp-avatar {
      width: 100%;
