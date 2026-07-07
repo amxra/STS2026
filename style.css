@@ -339,11 +339,15 @@ h1, h2, h3, h4, h5, h6 {
 .pt-hero,
 .sp-hero,
 .pe-hero,
-.ed-hero,
 .pub-hero,
 .pr-hero,
 .ct-hero {
   padding-top: 120px;
+}
+
+/* Edition hero sits below ed-nav-bar, not below fixed nav directly */
+.ed-hero {
+  padding-top: 80px;
 }
 
 .hero-section {
@@ -5648,28 +5652,97 @@ h1, h2, h3, h4, h5, h6 {
 
    /* ---- BACK LINK ---- */
    .ed-back {
-     background: #fff;
-     padding: 16px 60px;
-     border-bottom: 1px solid var(--border);
+     background: var(--navy);
+     padding: 12px 60px;
+     border-bottom: 2px solid var(--green);
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
    }
    .ed-back a {
-     font-size: 0.85rem;
-     color: var(--blue);
+     font-size: 0.8rem;
+     font-weight: 500;
+     color: rgba(255,255,255,0.6);
      text-decoration: none;
      display: inline-flex;
      align-items: center;
      gap: 6px;
-     transition: gap 0.2s;
+     text-transform: uppercase;
+     letter-spacing: 0.06em;
+     transition: color 0.2s, gap 0.2s;
    }
-   .ed-back a:hover { gap: 10px; }
+   .ed-back a:hover { color: var(--green); gap: 10px; }
+   .ed-back-center {
+     font-size: 11px;
+     font-weight: 500;
+     color: rgba(255,255,255,0.3);
+     text-transform: uppercase;
+     letter-spacing: 0.12em;
+   }
    
    @media (max-width: 768px) { .ed-back { padding: 14px 24px; } }
    
    
+
+   /* ---- EDITION PREV/NEXT NAV BAR ---- */
+   .ed-nav-bar {
+     background: var(--navy);
+     padding: 13px 60px;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     border-bottom: 2px solid var(--green);
+   }
+
+   /* Sticky ed-nav-bar is pinned 80px down from the very first frame,
+      leaving nothing behind the transparent fixed header except blank
+      page background. This fills that gap with the same navy so the
+      header tints navy (matching the dark hero look) instead of grey. */
+   .ed-nav-bar::before {
+     content: "";
+     position: fixed;
+     top: 0;
+     left: 0;
+     right: 0;
+     height: 80px;
+     background: var(--navy);
+     z-index: 9998;
+   }
+
+   .ed-nav-back,
+   .ed-nav-next {
+     font-size: 0.78rem;
+     font-weight: 600;
+     color: rgba(255,255,255,0.55);
+     text-decoration: none;
+     display: inline-flex;
+     align-items: center;
+     gap: 6px;
+     text-transform: uppercase;
+     letter-spacing: 0.08em;
+     transition: color 0.2s, gap 0.2s;
+     padding: 4px 0;
+   }
+   .ed-nav-back:hover { color: var(--green); gap: 10px; }
+   .ed-nav-next:hover { color: var(--green); gap: 10px; }
+
+   .ed-nav-center {
+     font-size: 11px;
+     font-weight: 500;
+     color: rgba(255,255,255,0.3);
+     text-transform: uppercase;
+     letter-spacing: 0.14em;
+   }
+
+   @media (max-width: 768px) {
+     .ed-nav-bar { padding: 12px 20px; }
+     .ed-nav-center { display: none; }
+   }
+
    /* ---- HERO ---- */
    .ed-hero {
-     min-height: 380px;
-     padding: 56px 60px 48px;
+     min-height: 420px;
+     padding: 80px 80px 56px;
      display: flex;
      flex-direction: column;
      justify-content: flex-end;
@@ -5919,9 +5992,11 @@ h1, h2, h3, h4, h5, h6 {
      border-radius: 10px;
      overflow: hidden;
      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-     opacity: 0;
-     transform: translateY(12px);
+     opacity: 1;
+     transform: translateY(0);
    }
+   /* Cards no longer depend on JS to become visible — if the reveal
+      script runs, .visible just reinforces the same end state. */
    .ed-sp-card.visible {
      opacity: 1;
      transform: translateY(0);
@@ -6006,11 +6081,47 @@ h1, h2, h3, h4, h5, h6 {
      .ed-gallery-grid { grid-template-columns: repeat(2, 1fr); }
      .ed-gallery-item.tall { aspect-ratio: 4/3; grid-row: span 1; }
    }
+
+   /* ---- SPONSORS GRID (logo tiles) ---- */
+   .ed-sponsors-grid {
+     display: grid;
+     grid-template-columns: repeat(5, 1fr);
+     gap: 14px;
+   }
+   .ed-sponsor-cell {
+     background: #fff;
+     border-radius: 10px;
+     height: 92px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 16px;
+     transition: box-shadow 0.2s;
+   }
+   .ed-sponsor-cell:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+   .ed-sponsor-cell img {
+     max-width: 100%;
+     max-height: 100%;
+     width: auto;
+     height: auto;
+     object-fit: contain;
+   }
+   .ed-sponsor-name {
+     font-size: 0.82rem;
+     font-weight: 600;
+     color: var(--slate);
+     text-align: center;
+     line-height: 1.3;
+   }
+   @media (max-width: 1100px) { .ed-sponsors-grid { grid-template-columns: repeat(4, 1fr); } }
+   @media (max-width: 768px)  { .ed-sponsors-grid { grid-template-columns: repeat(3, 1fr); } }
+   @media (max-width: 500px)  { .ed-sponsors-grid { grid-template-columns: repeat(2, 1fr); } }
    
    
    /* ---- NAVIGATION BETWEEN EDITIONS ---- */
-   .ed-nav {
+   .ed-edition-nav {
      background: var(--navy);
+     border-top: 2px solid var(--green);
      padding: 32px 60px;
      display: flex;
      justify-content: space-between;
@@ -6018,38 +6129,39 @@ h1, h2, h3, h4, h5, h6 {
      gap: 24px;
    }
    
-   .ed-nav-link {
+   .ed-edition-nav-link {
      display: flex;
      flex-direction: column;
      gap: 4px;
      text-decoration: none;
      max-width: 280px;
    }
-   .ed-nav-link.next { align-items: flex-end; text-align: right; }
+   .ed-edition-nav-link.right { align-items: flex-end; text-align: right; margin-left: auto; }
    
-   .ed-nav-direction {
+   .ed-edition-nav-dir {
      font-size: 10px;
      font-weight: 500;
      color: rgba(255,255,255,0.4);
      text-transform: uppercase;
      letter-spacing: 0.12em;
    }
-   .ed-nav-year {
+   .ed-edition-nav-year {
      font-family: 'Playfair Display', Georgia, serif;
      font-size: 1.4rem;
      font-weight: 700;
      color: #fff;
    }
-   .ed-nav-theme {
+   .ed-edition-nav-theme {
      font-size: 0.8rem;
      color: rgba(255,255,255,0.5);
      line-height: 1.4;
    }
-   .ed-nav-link:hover .ed-nav-year { color: var(--green); }
+   .ed-edition-nav-link:hover .ed-edition-nav-year { color: var(--green); }
+   .ed-edition-nav-link:hover .ed-edition-nav-dir { color: var(--green); }
    
    @media (max-width: 640px) {
-     .ed-nav { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
-     .ed-nav-link.next { align-items: flex-start; text-align: left; }
+     .ed-edition-nav { padding: 28px 20px; flex-direction: column; align-items: flex-start; }
+     .ed-edition-nav-link.right { align-items: flex-start; text-align: left; margin-left: 0; }
    }
 
    /* =============================================
@@ -7370,3 +7482,43 @@ h1, h2, h3, h4, h5, h6 {
 }
 /* Border-bottom only on hero strips in deal-room and partners */
 #heroStrip { border-bottom: 3px solid var(--blue); }
+
+/* =============================================
+   EDITION PAGES — KEY TAKEAWAY (Option A)
+   ============================================= */
+
+.ed-key-takeaway {
+  margin: 28px 0;
+  padding-left: 28px;
+  border-left: 3px solid var(--green);
+}
+
+.ed-kt-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.ed-kt-label::after {
+  content: '';
+  flex: 0 0 20px;
+  height: 1px;
+  background: var(--green);
+  opacity: 0.4;
+}
+
+.ed-kt-text {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.05rem;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.75;
+  margin: 0;
+  text-align: justify;
+}
