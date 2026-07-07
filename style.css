@@ -1052,6 +1052,20 @@ h1, h2, h3, h4, h5, h6 {
   .main-nav   { display: none; }
   .hamburger  { display: flex; }
 
+  .logo-pair {
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    gap: 4px;
+  }
+  .logo-pair img { height: 26px; }
+  .logo-pair a:last-child img { height: 26px; }
+  .logo-divider {
+    width: 24px;
+    height: 1px;
+    margin: 0;
+  }
+
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
 
   .sdg-inner   { flex-direction: column; gap: 32px; }
