@@ -1055,13 +1055,18 @@ h1, h2, h3, h4, h5, h6 {
   .logo-pair {
     flex-direction: column;
     align-items: flex-start;
+    justify-content: center;
     width: auto;
-    gap: 4px;
+    gap: 3px;
   }
-  .logo-pair img { height: 26px; }
-  .logo-pair a:last-child img { height: 26px; }
+  .logo-pair img {
+    height: 20px;
+    margin: 0;
+  }
+  .logo-pair a:last-child img { height: 20px; }
+  .logo-pair a { line-height: 0; }
   .logo-divider {
-    width: 24px;
+    width: 20px;
     height: 1px;
     margin: 0;
   }
