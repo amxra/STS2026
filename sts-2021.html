@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="assets/AG-Logos/STS-Logo.png">
 </head>
 <body>
 <div id="page">
@@ -27,6 +28,7 @@
         <div class="has-dropdown">
           <a href="past-events.html" aria-haspopup="true" class="active">Past Events ▾</a>
           <div class="dropdown dropdown--scroll" role="menu">
+            <a href="sts-2026.html" role="menuitem">2026 — 10th Edition</a>
             <a href="sts-2025.html" role="menuitem">2025 — 9th Edition</a>
             <a href="sts-2024.html" role="menuitem">2024 — 8th Edition</a>
             <a href="sts-2023.html" role="menuitem">2023 — 7th Edition</a>
@@ -60,6 +62,7 @@
       <div class="mobile-submenu">
         <button class="mobile-submenu-title" aria-expanded="false">Past Events ▾</button>
         <div class="mobile-submenu-links" hidden>
+          <a href="sts-2026.html">2026 — 10th Edition</a>
           <a href="sts-2025.html">2025 — 9th Edition</a>
           <a href="sts-2024.html">2024 — 8th Edition</a>
           <a href="sts-2023.html">2023 — 7th Edition</a>
@@ -187,80 +190,20 @@
     <div class="ed-section-inner">
       <span class="ed-section-label">Faculty</span>
       <h2 class="ed-section-heading">Edition Speakers</h2>
-      <div class="ed-speakers-grid">
-        <div class="ed-sp-card">
-          <div class="ed-sp-avatar ed-av-0">AO</div>
-          <div class="ed-sp-info">
-            <div class="ed-sp-name">Akintunde Oyebode</div>
-            <div class='ed-sp-title'>Commissioner of Finance & Economic Development</div>
-            <div class='ed-sp-org'>Ekiti State</div>
-          </div>
-        </div>
-        <div class="ed-sp-card">
-          <div class="ed-sp-avatar ed-av-1">CA</div>
-          <div class="ed-sp-info">
-            <div class="ed-sp-name">Cecilia Akintomide</div>
-            <div class='ed-sp-title'>Chairperson</div>
-            <div class='ed-sp-org'>Sanitation & Hygiene Fund Africa</div>
-          </div>
-        </div>
-        <div class="ed-sp-card">
-          <div class="ed-sp-avatar ed-av-2">TA</div>
-          <div class="ed-sp-info">
-            <div class="ed-sp-name">Teju Abisoye</div>
-            <div class='ed-sp-title'>Executive Secretary</div>
-            <div class='ed-sp-org'>LSETF</div>
-          </div>
-        </div>
-        <div class="ed-sp-card">
-          <div class="ed-sp-avatar ed-av-3">AA</div>
-          <div class="ed-sp-info">
-            <div class="ed-sp-name">Adenike Adeyemi</div>
-            <div class='ed-sp-title'>Executive Director</div>
-            <div class='ed-sp-org'>Fate Foundation</div>
-          </div>
-        </div>
-        <div class="ed-sp-card">
-          <div class="ed-sp-avatar ed-av-4">BA</div>
-          <div class="ed-sp-info">
-            <div class="ed-sp-name">Babatomiwa Adesida</div>
-            <div class='ed-sp-title'>Head, External & Community Relations</div>
-            <div class='ed-sp-org'>Sahara Group</div>
-          </div>
-        </div>
-        <div class="ed-sp-card">
-          <div class="ed-sp-avatar ed-av-5">OO</div>
-          <div class="ed-sp-info">
-            <div class="ed-sp-name">Oladimeji Oresanya</div>
-            <div class='ed-sp-title'>Special Adviser (Environment)</div>
-            <div class='ed-sp-org'>Ogun State</div>
-          </div>
-        </div>
-        <div class="ed-sp-card">
-          <div class="ed-sp-avatar ed-av-0">TF</div>
-          <div class="ed-sp-info">
-            <div class="ed-sp-name">Tolulope Falola</div>
-            <div class='ed-sp-title'>Managing Director</div>
-            <div class='ed-sp-org'>Energy First Ltd</div>
-          </div>
-        </div>
-        <div class="ed-sp-card">
-          <div class="ed-sp-avatar ed-av-1">TA</div>
-          <div class="ed-sp-info">
-            <div class="ed-sp-name">Temitayo Ade-Peters</div>
-            <div class='ed-sp-title'>Founder</div>
-            <div class='ed-sp-org'>WeforGood International</div>
-          </div>
-        </div>
-        <div class="ed-sp-card">
-          <div class="ed-sp-avatar ed-av-2">IO</div>
-          <div class="ed-sp-info">
-            <div class="ed-sp-name">Idris Olorunnimbe</div>
-            <div class='ed-sp-title'>Chief Executive</div>
-            <div class='ed-sp-org'>Temple Management Company</div>
-          </div>
-        </div>
-      </div>
+      <div class="ed-speakers-grid" id="edSpeakersGrid"></div>
+      <script>
+var EDITION_SPEAKERS = [
+  { name: 'Adenike Adeyemi', title: 'Executive Director', org: 'Fate Foundation', photo: 'assets/speakers/AdenineAdeyemi.jpg' },
+  { name: 'Akintunde Oyebode', title: 'Commissioner of Finance & Economic Development', org: 'Ekiti State', photo: 'assets/speakers/AkintundeOyebode.jpg' },
+  { name: 'Babatomiwa Adesida', title: 'Head, External & Community Relations', org: 'Sahara Group', photo: 'assets/speakers/BabatomiwaAdesida.jpg' },
+  { name: 'Cecilia Akintomide', title: 'Chairperson', org: 'Sanitation & Hygiene Fund Africa', photo: 'assets/speakers/CecillaAkintomide.jpg' },
+  { name: 'Idris Olorunnimbe', title: 'Chief Executive', org: 'Temple Management Company', photo: 'assets/speakers/IdrisOlorunnimbe.jpg' },
+  { name: 'Oladimeji Oresanya', title: 'Special Adviser (Environment)', org: 'Ogun State', photo: 'assets/speakers/OladimejiOresanya.jpg' },
+  { name: 'Teju Abisoye', title: 'Executive Secretary', org: 'LSETF', photo: 'assets/speakers/TejuAbisoye.jpg' },
+  { name: 'Temitayo Ade-Peters', title: 'Founder', org: 'WeforGood International', photo: 'assets/speakers/TemitayoAde-Peters.jpg' },
+  { name: 'Tolulope Falola', title: 'Managing Director', org: 'Energy First Ltd', photo: 'assets/speakers/TolulopeFalola.jpg' }
+];
+      </script>
     </div>
   </div>
 
