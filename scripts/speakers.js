@@ -39,7 +39,7 @@ var SPEAKERS = [
   { name: 'David Kahale', title: 'CEO', org: 'Panta', photo: 'assets/speakers/DavidKahale.jpg' },
   { name: 'Desmond Majekodunmi', title: 'Chairman', org: 'LUFASI', photo: 'assets/speakers/DesmondMajekodunmi.jpg' },
   { name: 'Deyemi Okanlawon', title: 'Actor & Event Compere', org: '', photo: 'assets/speakers/deyemiOkanlawon.jpg' },
-  { name: 'Dolapo Fasawe', title: 'Mandate Secretary for Health & Environment', org: 'FCT Administration', photo: 'assets/speakers/DollopFasawe.jpg' },
+  { name: 'Dolapo Fasawe', title: 'Mandate Secretary for Health & Environment', org: 'FCT Administration', photo: 'assets/speakers/DolapoFasawe.jpg' },
   { name: 'Doyin Ogunye', title: 'Founder', org: 'RESWAYE', photo: 'assets/speakers/DoyinOgunye.jpg' },
   { name: 'Ella Togun', title: 'Engagement Manager', org: 'McKinsey & Company', photo: 'assets/speakers/EllaTough.jpg' },
   { name: 'Etemore Glover', title: 'CEO', org: 'Impact Investors Foundation', photo: 'assets/speakers/EtemoreGlover.jpg' },
