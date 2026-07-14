@@ -93,7 +93,7 @@ var SPEAKERS = [
   { name: 'Onyeka Akumah', title: 'Founder & CEO', org: 'Farmcrowdy', photo: 'assets/speakers/OnyekaAkumah.jpg' },
   { name: 'Safiya Sule', title: 'Managing Consultant', org: 'Capgemini Invent', photo: 'assets/speakers/SafiyaSule.jpg' },
   { name: 'Segun Adebayo', title: 'Executive Secretary', org: 'NALDA', photo: 'assets/speakers/SegunAdebayo.jpg' },
-  { name: 'Solape Hammond', title: 'Co-Founder & CEO', org: 'Impact Hub Lagos', photo: 'assets/speakers/SolapeHammod.jpg' },
+  { name: 'Solape Hammod', title: 'Co-Founder & CEO', org: 'Impact Hub Lagos', photo: 'assets/speakers/SolapeHammod.jpg' },
   { name: 'Teju Abisoye', title: 'Vice President (Africa Region)', org: 'United Way', photo: 'assets/speakers/TejuAbisoye.jpg' },
   { name: 'Temitayo Ade-Peters', title: 'Community Engagement', org: 'City of Toronto', photo: 'assets/speakers/TemitayoAde-Peters.jpg' },
   { name: 'Temitope Arasi', title: 'Head, Regulatory Reporting & Tax', org: 'Unity Bank Plc', photo: 'assets/speakers/TemitopeArasi.jpg' },
