@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>STS 2022 — STS</title>
+  <link rel="icon" type="image/png" href="assets/AG-Logos/STS-Logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
       <div class="logo-pair">
         <a href="index.html"><img src="assets/AG-Logos/STS-Logo.png" alt="STS 2026"></a>
         <div class="logo-divider"></div>
-        <a href="foundation.html"><img src="assets/AG-logos/fdn_logo.png" alt="Avant-Garde Sustainability Foundation"></a>
+        <a href="https://avantgardesustainability.com/"><img src="assets/AG-logos/fdn_logo.png" alt="Avant-Garde Sustainability Foundation"></a>
       </div>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
@@ -247,6 +248,153 @@ var EDITION_SPEAKERS = [
           <span class="ed-sponsor-name" style="display:none">Government of Ekiti State, Nigeria</span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTS GALLERY -->
+  <div class="ed-section">
+    <div class="ed-section-inner">
+      <span class="ed-section-label">Gallery</span>
+      <h2 class="ed-section-heading">Event Highlights</h2>
+      <div class="ed-gallery-grid" id="edGalleryGrid"></div>
+      <script>
+var EDITION_GALLERY = [
+  'assets/edition-photos/sts-2022/_QP22661.jpg',
+  'assets/edition-photos/sts-2022/_QP15529.jpg',
+  'assets/edition-photos/sts-2022/_QP22814.jpg',
+  'assets/edition-photos/sts-2022/_QP15978.jpg',
+  'assets/edition-photos/sts-2022/_QP15491.jpg',
+  'assets/edition-photos/sts-2022/_QP16068.jpg',
+  'assets/edition-photos/sts-2022/_QP23113.jpg',
+  'assets/edition-photos/sts-2022/_QP16285.jpg',
+  'assets/edition-photos/sts-2022/IMG_4366.jpg',
+  'assets/edition-photos/sts-2022/_QP22635.jpg',
+  'assets/edition-photos/sts-2022/_QP15519.jpg',
+  'assets/edition-photos/sts-2022/IMG_4357.jpg',
+  'assets/edition-photos/sts-2022/IMG_4360.jpg',
+  'assets/edition-photos/sts-2022/IMG_4367.jpg',
+  'assets/edition-photos/sts-2022/_QP16392.jpg',
+  'assets/edition-photos/sts-2022/_QP23006.jpg',
+  'assets/edition-photos/sts-2022/_QP15588.jpg',
+  'assets/edition-photos/sts-2022/_QP15733%20(1).jpg',
+  'assets/edition-photos/sts-2022/_QP15501.jpg',
+  'assets/edition-photos/sts-2022/_QP14985.jpg',
+  'assets/edition-photos/sts-2022/_QP15826.jpg',
+  'assets/edition-photos/sts-2022/_QP15848.jpg',
+  'assets/edition-photos/sts-2022/IMG_4363.jpg',
+  'assets/edition-photos/sts-2022/_QP15885.jpg',
+  'assets/edition-photos/sts-2022/_QP15663.jpg',
+  'assets/edition-photos/sts-2022/_QP14998.jpg',
+  'assets/edition-photos/sts-2022/_QP15778.jpg',
+  'assets/edition-photos/sts-2022/_QP15905.jpg',
+  'assets/edition-photos/sts-2022/942b5819-05d0-4086-848d-58a1f5154535(1).jpg',
+  'assets/edition-photos/sts-2022/IMG_4368.jpg',
+  'assets/edition-photos/sts-2022/_QP22959.jpg',
+  'assets/edition-photos/sts-2022/_QP15660.jpg',
+  'assets/edition-photos/sts-2022/_QP15322.jpg',
+  'assets/edition-photos/sts-2022/IMG_4358.jpg',
+  'assets/edition-photos/sts-2022/_QP15937.jpg',
+  'assets/edition-photos/sts-2022/_QP23144.jpg',
+  'assets/edition-photos/sts-2022/IMG_4373.jpg',
+  'assets/edition-photos/sts-2022/IMG_4356.jpg',
+  'assets/edition-photos/sts-2022/_QP15661.jpg',
+  'assets/edition-photos/sts-2022/_QP15280.jpg',
+  'assets/edition-photos/sts-2022/_QP15691.jpg',
+  'assets/edition-photos/sts-2022/_QP15737.jpg',
+  'assets/edition-photos/sts-2022/_QP15960.jpg',
+  'assets/edition-photos/sts-2022/_QP15697.jpg',
+  'assets/edition-photos/sts-2022/_QP15425.jpg',
+  'assets/edition-photos/sts-2022/IMG_4374.jpg',
+  'assets/edition-photos/sts-2022/_QP15449%20(1).jpg',
+  'assets/edition-photos/sts-2022/_QP15793.jpg',
+  'assets/edition-photos/sts-2022/IMG_4351.jpg',
+  'assets/edition-photos/sts-2022/IMG_4353.jpg',
+  'assets/edition-photos/sts-2022/_QP15710.jpg',
+  'assets/edition-photos/sts-2022/_QP15617.jpg',
+  'assets/edition-photos/sts-2022/IMG_4378.jpg',
+  'assets/edition-photos/sts-2022/_QP15879.jpg',
+  'assets/edition-photos/sts-2022/IMG_4352.jpg',
+  'assets/edition-photos/sts-2022/IMG_4377.jpg',
+  'assets/edition-photos/sts-2022/_QP22952.jpg',
+  'assets/edition-photos/sts-2022/_QP22687.jpg',
+  'assets/edition-photos/sts-2022/_QP15419.jpg',
+  'assets/edition-photos/sts-2022/_QP15656.jpg',
+  'assets/edition-photos/sts-2022/_QP15422.jpg',
+  'assets/edition-photos/sts-2022/IMG_4361.jpg',
+  'assets/edition-photos/sts-2022/IMG_4372.jpg',
+  'assets/edition-photos/sts-2022/_QP16124.jpg',
+  'assets/edition-photos/sts-2022/_QP16375.jpg',
+  'assets/edition-photos/sts-2022/_QP15388.jpg',
+  'assets/edition-photos/sts-2022/IMG_4355.jpg',
+  'assets/edition-photos/sts-2022/_QP15177.jpg',
+  'assets/edition-photos/sts-2022/_QP15553.jpg',
+  'assets/edition-photos/sts-2022/_QP15365.jpg',
+  'assets/edition-photos/sts-2022/_QP23150.jpg',
+  'assets/edition-photos/sts-2022/_QP22788.jpg',
+  'assets/edition-photos/sts-2022/_QP15386.jpg',
+  'assets/edition-photos/sts-2022/_QP15404%20(1).jpg',
+  'assets/edition-photos/sts-2022/_QP22804.jpg',
+  'assets/edition-photos/sts-2022/_QP15446.jpg',
+  'assets/edition-photos/sts-2022/_QP15749.jpg',
+  'assets/edition-photos/sts-2022/_QP15257.jpg',
+  'assets/edition-photos/sts-2022/_QP15567.jpg',
+  'assets/edition-photos/sts-2022/_QP15641.jpg',
+  'assets/edition-photos/sts-2022/IMG_4364.jpg',
+  'assets/edition-photos/sts-2022/_QP15931.jpg',
+  'assets/edition-photos/sts-2022/_QP15524.jpg',
+  'assets/edition-photos/sts-2022/_QP15725.jpg',
+  'assets/edition-photos/sts-2022/_QP15557.jpg',
+  'assets/edition-photos/sts-2022/_QP22892.jpg',
+  'assets/edition-photos/sts-2022/_QP15557(1).jpg',
+  'assets/edition-photos/sts-2022/IMG_4370.jpg',
+  'assets/edition-photos/sts-2022/_QP15719.jpg',
+  'assets/edition-photos/sts-2022/_QP15383.jpg',
+  'assets/edition-photos/sts-2022/_QP22784.jpg',
+  'assets/edition-photos/sts-2022/_QP15432.jpg',
+  'assets/edition-photos/sts-2022/d503b435-fb63-4cb0-96e4-41ba84a036f3.jpg',
+  'assets/edition-photos/sts-2022/_QP15394.jpg',
+  'assets/edition-photos/sts-2022/_QP15557%20(1).jpg',
+  'assets/edition-photos/sts-2022/IMG_4375.jpg',
+  'assets/edition-photos/sts-2022/_QP15512%20(1).jpg',
+  'assets/edition-photos/sts-2022/_QP15836.jpg',
+  'assets/edition-photos/sts-2022/_QP15903.jpg',
+  'assets/edition-photos/sts-2022/_QP16160.jpg',
+  'assets/edition-photos/sts-2022/_QP23142.jpg',
+  'assets/edition-photos/sts-2022/_QP15853.jpg',
+  'assets/edition-photos/sts-2022/942b5819-05d0-4086-848d-58a1f5154535.jpg',
+  'assets/edition-photos/sts-2022/_QP22945.jpg',
+  'assets/edition-photos/sts-2022/IMG_4349.jpg',
+  'assets/edition-photos/sts-2022/_QP15693.jpg',
+  'assets/edition-photos/sts-2022/IMG_4371.jpg',
+  'assets/edition-photos/sts-2022/_QP15482.jpg',
+  'assets/edition-photos/sts-2022/_QP22713.jpg',
+  'assets/edition-photos/sts-2022/_QP15647.jpg',
+  'assets/edition-photos/sts-2022/_QP23153.jpg',
+  'assets/edition-photos/sts-2022/_QP15019.jpg',
+  'assets/edition-photos/sts-2022/IMG_4362.jpg',
+  'assets/edition-photos/sts-2022/IMG_4369.jpg',
+  'assets/edition-photos/sts-2022/IMG_4365.jpg',
+  'assets/edition-photos/sts-2022/_QP22625.jpg',
+  'assets/edition-photos/sts-2022/_QP15786.jpg',
+  'assets/edition-photos/sts-2022/_QP15184.jpg',
+  'assets/edition-photos/sts-2022/IMG_4359.jpg',
+  'assets/edition-photos/sts-2022/_QP22773.jpg',
+  'assets/edition-photos/sts-2022/_QP15542.jpg',
+  'assets/edition-photos/sts-2022/_QP15451.jpg',
+  'assets/edition-photos/sts-2022/_QP15671.jpg',
+  'assets/edition-photos/sts-2022/_QP15537.jpg',
+  'assets/edition-photos/sts-2022/_QP15428.jpg',
+  'assets/edition-photos/sts-2022/_QP22938.jpg',
+  'assets/edition-photos/sts-2022/IMG_4350.jpg',
+  'assets/edition-photos/sts-2022/IMG_4376.jpg',
+  'assets/edition-photos/sts-2022/_QP15800.jpg',
+  'assets/edition-photos/sts-2022/_QP15465.jpg',
+  'assets/edition-photos/sts-2022/IMG_4354.jpg',
+  'assets/edition-photos/sts-2022/_QP15506.jpg',
+  'assets/edition-photos/sts-2022/_QP23189.jpg',
+  'assets/edition-photos/sts-2022/_QP15756.jpg'
+];
+      </script>
     </div>
   </div>
 

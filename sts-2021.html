@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>STS 2021 — STS</title>
+  <link rel="icon" type="image/png" href="assets/AG-Logos/STS-Logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
       <div class="logo-pair">
         <a href="index.html"><img src="assets/AG-Logos/STS-Logo.png" alt="STS 2026"></a>
         <div class="logo-divider"></div>
-        <a href="foundation.html"><img src="assets/AG-logos/fdn_logo.png" alt="Avant-Garde Sustainability Foundation"></a>
+        <a href="https://avantgardesustainability.com/"><img src="assets/AG-logos/fdn_logo.png" alt="Avant-Garde Sustainability Foundation"></a>
       </div>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
@@ -233,6 +234,85 @@ var EDITION_SPEAKERS = [
           <span class="ed-sponsor-name" style="display:none">Government of Ekiti State, Nigeria</span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTS GALLERY -->
+  <div class="ed-section">
+    <div class="ed-section-inner">
+      <span class="ed-section-label">Gallery</span>
+      <h2 class="ed-section-heading">Event Highlights</h2>
+      <div class="ed-gallery-grid" id="edGalleryGrid"></div>
+      <script>
+var EDITION_GALLERY = [
+  'assets/edition-photos/sts-2021/_QP31079.jpg',
+  'assets/edition-photos/sts-2021/_DMS4121.jpg',
+  'assets/edition-photos/sts-2021/IMG_4343.jpg',
+  'assets/edition-photos/sts-2021/_DMS4105.jpg',
+  'assets/edition-photos/sts-2021/_DMS3852.jpg',
+  'assets/edition-photos/sts-2021/_DMS3990.jpg',
+  'assets/edition-photos/sts-2021/_DMS4015(1).jpg',
+  'assets/edition-photos/sts-2021/_DMS4318.jpg',
+  'assets/edition-photos/sts-2021/IMG_4345.jpg',
+  'assets/edition-photos/sts-2021/IMG_4336.jpg',
+  'assets/edition-photos/sts-2021/_DMS4132.jpg',
+  'assets/edition-photos/sts-2021/_DMS4018.jpg',
+  'assets/edition-photos/sts-2021/IMG_4337.jpg',
+  'assets/edition-photos/sts-2021/_DMS4158.jpg',
+  'assets/edition-photos/sts-2021/_QP31125.jpg',
+  'assets/edition-photos/sts-2021/IMG_4335.jpg',
+  'assets/edition-photos/sts-2021/IMG_4344.jpg',
+  'assets/edition-photos/sts-2021/_DMS4137.jpg',
+  'assets/edition-photos/sts-2021/_DMS4004.jpg',
+  'assets/edition-photos/sts-2021/_QP31148.jpg',
+  'assets/edition-photos/sts-2021/_QP31015.jpg',
+  'assets/edition-photos/sts-2021/_DMS3724.jpg',
+  'assets/edition-photos/sts-2021/_DMS4012.jpg',
+  'assets/edition-photos/sts-2021/IMG_4338.jpg',
+  'assets/edition-photos/sts-2021/_DMS4206.jpg',
+  'assets/edition-photos/sts-2021/_DMS3732.jpg',
+  'assets/edition-photos/sts-2021/IMG_4347.jpg',
+  'assets/edition-photos/sts-2021/_QP31033.jpg',
+  'assets/edition-photos/sts-2021/_DMS4019.jpg',
+  'assets/edition-photos/sts-2021/IMG_4332.jpg',
+  'assets/edition-photos/sts-2021/IMG_4346.jpg',
+  'assets/edition-photos/sts-2021/_DMS4180.jpg',
+  'assets/edition-photos/sts-2021/IMG_4333.jpg',
+  'assets/edition-photos/sts-2021/_DMS4118.jpg',
+  'assets/edition-photos/sts-2021/_DMS4133.jpg',
+  'assets/edition-photos/sts-2021/_DMS3951.jpg',
+  'assets/edition-photos/sts-2021/_DMS3730.jpg',
+  'assets/edition-photos/sts-2021/_DMS3933.jpg',
+  'assets/edition-photos/sts-2021/IMG_4334.jpg',
+  'assets/edition-photos/sts-2021/_DMS4015%20(1).jpg',
+  'assets/edition-photos/sts-2021/_DMS3784.jpg',
+  'assets/edition-photos/sts-2021/IMG_4341.jpg',
+  'assets/edition-photos/sts-2021/_QP31096.jpg',
+  'assets/edition-photos/sts-2021/_QP31030.jpg',
+  'assets/edition-photos/sts-2021/_QP31130%20(1).jpg',
+  'assets/edition-photos/sts-2021/_DMS3916.jpg',
+  'assets/edition-photos/sts-2021/_DMS4115.jpg',
+  'assets/edition-photos/sts-2021/_QP31035.jpg',
+  'assets/edition-photos/sts-2021/_QP31032.jpg',
+  'assets/edition-photos/sts-2021/_DMS4357.jpg',
+  'assets/edition-photos/sts-2021/IMG_4331.jpg',
+  'assets/edition-photos/sts-2021/IMG_4340.jpg',
+  'assets/edition-photos/sts-2021/_DMS4314.jpg',
+  'assets/edition-photos/sts-2021/_QP31018.jpg',
+  'assets/edition-photos/sts-2021/IMG_4329.jpg',
+  'assets/edition-photos/sts-2021/_DMS4076.jpg',
+  'assets/edition-photos/sts-2021/_DMS4015.jpg',
+  'assets/edition-photos/sts-2021/_DMS4166.jpg',
+  'assets/edition-photos/sts-2021/IMG_4342.jpg',
+  'assets/edition-photos/sts-2021/_QP31027.jpg',
+  'assets/edition-photos/sts-2021/_DMS4172.jpg',
+  'assets/edition-photos/sts-2021/IMG_4330.jpg',
+  'assets/edition-photos/sts-2021/_DMS4096.jpg',
+  'assets/edition-photos/sts-2021/_QP31050.jpg',
+  'assets/edition-photos/sts-2021/IMG_4339.jpg',
+  'assets/edition-photos/sts-2021/_DMS3729.jpg'
+];
+      </script>
     </div>
   </div>
 

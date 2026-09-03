@@ -6089,6 +6089,7 @@ h1, h2, h3, h4, h5, h6 {
    }
    
    .ed-gallery-item {
+     position: relative;
      border-radius: 8px;
      overflow: hidden;
      background: var(--border);
@@ -6098,14 +6099,130 @@ h1, h2, h3, h4, h5, h6 {
      justify-content: center;
      color: var(--slate);
      font-size: 0.85rem;
+     cursor: pointer;
+     border: none;
+     padding: 0;
+     width: 100%;
    }
    
    .ed-gallery-item.tall { aspect-ratio: 3/4; grid-row: span 2; }
-   .ed-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
+   .ed-gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.25s ease; }
+   .ed-gallery-item:hover img { transform: scale(1.04); }
+
+   .ed-gallery-fallback {
+     position: absolute;
+     inset: 0;
+     display: none;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 6px;
+     background: #eceae4;
+     color: var(--slate);
+   }
+   .ed-gallery-fallback svg { width: 24px; height: 24px; fill: var(--slate); }
+   .ed-gallery-fallback span { font-size: 11px; letter-spacing: 0.02em; }
+
+   .ed-gallery-more {
+     position: absolute;
+     inset: 0;
+     background: rgba(30, 41, 59, 0.62);
+     color: #fff;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     font-size: 1rem;
+     font-weight: 600;
+     letter-spacing: 0.01em;
+     pointer-events: none;
+   }
    
    @media (max-width: 640px) {
      .ed-gallery-grid { grid-template-columns: repeat(2, 1fr); }
      .ed-gallery-item.tall { aspect-ratio: 4/3; grid-row: span 1; }
+   }
+
+   /* ---- LIGHTBOX ---- */
+   .ed-lightbox {
+     position: fixed;
+     inset: 0;
+     background: rgba(30, 41, 59, 0.92);
+     z-index: 999;
+     display: none;
+     align-items: center;
+     justify-content: center;
+     padding: 40px;
+   }
+   .ed-lightbox.is-open { display: flex; }
+   .ed-lightbox-figure {
+     position: relative;
+     max-width: 900px;
+     max-height: 84vh;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+   }
+   .ed-lightbox-figure img {
+     max-width: 100%;
+     max-height: 84vh;
+     border-radius: 6px;
+     display: block;
+     object-fit: contain;
+   }
+   .ed-lightbox-fallback {
+     display: none;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+     color: #cfcdc6;
+     width: 480px;
+     max-width: 80vw;
+     aspect-ratio: 4/3;
+     background: var(--navy);
+     border-radius: 6px;
+   }
+   .ed-lightbox-fallback svg { width: 40px; height: 40px; fill: #cfcdc6; }
+   .ed-lightbox-fallback span { font-size: 13px; }
+   .ed-lightbox-close,
+   .ed-lightbox-prev,
+   .ed-lightbox-next {
+     position: fixed;
+     background: rgba(255,255,255,0.08);
+     border: none;
+     color: #fff;
+     width: 44px;
+     height: 44px;
+     border-radius: 50%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     cursor: pointer;
+   }
+   .ed-lightbox-close:hover,
+   .ed-lightbox-prev:hover,
+   .ed-lightbox-next:hover { background: var(--green); }
+   .ed-lightbox-close { top: 24px; right: 24px; }
+   .ed-lightbox-prev { left: 24px; top: 50%; transform: translateY(-50%); }
+   .ed-lightbox-next { right: 24px; top: 50%; transform: translateY(-50%); }
+   .ed-lightbox-close svg,
+   .ed-lightbox-prev svg,
+   .ed-lightbox-next svg { width: 18px; height: 18px; fill: #fff; }
+   .ed-lightbox-counter {
+     position: fixed;
+     bottom: 24px;
+     left: 50%;
+     transform: translateX(-50%);
+     color: rgba(255,255,255,0.7);
+     font-size: 12px;
+     letter-spacing: 0.05em;
+   }
+   @media (max-width: 640px) {
+     .ed-lightbox { padding: 16px; }
+     .ed-lightbox-prev { left: 8px; }
+     .ed-lightbox-next { right: 8px; }
+     .ed-lightbox-close { top: 12px; right: 12px; }
    }
 
    /* ---- SPONSORS GRID (logo tiles) ---- */
@@ -7546,3 +7663,264 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0;
   text-align: justify;
 }
+
+
+/* =========================================================
+   MOBILE LAYOUT FIXES
+   ========================================================= */
+
+   @media (max-width: 960px) {
+
+    /* =====================================================
+       1. MOBILE HEADER — LOGOS SIDE BY SIDE + MENU ON RIGHT
+       ===================================================== */
+  
+    .header-inner {
+      width: 100%;
+      padding: 0 18px;
+      justify-content: space-between;
+    }
+  
+    .logo-pair {
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: flex-start;
+      width: auto !important;
+      max-width: calc(100% - 56px);
+      gap: 0 !important;
+      min-width: 0;
+    }
+  
+    .logo-pair a {
+      min-width: 0;
+      flex-shrink: 1;
+    }
+  
+    .logo-pair img {
+      height: 32px !important;
+      width: auto !important;
+      max-width: 118px !important;
+      object-fit: contain;
+    }
+  
+    .logo-pair a:last-child img {
+      height: 36px !important;
+      max-width: 128px !important;
+    }
+  
+    .logo-divider {
+      width: 1px !important;
+      height: 28px !important;
+      margin: 0 8px !important;
+      flex: 0 0 1px;
+    }
+  
+    .hamburger {
+      margin-left: auto;
+      flex-shrink: 0;
+    }
+  
+  
+    /* =====================================================
+       2. SDG SECTION — TEXT ON TOP, ICONS UNDERNEATH
+       ===================================================== */
+  
+    .sdg-inner {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+      align-items: start;
+    }
+  
+    .sdg-text {
+      max-width: 100%;
+    }
+  
+    .sdg-text p {
+      max-width: 100%;
+    }
+  
+  
+    /* =====================================================
+       3. HOMEPAGE ABOUT STS — TEXT FIRST, IMAGE SECOND
+       ===================================================== */
+  
+    .about-section .about-inner {
+      flex-direction: column !important;
+      align-items: stretch;
+      gap: 36px;
+    }
+  
+    .about-section .about-text,
+    .about-section .about-img {
+      width: 100%;
+      min-width: 0;
+    }
+  
+    .about-section .about-img img {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+  
+    /* =====================================================
+       4. ABOUT STS PAGE — STOP IMAGES SPILLING RIGHT
+       ===================================================== */
+  
+    .about-text-inner {
+      width: 100%;
+      max-width: 100%;
+      min-width: 0;
+    }
+  
+    .about-text-left,
+    .about-text-right {
+      min-width: 0;
+      max-width: 100%;
+    }
+  
+    .about-text-right {
+      width: 100% !important;
+      flex: none !important;
+    }
+  
+    .about-text-right img {
+      display: block;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto;
+      margin: 0 0 20px 0 !important;
+    }
+  
+  
+    /* =====================================================
+       5. INNER PAGE HEROES — CLEAR FIXED NAVIGATION
+       ===================================================== */
+  
+    .sp-hero,
+    .pt-hero,
+    .dr-hero,
+    .pub-hero,
+    .pr-hero,
+    .pe-hero,
+    .ct-hero {
+      padding-top: 120px !important;
+    }
+  
+  }
+  
+  
+  /* =========================================================
+     STANDARD MOBILE
+     ========================================================= */
+  
+  @media (max-width: 640px) {
+  
+    /* Stop any page from becoming wider than the phone */
+    html,
+    body,
+    #page {
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  
+  
+    /* HEADER */
+  
+    .header-inner {
+      height: 80px;
+      padding: 0 14px;
+    }
+  
+    .logo-pair {
+      max-width: calc(100% - 50px);
+    }
+  
+    .logo-pair img {
+      height: 36px !important;
+      max-width: 125px !important;
+    }
+    
+    .logo-pair a:last-child img {
+      height: 38px !important;
+      max-width: 130px !important;
+    }
+  
+    .logo-divider {
+      height: 24px !important;
+      margin: 0 6px !important;
+    }
+  
+  
+    /* SDG ICONS */
+  
+    .sdg-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+      gap: 7px !important;
+    }
+  
+  
+    /* ABOUT PAGE WIDTH PROTECTION */
+  
+    .about-text,
+    .about-text-inner,
+    .about-text-left,
+    .about-text-right {
+      box-sizing: border-box;
+    }
+  
+  
+    /* PAGE HERO SPACING */
+  
+    .sp-hero,
+    .pt-hero,
+    .dr-hero,
+    .pub-hero,
+    .pr-hero,
+    .pe-hero,
+    .ct-hero {
+      padding-top: 112px !important;
+    }
+  
+  }
+  
+  
+  /* =========================================================
+     VERY SMALL PHONES
+     ========================================================= */
+  
+  @media (max-width: 400px) {
+  
+    /*
+      Your old CSS changes the header to 64px here.
+      Keep it at 80px so the menu and page spacing remain
+      consistent across mobile sizes.
+    */
+  
+    .site-header,
+    .header-inner {
+      height: 80px !important;
+    }
+  
+    .mobile-nav {
+      top: 80px !important;
+    }
+  
+  
+    /* Slightly smaller logos for very narrow screens */
+  
+    .logo-pair img {
+      height: 25px !important;
+      max-width: 88px !important;
+    }
+  
+    .logo-pair a:last-child img {
+      height: 29px !important;
+      max-width: 98px !important;
+    }
+  
+    .logo-divider {
+      height: 22px !important;
+      margin: 0 5px !important;
+    }
+  
+  }

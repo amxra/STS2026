@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>STS 2019 — STS</title>
+  <link rel="icon" type="image/png" href="assets/AG-Logos/STS-Logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
       <div class="logo-pair">
         <a href="index.html"><img src="assets/AG-Logos/STS-Logo.png" alt="STS 2026"></a>
         <div class="logo-divider"></div>
-        <a href="foundation.html"><img src="assets/AG-logos/fdn_logo.png" alt="Avant-Garde Sustainability Foundation"></a>
+        <a href="https://avantgardesustainability.com/"><img src="assets/AG-logos/fdn_logo.png" alt="Avant-Garde Sustainability Foundation"></a>
       </div>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
@@ -237,6 +238,120 @@ var EDITION_SPEAKERS = [
           <span class="ed-sponsor-name" style="display:none">Golborne Road Advisory (GRA)</span>
         </div>
       </div>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTS GALLERY -->
+  <div class="ed-section">
+    <div class="ed-section-inner">
+      <span class="ed-section-label">Gallery</span>
+      <h2 class="ed-section-heading">Event Highlights</h2>
+      <div class="ed-gallery-grid" id="edGalleryGrid"></div>
+      <script>
+var EDITION_GALLERY = [
+  'assets/edition-photos/sts-2019/DSC_7085.jpg',
+  'assets/edition-photos/sts-2019/DSC_7200.jpg',
+  'assets/edition-photos/sts-2019/DSC_7202.jpg',
+  'assets/edition-photos/sts-2019/DSC_6646.jpg',
+  'assets/edition-photos/sts-2019/DSC_7115.jpg',
+  'assets/edition-photos/sts-2019/DSC_7039.jpg',
+  'assets/edition-photos/sts-2019/EVS_0388.jpg',
+  'assets/edition-photos/sts-2019/DSC_6620.jpg',
+  'assets/edition-photos/sts-2019/DSC_7146.jpg',
+  'assets/edition-photos/sts-2019/DSC_6653.jpg',
+  'assets/edition-photos/sts-2019/DSC_6402.jpg',
+  'assets/edition-photos/sts-2019/DSC_6395.jpg',
+  'assets/edition-photos/sts-2019/DSC_7369.jpg',
+  'assets/edition-photos/sts-2019/DSC_6816.jpg',
+  'assets/edition-photos/sts-2019/DSC_7484.jpg',
+  'assets/edition-photos/sts-2019/DSC_7121.jpg',
+  'assets/edition-photos/sts-2019/DSC_7479.jpg',
+  'assets/edition-photos/sts-2019/DSC_7131.jpg',
+  'assets/edition-photos/sts-2019/DSC_7425.jpg',
+  'assets/edition-photos/sts-2019/DSC_7088.jpg',
+  'assets/edition-photos/sts-2019/DSC_7010.jpg',
+  'assets/edition-photos/sts-2019/DSC_6492.jpg',
+  'assets/edition-photos/sts-2019/DSC_6693.jpg',
+  'assets/edition-photos/sts-2019/DSC_6818.jpg',
+  'assets/edition-photos/sts-2019/DSC_6629.jpg',
+  'assets/edition-photos/sts-2019/DSC_6759.jpg',
+  'assets/edition-photos/sts-2019/DSC_7124.jpg',
+  'assets/edition-photos/sts-2019/DSC_6496.jpg',
+  'assets/edition-photos/sts-2019/DSC_7590.jpg',
+  'assets/edition-photos/sts-2019/DSC_7045.jpg',
+  'assets/edition-photos/sts-2019/DSC_7294.jpg',
+  'assets/edition-photos/sts-2019/DSC_6681.jpg',
+  'assets/edition-photos/sts-2019/DSC_6711.jpg',
+  'assets/edition-photos/sts-2019/DSC_6727.jpg',
+  'assets/edition-photos/sts-2019/DSC_6781.jpg',
+  'assets/edition-photos/sts-2019/DSC_7095.jpg',
+  'assets/edition-photos/sts-2019/DSC_7227.jpg',
+  'assets/edition-photos/sts-2019/DSC_6365.jpg',
+  'assets/edition-photos/sts-2019/DSC_7152.jpg',
+  'assets/edition-photos/sts-2019/DSC_6192.jpg',
+  'assets/edition-photos/sts-2019/DSC_7123.jpg',
+  'assets/edition-photos/sts-2019/DSC_6785.jpg',
+  'assets/edition-photos/sts-2019/DSC_7490.jpg',
+  'assets/edition-photos/sts-2019/DSC_6360.jpg',
+  'assets/edition-photos/sts-2019/DSC_6882.jpg',
+  'assets/edition-photos/sts-2019/DSC_7512.jpg',
+  'assets/edition-photos/sts-2019/DSC_6703.jpg',
+  'assets/edition-photos/sts-2019/DSC_6838.jpg',
+  'assets/edition-photos/sts-2019/DSC_6796.jpg',
+  'assets/edition-photos/sts-2019/DSC_7189.jpg',
+  'assets/edition-photos/sts-2019/DSC_6352.jpg',
+  'assets/edition-photos/sts-2019/DSC_7381.jpg',
+  'assets/edition-photos/sts-2019/DSC_6373.jpg',
+  'assets/edition-photos/sts-2019/DSC_7048.jpg',
+  'assets/edition-photos/sts-2019/DSC_7103.jpg',
+  'assets/edition-photos/sts-2019/DSC_7429.jpg',
+  'assets/edition-photos/sts-2019/DSC_6773.jpg',
+  'assets/edition-photos/sts-2019/EVS_0168.jpg',
+  'assets/edition-photos/sts-2019/DSC_6699.jpg',
+  'assets/edition-photos/sts-2019/DSC_7537.jpg',
+  'assets/edition-photos/sts-2019/DSC_6925.jpg',
+  'assets/edition-photos/sts-2019/DSC_6425.jpg',
+  'assets/edition-photos/sts-2019/DSC_6581.jpg',
+  'assets/edition-photos/sts-2019/DSC_6617.jpg',
+  'assets/edition-photos/sts-2019/DSC_6802.jpg',
+  'assets/edition-photos/sts-2019/DSC_6841.jpg',
+  'assets/edition-photos/sts-2019/DSC_6926.jpg',
+  'assets/edition-photos/sts-2019/DSC_7111.jpg',
+  'assets/edition-photos/sts-2019/DSC_6636.jpg',
+  'assets/edition-photos/sts-2019/DSC_7222.jpg',
+  'assets/edition-photos/sts-2019/DSC_6868.jpg',
+  'assets/edition-photos/sts-2019/DSC_7341.jpg',
+  'assets/edition-photos/sts-2019/DSC_7192.jpg',
+  'assets/edition-photos/sts-2019/DSC_7293.jpg',
+  'assets/edition-photos/sts-2019/DSC_6540.jpg',
+  'assets/edition-photos/sts-2019/DSC_6913.jpg',
+  'assets/edition-photos/sts-2019/DSC_7518.jpg',
+  'assets/edition-photos/sts-2019/DSC_6964.jpg',
+  'assets/edition-photos/sts-2019/DSC_6777.jpg',
+  'assets/edition-photos/sts-2019/DSC_6325.jpg',
+  'assets/edition-photos/sts-2019/DSC_6436.jpg',
+  'assets/edition-photos/sts-2019/DSC_6833.jpg',
+  'assets/edition-photos/sts-2019/DSC_7486.jpg',
+  'assets/edition-photos/sts-2019/DSC_6731.jpg',
+  'assets/edition-photos/sts-2019/DSC_7308.jpg',
+  'assets/edition-photos/sts-2019/DSC_7032.jpg',
+  'assets/edition-photos/sts-2019/DSC_7062.jpg',
+  'assets/edition-photos/sts-2019/DSC_6556.jpg',
+  'assets/edition-photos/sts-2019/DSC_6937.jpg',
+  'assets/edition-photos/sts-2019/DSC_6553.jpg',
+  'assets/edition-photos/sts-2019/DSC_7139.jpg',
+  'assets/edition-photos/sts-2019/DSC_7207.jpg',
+  'assets/edition-photos/sts-2019/DSC_7393.jpg',
+  'assets/edition-photos/sts-2019/DSC_7353.jpg',
+  'assets/edition-photos/sts-2019/EVS_0403.jpg',
+  'assets/edition-photos/sts-2019/DSC_6704.jpg',
+  'assets/edition-photos/sts-2019/DSC_7004.jpg',
+  'assets/edition-photos/sts-2019/DSC_7436.jpg',
+  'assets/edition-photos/sts-2019/DSC_6765.jpg',
+  'assets/edition-photos/sts-2019/DSC_6571.jpg',
+  'assets/edition-photos/sts-2019/DSC_6752.jpg'
+];
+      </script>
     </div>
   </div>
 

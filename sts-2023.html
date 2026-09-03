@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>STS 2023 — STS</title>
+  <link rel="icon" type="image/png" href="assets/AG-Logos/STS-Logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
       <div class="logo-pair">
         <a href="index.html"><img src="assets/AG-Logos/STS-Logo.png" alt="STS 2026"></a>
         <div class="logo-divider"></div>
-        <a href="foundation.html"><img src="assets/AG-logos/fdn_logo.png" alt="Avant-Garde Sustainability Foundation"></a>
+        <a href="https://avantgardesustainability.com/"><img src="assets/AG-logos/fdn_logo.png" alt="Avant-Garde Sustainability Foundation"></a>
       </div>
       <nav class="main-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
@@ -243,6 +244,134 @@ var EDITION_SPEAKERS = [
             <span class="ed-sponsor-name" style="display:none">LSETF</span>
           </div>
       </div>
+    </div>
+  </div>
+
+  <!-- HIGHLIGHTS GALLERY -->
+  <div class="ed-section">
+    <div class="ed-section-inner">
+      <span class="ed-section-label">Gallery</span>
+      <h2 class="ed-section-heading">Event Highlights</h2>
+      <div class="ed-gallery-grid" id="edGalleryGrid"></div>
+      <script>
+var EDITION_GALLERY = [
+  'assets/edition-photos/sts-2023/_QP19574.jpg',
+  'assets/edition-photos/sts-2023/_QP22755.jpg',
+  'assets/edition-photos/sts-2023/_QP22981.jpg',
+  'assets/edition-photos/sts-2023/IMG_4386.jpg',
+  'assets/edition-photos/sts-2023/IMG_4381.jpg',
+  'assets/edition-photos/sts-2023/_QP22737.jpg',
+  'assets/edition-photos/sts-2023/_QP19560.jpg',
+  'assets/edition-photos/sts-2023/IMG_4403.jpg',
+  'assets/edition-photos/sts-2023/IMG_4379.jpg',
+  'assets/edition-photos/sts-2023/IMG_4387.jpg',
+  'assets/edition-photos/sts-2023/_QP19647.jpg',
+  'assets/edition-photos/sts-2023/_QP19788.jpg',
+  'assets/edition-photos/sts-2023/_QP22558.jpg',
+  'assets/edition-photos/sts-2023/IMG_4397.jpg',
+  'assets/edition-photos/sts-2023/_QP19631.jpg',
+  'assets/edition-photos/sts-2023/IMG_4389.jpg',
+  'assets/edition-photos/sts-2023/IMG_4384.jpg',
+  'assets/edition-photos/sts-2023/_QP22816.jpg',
+  'assets/edition-photos/sts-2023/_QP19810.jpg',
+  'assets/edition-photos/sts-2023/IMG_4380.jpg',
+  'assets/edition-photos/sts-2023/_QP19925.jpg',
+  'assets/edition-photos/sts-2023/_QP19834.jpg',
+  'assets/edition-photos/sts-2023/_QP19792.jpg',
+  'assets/edition-photos/sts-2023/IMG_4390.jpg',
+  'assets/edition-photos/sts-2023/_QP19466.jpg',
+  'assets/edition-photos/sts-2023/IMG_4408.jpg',
+  'assets/edition-photos/sts-2023/_QP19378.jpg',
+  'assets/edition-photos/sts-2023/IMG_4411.jpg',
+  'assets/edition-photos/sts-2023/_QP19581.jpg',
+  'assets/edition-photos/sts-2023/IMG_4405.jpg',
+  'assets/edition-photos/sts-2023/_QP22668.jpg',
+  'assets/edition-photos/sts-2023/_QP23364.jpg',
+  'assets/edition-photos/sts-2023/_QP22985.jpg',
+  'assets/edition-photos/sts-2023/_QP22885.jpg',
+  'assets/edition-photos/sts-2023/_QP23418.jpg',
+  'assets/edition-photos/sts-2023/_QP22963.jpg',
+  'assets/edition-photos/sts-2023/IMG_4382.jpg',
+  'assets/edition-photos/sts-2023/IMG_4406.jpg',
+  'assets/edition-photos/sts-2023/_QP19377.jpg',
+  'assets/edition-photos/sts-2023/IMG_4391.jpg',
+  'assets/edition-photos/sts-2023/_QP22814.jpg',
+  'assets/edition-photos/sts-2023/_QP19844.jpg',
+  'assets/edition-photos/sts-2023/_QP19673.jpg',
+  'assets/edition-photos/sts-2023/_QP19457.jpg',
+  'assets/edition-photos/sts-2023/_QP19703.jpg',
+  'assets/edition-photos/sts-2023/_QP19973.jpg',
+  'assets/edition-photos/sts-2023/_QP19848.jpg',
+  'assets/edition-photos/sts-2023/_QP22936.jpg',
+  'assets/edition-photos/sts-2023/_QP22750.jpg',
+  'assets/edition-photos/sts-2023/_QP23082.jpg',
+  'assets/edition-photos/sts-2023/_QP19743.jpg',
+  'assets/edition-photos/sts-2023/_QP22722.jpg',
+  'assets/edition-photos/sts-2023/_QP22194.jpg',
+  'assets/edition-photos/sts-2023/_QP19698.jpg',
+  'assets/edition-photos/sts-2023/IMG_4385.jpg',
+  'assets/edition-photos/sts-2023/_QP19569.jpg',
+  'assets/edition-photos/sts-2023/IMG_4399.jpg',
+  'assets/edition-photos/sts-2023/_QP19846.jpg',
+  'assets/edition-photos/sts-2023/_QP23345.jpg',
+  'assets/edition-photos/sts-2023/IMG_4409.jpg',
+  'assets/edition-photos/sts-2023/_QP22911.jpg',
+  'assets/edition-photos/sts-2023/_QP19281.jpg',
+  'assets/edition-photos/sts-2023/_QP19806.jpg',
+  'assets/edition-photos/sts-2023/_QP22666.jpg',
+  'assets/edition-photos/sts-2023/_QP22951.jpg',
+  'assets/edition-photos/sts-2023/_QP22723.jpg',
+  'assets/edition-photos/sts-2023/_QP19382.jpg',
+  'assets/edition-photos/sts-2023/_QP19633.jpg',
+  'assets/edition-photos/sts-2023/IMG_4410.jpg',
+  'assets/edition-photos/sts-2023/_QP19801.jpg',
+  'assets/edition-photos/sts-2023/_QP23061.jpg',
+  'assets/edition-photos/sts-2023/IMG_4404.jpg',
+  'assets/edition-photos/sts-2023/IMG_4402.jpg',
+  'assets/edition-photos/sts-2023/_QP23272.jpg',
+  'assets/edition-photos/sts-2023/IMG_4395.jpg',
+  'assets/edition-photos/sts-2023/_QP22922.jpg',
+  'assets/edition-photos/sts-2023/_QP19734.jpg',
+  'assets/edition-photos/sts-2023/IMG_4396.jpg',
+  'assets/edition-photos/sts-2023/_QP19727.jpg',
+  'assets/edition-photos/sts-2023/_QP19500.jpg',
+  'assets/edition-photos/sts-2023/IMG_4394.jpg',
+  'assets/edition-photos/sts-2023/_QP19816.jpg',
+  'assets/edition-photos/sts-2023/_QP22799.jpg',
+  'assets/edition-photos/sts-2023/IMG_4400.jpg',
+  'assets/edition-photos/sts-2023/_QP19976.jpg',
+  'assets/edition-photos/sts-2023/_QP23390.jpg',
+  'assets/edition-photos/sts-2023/_QP19794.jpg',
+  'assets/edition-photos/sts-2023/IMG_4393.jpg',
+  'assets/edition-photos/sts-2023/IMG_4401.jpg',
+  'assets/edition-photos/sts-2023/_QP22982.jpg',
+  'assets/edition-photos/sts-2023/_QP19588.jpg',
+  'assets/edition-photos/sts-2023/_QP19731.jpg',
+  'assets/edition-photos/sts-2023/_QP22713.jpg',
+  'assets/edition-photos/sts-2023/_QP23107.jpg',
+  'assets/edition-photos/sts-2023/IMG_4407.jpg',
+  'assets/edition-photos/sts-2023/_QP19571.jpg',
+  'assets/edition-photos/sts-2023/_QP19280.jpg',
+  'assets/edition-photos/sts-2023/_QP22718.jpg',
+  'assets/edition-photos/sts-2023/IMG_4388.jpg',
+  'assets/edition-photos/sts-2023/_QP22938.jpg',
+  'assets/edition-photos/sts-2023/_QP19624.jpg',
+  'assets/edition-photos/sts-2023/IMG_4383.jpg',
+  'assets/edition-photos/sts-2023/_QP19837.jpg',
+  'assets/edition-photos/sts-2023/IMG_4392.jpg',
+  'assets/edition-photos/sts-2023/IMG_4398.jpg',
+  'assets/edition-photos/sts-2023/_QP19380.jpg',
+  'assets/edition-photos/sts-2023/_QP23338.jpg',
+  'assets/edition-photos/sts-2023/_QP19841.jpg',
+  'assets/edition-photos/sts-2023/_QP19798.jpg',
+  'assets/edition-photos/sts-2023/_QP22854.jpg',
+  'assets/edition-photos/sts-2023/_QP19688.jpg',
+  'assets/edition-photos/sts-2023/_QP22858.jpg',
+  'assets/edition-photos/sts-2023/_QP22697.jpg',
+  'assets/edition-photos/sts-2023/_QP19772.jpg',
+  'assets/edition-photos/sts-2023/_QP22751.jpg'
+];
+      </script>
     </div>
   </div>
 
