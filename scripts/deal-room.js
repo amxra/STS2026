@@ -154,33 +154,66 @@
       return valid;
     }
   
-    var investorBtn = document.getElementById('investorSubmitBtn');
-    if (investorBtn) {
-      investorBtn.addEventListener('click', function() {
-        if (!validateRequired(['inv-firstName','inv-lastName','inv-email','inv-phone','inv-country','inv-state','inv-orgName','inv-orgType','inv-role'])) { alert('Please fill in all required fields.'); return; }
-        document.getElementById('investorForm').style.display = 'none';
-        document.getElementById('investorSuccess').style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    function submitToNetlify(form, requiredIds, successId, submitBtn) {
+      if (!validateRequired(requiredIds)) { alert('Please fill in all required fields.'); return; }
+
+      var originalText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Submitting\u2026';
+
+      fetch('/', {
+        method: 'POST',
+        body: new FormData(form)
+      })
+        .then(function(response) {
+          if (!response.ok) { throw new Error('Network response was not ok'); }
+          form.style.display = 'none';
+          document.getElementById(successId).style.display = 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
+        .catch(function() {
+          alert('Something went wrong submitting your form. Please check your connection and try again.');
+          submitBtn.disabled = false;
+          submitBtn.textContent = originalText;
+        });
+    }
+
+    var investorForm = document.getElementById('investorForm');
+    if (investorForm) {
+      investorForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitToNetlify(
+          investorForm,
+          ['inv-firstName','inv-lastName','inv-email','inv-phone','inv-country','inv-state','inv-orgName','inv-orgType','inv-role'],
+          'investorSuccess',
+          document.getElementById('investorSubmitBtn')
+        );
       });
     }
-  
-    var grantsBtn = document.getElementById('grantsSubmitBtn');
-    if (grantsBtn) {
-      grantsBtn.addEventListener('click', function() {
-        if (!validateRequired(['gr-firstName','gr-lastName','gr-email','gr-phone','gr-country','gr-state','gr-projectName','gr-stage','gr-amount','gr-duration','gr-description','gr-impact'])) { alert('Please fill in all required fields.'); return; }
-        document.getElementById('grantsForm').style.display = 'none';
-        document.getElementById('grantsSuccess').style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    var grantsForm = document.getElementById('grantsForm');
+    if (grantsForm) {
+      grantsForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitToNetlify(
+          grantsForm,
+          ['gr-firstName','gr-lastName','gr-email','gr-phone','gr-country','gr-state','gr-projectName','gr-stage','gr-amount','gr-duration','gr-description','gr-impact'],
+          'grantsSuccess',
+          document.getElementById('grantsSubmitBtn')
+        );
       });
     }
-  
-    var loansBtn = document.getElementById('loansSubmitBtn');
-    if (loansBtn) {
-      loansBtn.addEventListener('click', function() {
-        if (!validateRequired(['ln-firstName','ln-lastName','ln-email','ln-phone','ln-country','ln-state','ln-bizName','ln-yearEstablished','ln-regStatus','ln-bizSize','ln-sector','ln-amount','ln-tenure','ln-purpose'])) { alert('Please fill in all required fields.'); return; }
-        document.getElementById('loansForm').style.display = 'none';
-        document.getElementById('loansSuccess').style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    var loansForm = document.getElementById('loansForm');
+    if (loansForm) {
+      loansForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitToNetlify(
+          loansForm,
+          ['ln-firstName','ln-lastName','ln-email','ln-phone','ln-country','ln-state','ln-bizName','ln-yearEstablished','ln-regStatus','ln-bizSize','ln-sector','ln-amount','ln-tenure','ln-purpose'],
+          'loansSuccess',
+          document.getElementById('loansSubmitBtn')
+        );
       });
     }
   

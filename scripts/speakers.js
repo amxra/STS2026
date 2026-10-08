@@ -112,6 +112,52 @@ var SPEAKERS = [
 ];
 
 /* ------------------------------------------
+   STS @ 10 (2026) SPEAKER DATA
+   Add confirmed 2026 speakers here — same format as above.
+   Photos go in assets/speakers/. Leave photo as '' to show initials.
+   While this list is empty, the "coming soon" box shows instead.
+   e.g. { name: 'Jane Doe', title: 'Chief Executive Officer', org: 'Example Ltd', photo: 'assets/speakers/JaneDoe.jpg' },
+------------------------------------------ */
+var SPEAKERS_2026 = [
+  { name: 'Abba Abubakar Aliyu', title: '', org: '', photo: 'assets/speakers/2026-speakers/AbbaAbubakarAliyu.png' },
+  { name: 'Abubakar Kyari', title: '', org: '', photo: 'assets/speakers/2026-speakers/AbubakarKyari.png' },
+  { name: 'Adam Boros', title: '', org: '', photo: 'assets/speakers/2026-speakers/AdamBoros.jpg' },
+  { name: 'Ademola Ogunbanjo', title: '', org: '', photo: 'assets/speakers/2026-speakers/AdemolaOgunbanjo.png' },
+  { name: 'Aderonke Alex-Adedipe', title: '', org: '', photo: 'assets/speakers/2026-speakers/Aderonke-AlexAdedipe.jpg' },
+  { name: 'Ahmad Damcida', title: '', org: '', photo: 'assets/speakers/2026-speakers/AhmadDamcida.jpg' },
+  { name: 'Akinkule Gbolu', title: '', org: '', photo: 'assets/speakers/2026-speakers/AkinkuleGbolu.jpg' },
+  { name: 'Akintunde Oyebode', title: 'Commissioner for Finance & Economic Dev.', org: 'Ekiti State', photo: 'assets/speakers/2026-speakers/AkintundeOyebode.jpg' },
+  { name: 'Aliyu Isa Maitasamu', title: '', org: '', photo: 'assets/speakers/2026-speakers/AliyuIsaMaitasamu.jpg' },
+  { name: 'Amaka Onyemelukwe', title: '', org: '', photo: 'assets/speakers/2026-speakers/AmakaOnyemelukwe.jpg' },
+  { name: 'Amira Adediran', title: '', org: '', photo: 'assets/speakers/2026-speakers/AmiraAdediran.jpg' },
+  { name: 'Ayobami Adisa', title: '', org: '', photo: 'assets/speakers/2026-speakers/AyobamiAdisa.jpg' },
+  { name: 'Ayodele Olajiga', title: '', org: '', photo: 'assets/speakers/2026-speakers/AyodeleOlajiga.jpg' },
+  { name: 'Azizat Sola Gbadegesin', title: '', org: '', photo: 'assets/speakers/2026-speakers/AzizatSolaGbadegesin.jpg' },
+  { name: 'Babatunde Niran Aluko', title: '', org: '', photo: 'assets/speakers/2026-speakers/BabatundeNiranAluko.jpg' },
+  { name: 'Ejiro Gray', title: '', org: '', photo: 'assets/speakers/2026-speakers/EjiroGray.jpg' },
+  { name: 'Emmanuel Oladipo', title: '', org: '', photo: 'assets/speakers/2026-speakers/Prof Emmanuel Oladipo.png' },
+  { name: 'Ibrahim Babalola', title: '', org: '', photo: 'assets/speakers/2026-speakers/IbrahimBabalola.png' },
+  { name: 'Ini-obong Antaih', title: '', org: '', photo: 'assets/speakers/2026-speakers/Ini-obongAntaih.png' },
+  { name: 'Jumoke Akande', title: '', org: '', photo: 'assets/speakers/2026-speakers/JumokeAkande.png' },
+  { name: 'Kayode Olaniyan', title: 'Principal Consultant', org: 'Avant-Garde Limited', photo: 'assets/speakers/2026-speakers/KayodeOlaniyan.jpg' },
+  { name: 'Kemdi Chika-Okafor', title: '', org: '', photo: 'assets/speakers/2026-speakers/KemdiChika-Okafor.jpg' },
+  { name: 'Labake Ajiboye-Richard', title: 'Principal Consultant', org: 'AR Initiative', photo: 'assets/speakers/2026-speakers/LabakeAjiboye-Richard.jpg' },
+  { name: 'Lehle Balde', title: 'Award Winning Media Entrepreneur', org: '', photo: 'assets/speakers/2026-speakers/LehleBalde.jpg' },
+  { name: 'Lolade Abiola', title: '', org: '', photo: 'assets/speakers/2026-speakers/LoladeAbiola.png' },
+  { name: 'Michael Ojo', title: '', org: '', photo: 'assets/speakers/2026-speakers/MichaelOjo.jpg' },
+  { name: 'Mohamad Darwish', title: '', org: '', photo: 'assets/speakers/2026-speakers/MohamadDarwish.png' },
+  { name: 'Mosadoluwa Otenaike', title: '', org: '', photo: 'assets/speakers/2026-speakers/MosadoluwaOtenaike.jpg' },
+  { name: 'Oluwole Adama', title: '', org: '', photo: 'assets/speakers/2026-speakers/OluwoleAdama.png' },
+  { name: 'Rolake Akinkugbe-Filani', title: '', org: '', photo: 'assets/speakers/2026-speakers/RolakeAkinkugbeFilani.jpg' },
+  { name: 'Rukaiya El-Rufai', title: '', org: '', photo: 'assets/speakers/2026-speakers/RukaiyaElRufai.jpg' },
+  { name: 'Titilayo Oshodi', title: '', org: '', photo: 'assets/speakers/2026-speakers/TitilayoOshodi.jpg' },
+  { name: 'Titilope Oguntuga', title: 'Director, Sustainability', org: 'IHS Nigeria Limited', photo: 'assets/speakers/2026-speakers/TitilopeOguntuga.png' },
+  { name: 'Uche Uzoebo', title: '', org: '', photo: 'assets/speakers/2026-speakers/UcheUzoebo.jpg' },
+  { name: 'Wunmi Ogunde', title: 'Co-Founder', org: 'Pakam Technology', photo: 'assets/speakers/2026-speakers/WunmiOgunde.jpg' },
+  { name: 'Yosola Onanuga', title: 'Head of Corporate Responsibilities', org: 'TGI Group', photo: 'assets/speakers/2026-speakers/YosolaOnanuga.jpg' }
+];
+
+/* ------------------------------------------
  GET INITIALS
 ------------------------------------------ */
 function spGetInitials(name) {
@@ -123,10 +169,11 @@ return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 /* ------------------------------------------
  RENDER CARDS
 ------------------------------------------ */
-function spRenderCards(rawList) {
-var grid      = document.getElementById('speakerGrid');
-var countEl   = document.getElementById('speakerCount');
-var noResults = document.getElementById('noResults');
+function spRenderCards(rawList, ids) {
+ids = ids || { grid: 'speakerGrid', count: 'speakerCount', noResults: 'noResults' };
+var grid      = document.getElementById(ids.grid);
+var countEl   = ids.count ? document.getElementById(ids.count) : null;
+var noResults = ids.noResults ? document.getElementById(ids.noResults) : null;
 if (!grid) return;
 
 var list = rawList.slice().sort(function (a, b) {
@@ -197,6 +244,17 @@ if ('IntersectionObserver' in window) {
 ------------------------------------------ */
 function spInit() {
 spRenderCards(SPEAKERS);
+
+/* 2026 speakers — same cards as past speakers */
+if (SPEAKERS_2026.length) {
+  var grid2026 = document.getElementById('speakerGrid2026');
+  var cs2026   = document.getElementById('sp2026ComingSoon');
+  var sub2026  = document.getElementById('sp2026Sub');
+  if (grid2026) grid2026.removeAttribute('hidden');
+  if (cs2026)   cs2026.style.display = 'none';
+  if (sub2026)  sub2026.textContent = 'Meet the voices taking the stage at the 10th edition of the Sustainability Table Discourse Series.';
+  spRenderCards(SPEAKERS_2026, { grid: 'speakerGrid2026' });
+}
 
 /* Search */
 var searchInput = document.getElementById('speakerSearch');
