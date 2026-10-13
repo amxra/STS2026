@@ -77,7 +77,7 @@ var SPEAKERS = [
   { name: 'Mofifoluwa Olawumi',   title: 'Entrepreneur Selection & Growth',  org: 'Endeavour', photo: 'assets/speakers/MofifoluwaOlawumi.jpg' },
   { name: 'Mojirayo Folarin-Lawal', title: 'Head, Funding & Partnerships', org: 'Lagos State Employment Trust Fund', photo: 'assets/speakers/MojirayoFolarinLawal.jpg' },
   { name: 'Morin Akeredolu-Ale', title: 'CEO / Lead Sustainability Consultant', org: 'Enconverge Green Ltd', photo: 'assets/speakers/MorinAkeredoluAle.jpg' },
-  { name: 'Mudrakat Alabi-Macfoy', title: 'Head of Sustainability & ESG', org: 'LAWMA', photo: 'assets/speakers/MudrakatAlabi.jpg' },
+  {name: 'Mudrakat Alabi-Macfoy',title: 'Supervisory Councilor',org: 'Department of Environment, Health Services and Waste Management, Lagos Island Local Government',photo: 'assets/speakers/MudrakatAlabi.jpg'},
   { name: 'Oladimeji Oresanya', title: 'Commissioner for Environment', org: 'Ogun State', photo: 'assets/speakers/OladimejiOresanya.jpg' },
   { name: 'Olatunbosun Alake', title: 'Honourable Commissioner', org: 'Innovation, Science & Technology, Lagos State', photo: 'assets/speakers/OlatunbosunAlake.jpg' },
   { name: 'Olufolake Abdulrazaq', title: 'First Lady', org: 'Kwara State', photo: 'assets/speakers/OlufolakeAbdulrazaq.jpg' },
@@ -117,51 +117,85 @@ var SPEAKERS = [
    Photos go in assets/speakers/. Leave photo as '' to show initials.
    While this list is empty, the "coming soon" box shows instead.
    e.g. { name: 'Jane Doe', title: 'Chief Executive Officer', org: 'Example Ltd', photo: 'assets/speakers/JaneDoe.jpg' },
+   PROTOCOL ORDER — optional 'rank' puts a speaker at the top (lower = earlier):
+   1 Governor · 2 Deputy Governor · 3 Emir of Kano · 4 Federal Minister
+   5 First Lady / Chair, Governors' Spouses Forum · 6 State Commissioner
+   7 Presidential advisers · 8 Heads of federal agencies · 9 Lagos State officials
+   Speakers without a rank follow, A–Z.
 ------------------------------------------ */
 var SPEAKERS_2026 = [
-  { name: 'Abba Abubakar Aliyu', title: '', org: '', photo: 'assets/speakers/2026-speakers/AbbaAbubakarAliyu.png' },
-  { name: 'Abubakar Kyari', title: '', org: '', photo: 'assets/speakers/2026-speakers/AbubakarKyari.png' },
-  { name: 'Adam Boros', title: '', org: '', photo: 'assets/speakers/2026-speakers/AdamBoros.jpg' },
-  { name: 'Ademola Ogunbanjo', title: '', org: '', photo: 'assets/speakers/2026-speakers/AdemolaOgunbanjo.png' },
-  { name: 'Aderonke Alex-Adedipe', title: '', org: '', photo: 'assets/speakers/2026-speakers/Aderonke-AlexAdedipe.jpg' },
-  { name: 'Ahmad Damcida', title: '', org: '', photo: 'assets/speakers/2026-speakers/AhmadDamcida.jpg' },
-  { name: 'Akinkule Gbolu', title: '', org: '', photo: 'assets/speakers/2026-speakers/AkinkuleGbolu.jpg' },
-  { name: 'Akintunde Oyebode', title: 'Commissioner for Finance & Economic Dev.', org: 'Ekiti State', photo: 'assets/speakers/2026-speakers/AkintundeOyebode.jpg' },
-  { name: 'Aliyu Isa Maitasamu', title: '', org: '', photo: 'assets/speakers/2026-speakers/AliyuIsaMaitasamu.jpeg' },
-  { name: 'Amaka Onyemelukwe', title: '', org: '', photo: 'assets/speakers/2026-speakers/AmakaOnyemelukwe.jpg' },
-  { name: 'Amira Adediran', title: '', org: '', photo: 'assets/speakers/2026-speakers/AmiraAdediran.jpg' },
-  { name: 'Ayobami Adisa', title: '', org: '', photo: 'assets/speakers/2026-speakers/AyobamiAdisa.jpg' },
-  { name: 'Ayodele Olajiga', title: '', org: '', photo: 'assets/speakers/2026-speakers/AyodeleOlajiga.jpg' },
-  { name: 'Azizat Sola Gbadegesin', title: '', org: '', photo: 'assets/speakers/2026-speakers/AzizatSolaGbadegesin.jpg' },
-  { name: 'Babatunde Niran Aluko', title: '', org: '', photo: 'assets/speakers/2026-speakers/BabatundeNiranAluko.jpg' },
-  { name: 'Ejiro Gray', title: '', org: '', photo: 'assets/speakers/2026-speakers/EjiroGray.jpg' },
-  { name: 'Emmanuel Oladipo', title: '', org: '', photo: 'assets/speakers/2026-speakers/Prof Emmanuel Oladipo.png' },
-  { name: 'Ibrahim Babalola', title: '', org: '', photo: 'assets/speakers/2026-speakers/IbrahimBabalola.png' },
-  { name: 'Ini-obong Antaih', title: '', org: '', photo: 'assets/speakers/2026-speakers/Ini-obongAntaih.png' },
-  { name: 'Jumoke Akande', title: '', org: '', photo: 'assets/speakers/2026-speakers/JumokeAkande.jpeg' },
+  { name: 'Lehlé Baldé', title: 'Summit Host', org: '', photo: 'assets/speakers/2026-speakers/LehleBalde.jpg' },
+  { name: 'H.E. Babajide Olusola Sanwo-Olu', title: 'Governor of Lagos State', org: 'Lagos State', photo: 'assets/speakers/2026-speakers/H.E.BabajideOlusolaSanwo-Olu.png', rank: 1 },
+  { name: 'H.E. Dr. Kadri Obafemi Hamzat', title: 'Deputy Governor of Lagos State', org: 'Lagos State', photo: 'assets/speakers/2026-speakers/H.E.Dr.KadriObafemiHamzat.jpeg', rank: 2 },
+  { name: 'H.H. Muhammadu Sanusi II', title: 'Emir of Kano', org: 'Kano Emirate', photo: 'assets/speakers/2026-speakers/H.H.MuhammaduSanusiII.jpg', rank: 3 },
+  { name: 'Tenioye Majekodunmi', title: 'Director-General', org: 'National Council on Climate Change (NCCC)', photo: 'assets/speakers/2026-speakers/tenioyeMajekodunmi.jpeg', rank: 8 },
+  { name: 'H.E. Amb. Prof. (Mrs.) Olufolake AbdulRazaq', title: 'First Lady of Kwara State; Chairperson', org: 'Nigeria Governors Spouses’ Forum', photo: 'assets/speakers/2026-speakers/H.E.Amb.Prof.(Mrs.)OlufolakeAbdulRazaq.jpg', rank: 5 },
+  { name: 'Dr. Innocent Barikor', title: 'Director-General/CEO', org: 'NESREA', photo: 'assets/speakers/2026-speakers/Prof.InnocentBarikor.jpg', rank: 8 },
+  { name: 'Dapo Otunla', title: 'Chief Corporate Services Officer', org: 'IHS Nigeria', photo: 'assets/speakers/2026-speakers/DapoOtunla.jpg' },
+  { name: 'Olu Arowolo Verheijen', title: 'Special Adviser to the President on Energy', org: 'Presidency', photo: 'assets/speakers/2026-speakers/OluArowoloVerheijen.png', rank: 7 },
+  { name: 'Rukaiya El-Rufai', title: 'Presidency / National Economic Council & Climate Change', org: 'Presidency', photo: 'assets/speakers/2026-speakers/RukaiyaElRufai.jpg', rank: 7 },
+  { name: 'Akintunde Oyebode', title: 'Commissioner for Finance, Ekiti State; Chairman', org: 'Forum of State Commissioners of Finance', photo: 'assets/speakers/2026-speakers/AkintundeOyebode.jpg', rank: 6 },
+  { name: 'Ademola Ogunbanjo', title: 'President & CEO', org: 'Oando Clean Energy', photo: 'assets/speakers/2026-speakers/AdemolaOgunbanjo.png' },
+  { name: 'Rolake Akinkugbe-Filani', title: 'Managing Director & CEO', org: 'EnergyInc Advisors Limited', photo: 'assets/speakers/2026-speakers/RolakeAkinkugbeFilani.jpg' },
+  { name: 'Dr. Eugene Itua', title: 'Facilitator', org: 'NESG Climate Special Task Force', photo: 'assets/speakers/2026-speakers/Dr.EugeneItuah.png' },
+  { name: 'Uche Uzoebo', title: 'MD/CEO', org: 'Shared Agent Network Expansion Facilities (SANEF)', photo: 'assets/speakers/2026-speakers/UcheUzoebo.jpg' },
+  { name: 'Dr. Sam Olugbenga Faleye', title: 'Chairman & CEO', org: 'Saglev Inc', photo: 'assets/speakers/2026-speakers/Dr.SamOlugbengaFaleye.jpg' },
+  { name: 'Lolade Abiola', title: 'Head, Energy Transition Office', org: 'Sustainable Energy for All', photo: 'assets/speakers/2026-speakers/LoladeAbiola.png' },
+  { name: 'Titilayo Oshodi', title: 'Special Adviser to the Lagos State Governor on Climate Change and Circular Economy', org: 'Lagos State', photo: 'assets/speakers/2026-speakers/TitilayoOshodi.jpg', rank: 9 },
+  { name: 'Titilope Oguntuga', title: 'Director, Sustainability', org: 'IHS Nigeria', photo: 'assets/speakers/TitilopeOguntuga.jpg' },
+  { name: 'Dr. Azizat ’Sola Gbadegesin', title: 'Chief Operating Officer', org: 'RenSource Energy', photo: 'assets/speakers/2026-speakers/AzizatGbadegesin.jpeg' },
+  { name: 'Adam Boros', title: 'Vice President & Head of Impact', org: 'Africa Finance Corporation', photo: 'assets/speakers/2026-speakers/AdamBoros.jpg' },
+  { name: 'Ejiro Gray', title: 'Executive Director, Governance & Sustainability', org: 'Sahara Group', photo: 'assets/speakers/2026-speakers/EjiroGray.jpg' },
+  { name: 'Ahmad Damcida', title: 'CEO', org: 'Edryv', photo: 'assets/speakers/2026-speakers/AhmadDamcida.jpg' },
+  { name: 'Kashifu Inuwa Abdullahi', title: 'Director-General/Chief Executive Officer', org: 'NITDA', photo: 'assets/speakers/2026-speakers/KashifuInuwaAbdullahi.jpg', rank: 8 },
+  { name: 'Labake Ajiboye-Richard', title: 'Founder', org: 'ARI Initiatives', photo: 'assets/speakers/2026-speakers/LabakeAjiboye-Richard.jpg' },
+  { name: 'Oluseun Onigbinde', title: 'Global Director', org: 'BudgIT', photo: 'assets/speakers/2026-speakers/SeunOnigbinde.jpeg' },
+  { name: 'Ayobami Adisa', title: 'Founder', org: 'Graypatch Advisory Limited', photo: 'assets/speakers/2026-speakers/AyobamiAdisa.jpg' },
+  { name: 'Aderonke Alex-Adedipe', title: 'Founding/Managing Partner', org: 'Pavestone Legal', photo: 'assets/speakers/2026-speakers/Aderonke-AlexAdedipe.png' },
+  { name: 'Jumoke Akande', title: '', org: 'Project BRIDGE', photo: 'assets/speakers/2026-speakers/JumokeAkande.jpg' },
+  { name: 'Ibraheem Babalola', title: 'CEO', org: 'ETAP', photo: 'assets/speakers/2026-speakers/IbrahimBabalola.png' },
+  { name: 'Mudrakat Alabi-MacFoy', title: 'Head of Sustainability', org: 'Lagos Waste Management Authority (LAWMA)', photo: 'assets/speakers/2026-speakers/Hon.MudrakatAlabiMacFoy.jpg' },
+  { name: 'Dr. Muyiwa Gbadegesin', title: 'Managing Director/Chief Executive Officer', org: 'Lagos Waste Management Authority (LAWMA)', photo: 'assets/speakers/2026-speakers/Dr.MuyiwaGbadegesin.jpg', rank: 9 },
+  { name: 'Agharese Onaghise', title: 'Executive Director/Secretary', org: 'Food and Beverage Recycling Alliance', photo: 'assets/speakers/2026-speakers/AghareseL.Onaghise.png' },
+  { name: 'Ibukun Faluyi', title: 'Executive Secretary', org: 'E-Waste Producer Responsibility Organisation of Nigeria', photo: 'assets/speakers/2026-speakers/IbukunFaluyi.png' },
+  { name: 'Miranda Amachree', title: 'Executive Secretary', org: 'Alliance for Responsible Battery Recycling', photo: 'assets/speakers/2026-speakers/MirandaAmachree.jpeg' },
+  { name: 'Amaka Onyemelukwe', title: 'Director, Public Affairs, Communications and Sustainability', org: 'Coca-Cola', photo: 'assets/speakers/2026-speakers/amakaOnyemelukwe.jpeg' },
+  { name: 'Senator Abubakar Kyari', title: 'Honourable Minister of Agriculture and Food Security', org: 'Ministry of Agriculture', photo: 'assets/speakers/2026-speakers/SenatorAbubakarKyari.jpg', rank: 4 },
+  { name: 'Ayodele Olajiga', title: 'CEO', org: 'AgroXchange', photo: 'assets/speakers/2026-speakers/AyodeleOlajiga.jpg' },
+  { name: 'Michael Ojo', title: 'Country Director', org: 'Global Alliance for Improved Nutrition (GAIN)', photo: 'assets/speakers/2026-speakers/MichaelOjo.jpg' },
+  { name: 'Modupe Ojo', title: 'Sustainability Manager', org: 'Sunbeth Global Concepts', photo: 'assets/speakers/2026-speakers/ModupeOjo.jpg' },
+  { name: 'Babatunde Niran-Aluko', title: 'Managing Director', org: 'Mystrose Agro Commodities Limited', photo: 'assets/speakers/2026-speakers/BabatundeNiranAluko.jpg' },
+  { name: 'Akinkunle Gbolu', title: 'Zonal Vice President, South West', org: 'National Onion Producers, Processors and Marketers Association of Nigeria (NOPPMAN)', photo: 'assets/speakers/2026-speakers/AkinkuleGbolu.jpg' },
+  { name: 'Aliyu Maitasamu Isah', title: 'President', org: 'National Onion Producers, Processors and Marketers Association of Nigeria (NOPPMAN)', photo: 'assets/speakers/2026-speakers/AliyuMaitasamuIsah.png' },
+  { name: 'Princess Kemdi Chika-Okafor', title: 'Founder', org: 'Century 21 Foundation', photo: 'assets/speakers/2026-speakers/PrincessKemdiChika-Okafor.jpg' },
+  { name: 'Professor Emmanuel Ladipo', title: 'Chairman ', org: 'Policy Advisory Panel for the Resource and Environmental Policy Research Centre, Environment for Development Nigeria (REPRC-EfD Nigeria)', photo: 'assets/speakers/2026-speakers/ProfEmmanuelOladipo.png' },
+  { name: 'Wunmi Ogunde', title: 'Circular Economy & Net-Zero Business Strategist', org: '', photo: 'assets/speakers/2026-speakers/WunmiOgunde.jpg' },
+  { name: 'Tosin Faniro-Dada', title: 'Investor & Innovation Strategist', org: '', photo: 'assets/speakers/2026-speakers/TosinFaniroDada.jpg' },
+  { name: 'Gbolahan Thomas', title: 'Entrepreneur', org: '', photo: 'assets/speakers/2026-speakers/GbolahanThomas.jpg' },
+  { name: 'Amira Adediran', title: 'Strategy & Commercial Consultant', org: '', photo: 'assets/speakers/2026-speakers/AmiraAdediran.jpg' },
+  { name: 'Deyi Dipeolu', title: 'Entrepreneur', org: '', photo: '' },
+  { name: 'Seun Awojobi', title: 'Entrepreneur', org: '', photo: 'assets/speakers/2026-speakers/SeunAwojobi.jpeg' },
+  { name: 'Ireayo Oladunjoye', title: 'Investor & Innovation Strategist', org: '', photo: 'assets/speakers/2026-speakers/ireayooladunjoye.png' },
+  { name: 'Abba Abubakar Aliyu', title: 'Managing Director / CEO', org: 'Rural Electrification Agency', photo: 'assets/speakers/2026-speakers/AbbaAbubakar.jpeg', rank: 8 },
+  { name: 'Ini-obong Antaih', title: 'Sustainability Manager', org: 'Lafarge Africa Plc', photo: 'assets/speakers/2026-speakers/Ini-obongAntaih.png' },
   { name: 'Kayode Olaniyan', title: 'Principal Consultant', org: 'Avant-Garde Limited', photo: 'assets/speakers/2026-speakers/KayodeOlaniyan.jpg' },
-  { name: 'Kemdi Chika-Okafor', title: '', org: '', photo: 'assets/speakers/2026-speakers/KemdiChika-Okafor.jpg' },
-  { name: 'Labake Ajiboye-Richard', title: 'Principal Consultant', org: 'AR Initiative', photo: 'assets/speakers/2026-speakers/LabakeAjiboye-Richard.jpg' },
-  { name: 'Lehle Balde', title: 'Award Winning Media Entrepreneur', org: '', photo: 'assets/speakers/2026-speakers/LehleBalde.jpg' },
-  { name: 'Lolade Abiola', title: '', org: '', photo: 'assets/speakers/2026-speakers/LoladeAbiola.jpeg' },
-  { name: 'Michael Ojo', title: '', org: '', photo: 'assets/speakers/2026-speakers/MichaelOjo.jpg' },
-  { name: 'Mohamad Darwish', title: '', org: '', photo: 'assets/speakers/2026-speakers/MohamadDarwish.png' },
-  { name: 'Mosadoluwa Otenaike', title: '', org: '', photo: 'assets/speakers/2026-speakers/MosadoluwaOtenaike.jpg' },
-  { name: 'Oluwole Adama', title: '', org: '', photo: 'assets/speakers/2026-speakers/OluwoleAdama.png' },
-  { name: 'Rolake Akinkugbe-Filani', title: '', org: '', photo: 'assets/speakers/2026-speakers/RolakeAkinkugbeFilani.jpg' },
-  { name: 'Rukaiya El-Rufai', title: '', org: '', photo: 'assets/speakers/2026-speakers/RukaiyaElRufai.jpg' },
-  { name: 'Titilayo Oshodi', title: '', org: '', photo: 'assets/speakers/2026-speakers/TitilayoOshodi.jpg' },
-  { name: 'Titilope Oguntuga', title: 'Director, Sustainability', org: 'IHS Nigeria Limited', photo: 'assets/speakers/2026-speakers/TitilopeOguntuga.jpeg' },
-  { name: 'Uche Uzoebo', title: '', org: '', photo: 'assets/speakers/2026-speakers/UcheUzoebo.jpg' },
-  { name: 'Wunmi Ogunde', title: 'Co-Founder', org: 'Pakam Technology', photo: 'assets/speakers/2026-speakers/WunmiOgunde.jpg' },
+  { name: 'Mosadoluwa Otenaike', title: 'Deputy Team Lead', org: 'EPPlus Sustainability Network', photo: 'assets/speakers/2026-speakers/MosadoluwaOtenaike.jpg' },
+  { name: 'Oluwole Adama', title: 'Executive Director, Midstream & Downstream Gas Infrastructure Fund', org: 'NMDPRA', photo: 'assets/speakers/2026-speakers/OluwoleAdama.jpg', rank: 8 },
   { name: 'Yosola Onanuga', title: 'Head of Corporate Responsibilities', org: 'TGI Group', photo: 'assets/speakers/2026-speakers/YosolaOnanuga.jpg' }
 ];
 
 /* ------------------------------------------
  GET INITIALS
 ------------------------------------------ */
+/* Strips honorifics (H.E., Dr., Prof., Senator…) so initials and A–Z order use the real name */
+function spPlainName(name) {
+return name.replace(/\((mrs|mr|ms)\.?\)/gi, ' ')
+  .replace(/\b(h\.e\.|h\.h\.|hrh|dr\.?|prof\.?|professor|amb\.?|senator|sen\.|princess|chief|engr\.?|hon\.?|mrs\.?|mr\.?|ms\.?)(?=\s|$)/gi, ' ')
+  .replace(/\s+/g, ' ').trim() || name;
+}
+
 function spGetInitials(name) {
-var parts = name.trim().split(/\s+/);
+var parts = spPlainName(name).replace(/\s+(ii|iii|iv|jr\.?|sr\.?)$/i, '').split(/\s+/);
 if (parts.length === 1) return parts[0][0].toUpperCase();
 return (parts[0][0] + parts[parts.length - 1][0]).toUpperCase();
 }
@@ -180,15 +214,21 @@ var list = rawList.slice().sort(function (a, b) {
   var rank = function (sp) {
     var t = (sp.title || '').toLowerCase();
     var o = (sp.org || '').toLowerCase();
-    if (t.indexOf('governor') > -1 && o.indexOf('lagos') > -1) return 0;
+    var to = t + ' ' + o;
+    var isLagosGov = to.indexOf('governor') > -1 && to.indexOf('lagos') > -1 && to.indexOf('adviser') === -1;
+    if (isLagosGov && to.indexOf('deputy') === -1) return 0;
+    if (isLagosGov) return 0.5; /* Deputy Governor straight after the Governor */
     if (t.indexOf('commissioner') > -1) return 1;
     if (t.indexOf('minister') > -1) return 2;
     if (t.indexOf('convener') > -1) return 3;
     return 4;
   };
-  var ra = rank(a), rb = rank(b);
+  /* A speaker with a 'rank' number is placed by that number first (protocol order);
+     everyone else follows, using the usual rule above, then A–Z */
+  var ra = (typeof a.rank === 'number') ? a.rank : 100 + rank(a);
+  var rb = (typeof b.rank === 'number') ? b.rank : 100 + rank(b);
   if (ra !== rb) return ra - rb;
-  return a.name.localeCompare(b.name);
+  return spPlainName(a.name).localeCompare(spPlainName(b.name));
 });
 
 grid.innerHTML = '';
@@ -206,15 +246,20 @@ list.forEach(function(speaker, i) {
   var card = document.createElement('div');
   card.className = 'sp-card';
   var colorClass = 'sp-av-' + (i % 6);
+  var initialsHtml = '<div class="sp-avatar ' + colorClass + '"' + (speaker.photo ? ' style="display:none"' : '') + '>' + spGetInitials(speaker.name) + '</div>';
+  /* If the photo is missing or fails to load, swap in the coloured initials (same as edition pages) */
   var avatarHtml = speaker.photo
-    ? '<div class="sp-avatar sp-avatar--photo"><img src="' + speaker.photo + '" alt="' + speaker.name + '" loading="lazy"></div>'
-    : '<div class="sp-avatar ' + colorClass + '">' + spGetInitials(speaker.name) + '</div>';
+    ? '<div class="sp-avatar sp-avatar--photo"><img src="' + speaker.photo + '" alt="' + speaker.name + '" loading="lazy" ' +
+      'onerror="this.parentNode.style.display=\'none\';this.parentNode.nextElementSibling.style.display=\'flex\'"></div>' + initialsHtml
+    : initialsHtml;
+  /* review: true = not yet on the confirmed list — shown in red text */
+  var red = speaker.review ? ' style="color:#dc2626"' : '';
   card.innerHTML =
     avatarHtml +
     '<div class="sp-card-info">' +
-      '<div class="sp-card-name">' + speaker.name + '</div>' +
-      (speaker.title ? '<div class="sp-card-title">' + speaker.title + '</div>' : '') +
-      (speaker.org   ? '<div class="sp-card-org">'   + speaker.org   + '</div>' : '') +
+      '<div class="sp-card-name"' + red + '>' + speaker.name + '</div>' +
+      (speaker.title ? '<div class="sp-card-title"' + red + '>' + speaker.title + '</div>' : '') +
+      (speaker.org   ? '<div class="sp-card-org"'   + red + '>' + speaker.org   + '</div>' : '') +
     '</div>';
   grid.appendChild(card);
 });
